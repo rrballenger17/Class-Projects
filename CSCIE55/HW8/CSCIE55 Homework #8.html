@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>CSCIE55 Homework #8</title>
+</head>
+<body>
+<center><font size=5><b>
+Homework #8 -- Further Adventures in MapReduce
+</font></b>
+<p align="center"><font size=4>Last Modified: <i><script>document.write(document.lastModified);</script></i>
+</font></p>
+Due: Saturday May 14th Grading: 10%
+</center>
+<hr>
+<p>You will be working with a set of files containing <a href="http://www.json.org/">JSON</a>-formatted 
+records of the
+form (URL, timestamp, set of tags). One record represents the fact
+that someone visited the URL at the given time, and labelled the visit
+with a number of tags. Here is some sample data:
+
+<pre>
+    {"url": "http://freegasmoney.org/", "timestamp": 1257034785, "tags": ["free", "gas", "coupon"]}
+    {"url": "http://www.autodriver.com/car-loans/pre-approved-auto-loans/index.html", "timestamp": 1257119583, "tags": ["approved", "car", "loans", "auto", "loan", "approval", "pre"]}
+    {"url": "http://www.simplykidstoys.com/precious-princess-perfect-dollhouse.html", "timestamp": 1257107683, "tags": ["toys", "birthday", "christmas", "dollhouse"]}
+    {"url": "http://thenuweigh.com/", "timestamp": 1257042871, "tags": ["diet", "diets", "fatloss", "weight", "loss", "program"]}
+</pre>
+
+<p>The timestamps represent the number of seconds since January 1,
+1970. This is a very common way of representing time in software.
+
+<p>This data is from a
+<a href="http://cnets.indiana.edu/groups/nan/givealink">research
+project</a>. It is organized into 15 files, for a total of
+11MB. 
+<h2>Download the data</h2>
+Download the data from <a href="links.tgz">here</a>. You can unpack
+the data using the command <tt><b>tar xvzf links.tgz</b></tt>.
+The data will be unpacked in a subdirectory <font face="courier new"><b>files.1</b></font>.
+<p>
+The data originates 
+<a href="http://carl.cs.indiana.edu/data/websci2014/givealink-nov-2009.tgz">here</a>,
+but it needed some cleaned-up, and reorganization into two directories. Do NOT use this original
+data.
+<h2>Problems to solve</h2>
+<b>Problem 1.</b> Write a <font face="courier new"><b>Map/Reduce</b></font> 
+solution that lists the url's with the (comma-separated)
+union of the tags listed in all the
+records for each url. For example, suppose the following two records were seen in the stream:
+<pre>
+    {"url": "http://freegasmoney.org/", "timestamp": 1257034785, "tags": ["free", "gas"]}
+    {"url": "http://freegasmoney.org/", "timestamp": 1257034877, "tags": ["free", "gas", "vacation"]} </pre>
+The final output from your solution would have one line:
+<pre><b>     http://freegasmoney.org/ free,gas,vacation</b></font></b></pre>
+Note: the tags are comma-separated, no white space, and the key/value pair is separated by a single white space. 
+Run your solution on the local file system, i.e. not against the Hadoop cluster. 
+Capture the first ten lines of the final output and submit it with your solution. For
+correctness you can compare your results with this reference result: <a href="prob1-first-ten.txt">
+prob1-first-ten</a>
+<p><i>Hint:</i> You will need to have your <font face="courier new"><b>Reducer</b></font> collect the tags in a 
+<font face="courier new"><b>java.util.Set</b></font>, which it can 
+use in <font face="courier new"><b>cleanup</b></font> to write the result.
+<p>
+To parse the lines of data use this Java code <a href="Link.zip">Link.zip</a> 
+&nbsp;&nbsp;&nbsp;<font face="courier new"><b>Link.java</b></font> has a
+static method <font face="courier new"><b>parse</b></font> that takes a 
+<font face="courier new"><b>String</b></font>. In <font face="courier new"><b>Mapper.map</b></font> 
+you can run <font face="courier new"><b>Link.parse</b></font> on each incoming line.
+This will produce a <font face="courier new"><b>Link</b></font> object. Note that 
+<font face="courier new"><b>Link.parser</b></font> returns
+<font face="courier new"><b>null</b></font> when it encounters bogus data. [Suggestion: extract
+a small set of records, say 5 lines, into a single file to run your code on while developing 
+your solution. Two gotchas: (1)blank lines in a data file, (2) editor backup files, like emacs' ~ recovery
+files. Either of these will cause problems.]
+<p>
+<b>Problem 2. </b> Write a <font face="courier new"><b>Map/Reduce</b></font> 
+solution that lists the url's of every record between two dates. Your solution must
+accomodate command line arguments for the dates in addition to the input/output directories.
+The date format to support is <font face="courier new"><b>dd-MM-yyyy</b></font>. The data reflect
+records between Novermber 1, 2009, and November 15, 2009. The final output should list each URL
+and the count of its appearances.
+<p>You will need two strategies: one to convert the dates on the command lines to 
+<font face="courier new"><b>long</b></font> values to be used as filters
+in the <font face="courier new"><b>map</b></font> method, and one to put these values
+into play from the driver's <font face="courier new"><b>main</b></font>. Here are three
+lines of code for the first of these: <pre><b>    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    simpleDateFormat.setTimeZone(TimeZone.getTimeZone("EST"));
+    Date startDate = simpleDateFormat.parse(args[2]);
+    Long startmilliseconds = startDate.getTime()/1000;</b></pre>
+The division by 1000 is to reduce the value from milliseconds to seconds.
+<p>The second strategy, getting the values into play, is for you to discover, using this hint:
+The <font face="courier new"><b>Configuration</b></font> used in creating the 
+<font face="courier new"><b>Job</b></font> is a convenient place to hold named parameters 
+for later use.
+<p><b>Run your solution, giving start date as November 8, 2009 and end date as November 9, 2009. Submit
+the resulting part-r-00000.</b> 
+<h2>Submission requirements</h2> 
+A zip file containing 
+<ul>
+<li>All the Java files for each problem.  [All classes should belong to package 
+<font face="courier new"><b>cscie55.hw8</b></font>]
+<li>The output files created by running
+the MR code (locally) for each driver class containing <font face="courier new"><b>main</b></font>.
+<ul>
+<li>
+ first 10 lines [<font face="courier new"><b>part-r-00000</b></font>] 
+for problem 1, 
+<li>the entire output file for problem 2. [Ref: <a href="time-link-part-2-00000">prob2-part-r-00000</a>]
+</ul>
+<li>A jar file containing all class files in a form suitable to run solutions
+for all three problems.
+<li>A solution overview, explaining each of the MR solutions.
+</ul>
+  
+ 
+
+</body>
+</html>

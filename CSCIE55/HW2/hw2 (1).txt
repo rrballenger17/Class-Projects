@@ -1,0 +1,41 @@
+Ryan Ballenger
+CSCIE55 HW2
+
+How you solved the homework
+
+I created a Building class, as directed by the homework handout, that holds the Floor and Elevator objects. It initiates and gives access to them via public methods. It serves to provide holistic access to everything inside the building. For example, the elevator can have its Building object and be able to access information from all the floors. Besides the elevator and floors[] variables that hold the data described above, the building object also contains a static final called FLOORS, containing the number of floors in the building, which is shared by being a public. 
+	Next, I created the Floor class which stores information about the state of a floor and gives methods to adjust the number of passengers on that floor waiting to board the elevator. Its constructor stores its Building object from the parameter, its floor number which is also a parameter, and initiates the number of waiting passengers to 0. The class has three methods including waitForElevator() which increments the number of waiting passengers by 1, the passengersWaiting() method which returns the number of passengers waiting stored as the int passengersWaitingCount, and the protected method passengerExit() to decrement the waiting passengers by 1. This class serves to keep track of what is happening on a floor outside the elevator. 
+	The Elevator class is largely the same as in HW1 but I will give an overview of the updates to this class. It now has a maximum capacity stored as a static final CAPACITY and is given public access. The other additional class variable is theBuilding which stores the Building object in which the elevator is located, giving access to information about the floors in order to board passengers, etc. 
+	The updates to the Elevator’s methods include passing the building object to the constructor and storing it, as discussed earlier. The move() method now uses that Building object to see how many passengers are waiting to board on the new floor. It attempts to board each one but catches an ElevatorFullException which leaves the additional passengers on that floor and prints the exception’s message. It also checks if a stop is required on the current floor and if not, the method ends before beginning to board any passengers. If a passenger boards, move() communicates this back to the floor via the passengerExit() method to maintain data integrity between the objects. If all passengers board, a stop is no longer required at the current floor. 
+	Other updates to Elevator’s methods include boardPassenger() checking for maximum capacity on the elevator. If so, it throws an ElevatorFullException. There are two new and simple methods required by the handout also, which are currentFloor() that returns the floor on which the elevator is located and passengers() that counts the number of passengers by their destinations in passengerCount[] to return the total passenger count. 
+	The last class is the ElevatorFullException which is a custom exception for when an attempt to exceed the elevator’s maximum capacity occurs. It extends the exception class and uses a super() call to create an exception. It has a message that introduces this particular exception by name and contains a string that is sent to the constructor by the parameter msg.
+
+Any assumptions you made in the design
+
+I assumed that a separate and protected method is needed for the floor class to decrement the waiting passengers as they board. The passengersWaitingCount variable is not suppose to be public because we are instructed to create a method to deliver its value. Therefore once the passengers board the elevator, this variable must decrement through this new protected method. I attempted to set the passengers waiting to 0 after retrieving the number of passengers waiting via the passengersWaiting() method, but the given test class checks passengersWaiting() when they shouldn’t also be cleared. The protected method passengerExit() serves to board a waiting passenger off the floor and is protected, as mentioned earlier, to make access more exclusive. 
+	Another assumption made is that there is no maximum value for the number of passengers waiting on a floor. Obviously in reality, there would be but it is probably large enough that it is not relevant to this system. 
+
+The classes that you created
+
+I created the Elevator class that, similar to HW1, does most of the processing. Its methods move the elevator, track passengers boarding and departing the elevator, and also accesses floor objects to board passengers waiting for the elevator on each floor. 
+	Secondly, the Floor and Building classes mostly store state information for their respective classes. The Floor stores and adjusts the number of passengers waiting to board the elevator. The Building class basically holds the elevator and floor objects that make up the system within the building. For more specific information on the methods, see the JavaDoc descriptions for these classes.
+	Lastly, I made the ElevatorFullException which is a custom exception that is thrown when a passenger tries to board a full elevator. It creates a standard exception with a custom message about the exception and the maximum capacity of the elevator.  
+
+
+How to execute your solution
+Option 1)
+In order to execute the program from the Jar file, as described in the submission policy, the following command executes the simulation test. Also the jar files hamcrest-core-1.3.jar and junit-4.11.jar must be in the current directory as outlined in the command line option in the homework handout.  
+
+java -cp ./hw2.jar:./hamcrest-core-1.3.jar:./junit-4.11.jar org.junit.runner.JUnitCore cscie55.hw2test.HW2ElevatorSimulationTest
+
+Option 2)
+Additionally, to compile and run the program manually, the jar file can be extracted followed by running this command to compile the program (note: the program is already compiled and contains the class files):
+
+javac -cp ./hamcrest-core-1.3.jar:./junit-4.11.jar cscie55/hw2/Elevator.java cscie55/hw2/Floor.java cscie55/hw2/Building.java cscie55/hw2/ElevatorFullException.java cscie55/hw2test/HW2ElevatorSimulationTest.java
+
+Then, this command executes the newly compiled program (However, note this is not necessary and my homework is executable from the jar file command described first in this section):
+
+java -cp ./:./hamcrest-core-1.3.jar:./junit-4.11.jar org.junit.runner.JUnitCore cscie55.hw2test.HW2ElevatorSimulationTest
+
+
+

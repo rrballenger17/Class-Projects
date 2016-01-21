@@ -1,0 +1,35 @@
+Ryan Ballenger
+CSCIE55 HW1
+
+How you solved the homework
+I created an Elevator class as directed by the homework handout. I solved the problem of creating this elevator application, first, by tracking its state with variables. The variables currentFloor, directionUp, passengerCount, and stops maintain the data for the elevator and the methods manipulate this data according to their purpose. 
+	Specifically, the variables work by currentFloor tracking which floor the elevator is on, directionUp tracking the direction with true being up of course, the passengerCount array tracking how many passengers on board are destined for each floor, and the stops array tracking which floors passengers need to go to, with true meaning a passenger is headed to the corresponding floor. This constitutes all the data that is needed to run the elevator for this assignment. 
+	The methods simply adjust this data according to their purpose, as mentioned earlier. The constructor puts the elevator on the first floor(currentFloor=0), sets the direction to up, and initiates the two arrays according to the number of floors, which is tracked by the constant FLOOR_COUNT. 
+	The next method move() moves the elevator in the appropriate direction one floor. If it goes outside the range of floors, this method reverses the direction and moves the elevator the other way. It also releases the passengers going to the new floor by passengerCount[currentFloor] = 0 and stops[currentFloor] = false. 
+	The board passenger method adds a passenger on the elevator and notes which floor she is headed for by incrementing the passenger destination array and marking the stops array as true for that floor. The getFloorCount() method returns the floor count for the test class to know when it has traversed all available floors. Lastly toString() counts the passengers on board by summing the destination floors in the passengerCount array and returns a string with the current floor and the total passenger count. That concludes an overview of how I used the methods to solve the problem and for more information about the methods and their implementation, please see the JavaDoc that has been created for that purpose. 
+
+Any assumptions you made in the design
+I assumed that each move call only causes the elevator to change one floor regardless of if someone needs to stop there or not. At some point, its likely we program only stops at floors passengers are going to, but from the homework handout, it seemed that move() should only move the elevator to the adjacent floor, regardless if someone needs to stop there. I made this assumption, instead of having the elevator skip floors to the next floor where passengers are getting off, because on the homework handout, the example output for the elevator test indicates that a stop is made at each floor. 
+	Another assumption is that a passenger cannot board the elevator in route to the current floor. For one, it does not make sense to get on the elevator to go to the current floor. Secondly, most elevators in the real world reopen their doors if the current floor button is pressed as passengers board, as if to remind the passenger that its already at that passenger’s destination. To function realistically, I do not allow a passenger to board for the current floor, assuming that the elevator would immediately reopen its doors and release the passenger. Although not specified in the handout, I made this assumption based on my experience riding elevators and knowing how they operate. 
+	No other assumptions were made and other design decisions for this project where made with certainty. 
+
+The classes that you created
+The Elevator class runs the elevator and adjusts its state according to calls to its public methods. All the functionality is within the Elevator class and other classes, such as the test class, can move the elevator, board a passenger, get the floor count, and get a string with state information. The implementation of these methods is discussed in the first section of this overview and within the JavaDocs provided. 
+	Secondly, I created the test class called ElevatorTest. This class consists of only a main method that functions as described in the handout by boarding three passengers for floors 3, 3, and 5. The main method then moves the elevator through a full cycle from bottom to top and back down. This class functions as a test that creates an elevator object, boards passengers, moves the elevator, and prints its current state, which is all the public functionality of the Elevator class. Again, the JavaDocs for the ElevatorTest provide more detailed information beyond the overview given here.
+
+How to execute your solution
+Option 1)
+In order to execute the program from the Jar file, as described in the submission policy, the following command executes the elevator test.
+java -cp hw1.jar cscie55.hw1.elevatortest.ElevatorTest
+
+Option 2)
+Additionally, to compile and run the program manually, the jar file can be extracted followed by running this command to compile the program (note: the program is already compiled and contains the class files):
+javac cscie55/hw1/elevator/Elevator.java cscie55/hw1/elevatortest/ElevatorTest.java
+
+Then, this command executes the newly compiled program (However, note this is not necessary and my homework is executable from the jar file command described first in this section):
+java cscie55.hw1.elevatortest.ElevatorTest
+
+
+
+
+

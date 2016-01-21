@@ -1,0 +1,221 @@
+<html>
+<head>
+<title>CSCI E55: Homework #3</title>
+</head>
+  <body>
+    <center><h2>Homework #3: Active Passengers, Collections</h2>
+
+<h3><b>Due:</b> Monday March 14th
+<p><b>Grade:</b> 15%
+<p align="center"><font size=4>Last Modified: <i><script>document.write(document.lastModified);</script></i>
+</font></p></h3>
+
+</center>
+<font face="arial">
+<h2>Resources: </h2>
+<ul>
+<li><a href="http://docs.oracle.com/javase/7/docs/technotes/guides/collections/overview.html">Collections</a>
+    <li><a
+        href="http://java.sun.com/docs/books/tutorial/collections/index.html"><font
+        size=4>Collections Tutorial</font></a></li>
+<li><a href="Collections.htm">Using Collections</a>
+    <!-- li><a href="http://java.sun.com/docs/books/tutorial/"><font
+        size=4>Java tutorial</font></a><font size=4> </font></li -->
+</ul>
+</h2>
+
+<h2>Specification of Requirements</h2>
+
+This homework extends <a href="http://courses.dce.harvard.edu/~cscie55/hw2-2014.html">Homework 2</a> in
+the following ways:
+
+<ul>
+  <li>There is a new object, <font face="courier new"><b>Passenger</b></font>. Now, instead of tracking counts of passengers,
+    individual <font face="courier new"><b>Passenger</b></font> objects are tracked. <font face="courier new"><b>Elevator</b></font> and <font face="courier new"><b>Floor</b></font> will track
+    <font face="courier new"><b>Passenger</b></font>s in collections, moving <font face="courier new"><b>Passenger</b></font> objects from one collection
+    to another as part of the simulation.
+
+  <li>This more detailed simulation correctly handles the direction in which a passenger wants
+    to travel. E.g., if the elevator is going down and stops on a floor, a passenger who wants
+    to go up will not board.
+</ul>
+
+<p>As in <a href="http://courses.dce.harvard.edu/~cscie55/hw2-2014.html">Homework 2</a>,
+  your code will be tested by a JUnit test, which you can find
+  <a href="HW3ElevatorSimulationTest.java">here</a>.
+
+<p>Assuming you are happy with your Homework 2 code, the best way to proceed is probably to
+  revisit the <font face="courier new"><b>Elevator</b></font> and <font face="courier new"><b>Floor</b></font> classes, and modify them to track <font face="courier new"><b>Passenger</b></font>
+  objects in collections:
+
+  <ul>
+    <li><font face="courier new"><b>Floor</b></font> needs three collections of <font face="courier new"><b>Passenger</b></font>s: <ol><li> <font face="courier new"><b>Passenger</b></font>s
+      who are <i>resident</i> on the <font face="courier new"><b>Floor</b></font>, not waiting for the elevator; 
+<li> <font face="courier new"><b>Passenger</b></font>s
+      who are waiting for an elevator going up; 
+<li> <font face="courier new"><b>Passenger</b></font>s who are waiting for an
+      elevator going down. </ol>A <font face="courier new"><b>Passenger</b></font> on a <font face="courier new"><b>Floor</b></font> will be in exactly one of these collections.
+
+
+    <li><font face="courier new"><b>Elevator</b></font> needs, for each <font face="courier new"><b>Floor</b></font>, a collection of <font face="courier new"><b>Passenger</b></font>s
+    who intend to disembark on that <font face="courier new"><b>Floor</b></font>.
+  </ul>
+
+<p>In previous homeworks, you had a flag for each floor, indicating
+  whether the elevator had to stop there to pick up passengers. Now,
+  this decision has to be based on the two queues of passengers on
+  each floor, those going up and those going down. For example,
+  suppose that there are two passengers on floor 3 who want to go up,
+  and four who want to go down. An empty elevator stops there on the
+  way up and picks up the two passengers going up.  Even though all
+  the going-up passengers could be accommodated, it will still be
+  necessary to stop on 3 on the way down to pick up the four
+  passengers going down.  
+  
+<h2>Tasks</h2>
+
+<h3>Code organization</h3>
+
+The <font face="courier new"><b>Elevator</b></font>, <font face="courier new"><b>Floor</b></font>, <font face="courier new"><b>Building</b></font>
+and <font face="courier new"><b>Passenger</b></font>
+classes all go into the package
+<font face="courier new"><b>cscie55.hw3</b></font>. If you define any additional classes, they should also
+go into this package (and should <i>not</i> be declared public).
+
+
+
+<h3>The <font face="courier new"><b>Passenger</b></font> class</h3>
+
+This is a new class which records, a passenger's current floor and
+destination floor. A <font face="courier new"><b>Passenger</b></font> who is resident on a floor has
+a current floor and an undefined destination. A <font face="courier new"><b>Passenger</b></font> who
+is on an elevator
+has a destination but an undefined current floor. A <font face="courier new"><b>Passenger</b></font>
+who is waiting for an elevator has a current floor (the floor on which
+he or she is waiting), and a destination floor, (the floor he or she
+wants to go to).
+
+<p><font face="courier new"><b>Passenger</b></font> has the following public methods:
+
+  <ul>
+    <li><font face="courier new"><b>int</b> </font>currentFloor()</tt>: The <font face="courier new"><b>Passenger's</b></font> current
+    floor.
+
+    <li><font face="courier new"><b>int</b> </font>destinationFloor()</tt>: The <font face="courier new"><b>Passenger's</b></font> destination
+    floor.
+
+    <li><font face="courier new"><b>void</b> </font>waitForElevator(int newDestinationFloor)</tt>:
+    Sets the <font face="courier new"><b>Passenger</b></font>'s destination floor to <font face="courier new"><b>newDestinationFloor</b></font>.
+      
+    <li><font face="courier new"><b>void</b> </font>boardElevator()</tt>: Sets the <font face="courier new"><b>Passenger</b></font>'s
+    current floor to be  undefined.
+      
+    <li><font face="courier new"><b>void</b> </font>arrive()</tt>: The <font face="courier new"><b>Passenger</b></font> is on an
+    elevator and arrives at his or her destination. Copy the value of
+    the destination floor to the current floor, and set the
+    destination floor to be undefined.
+      
+  <li>As usual, define a <font face="courier new"><b>toString</b></font> method to aid in debugging.
+
+      
+  </ul>
+
+  <p>A <font face="courier new"><b>Passenger</b></font> starts out with current floor = 1 (the
+  ground floor) and the destination floor undefined.
+
+  <p>A word of advice: Be precise about undefined values. Define an
+  UNDEFINED_FLOOR to be -1, for example, and assign this as the value
+  of the current or destination floor as appropriate.  If you do this
+  correctly, (and print both current and destination floors in the
+  <font face="courier new"><b>toString</b></font> method), it will simplify debugging. E.g., if
+  you see a <font face="courier new"><b>Passenger</b></font> in an <font face="courier new"><b>Elevator</b></font> collection,
+  and the destination floor is UNDEFINED_FLOOR, then something has
+  gone wrong.
+
+<h3>The <font face="courier new"><b>Elevator</b></font> class</h3>
+
+Starting with <font face="courier new"><b>Elevator</b></font> from Homework 2, add the following
+public methods:
+
+    <ul>
+      <li><font face="courier new"><b>boolean goingUp()</b></font>: Return <font face="courier new"><b>true</b></font>
+ if the elevator is
+      going up, <font face="courier new"><b>false</b></font> otherwise.
+      
+      <li><font face="courier new"><b>boolean goingDown()</b></font>: Return <font face="courier new"><b>true</b></font> if the elevator is
+      going down, <font face="courier new"><b>false</b></font> otherwise.
+
+      <li>Change the <font face="courier new"><b>passengers()</b></font> method to return
+      a <font face="courier new"><b>Set&lt;Passenger&gt;</b></font> containing all of
+      the <font face="courier new"><b>Passenger</b></font>s on the elevator. (It returned a
+      passenger count in Homework 2.)
+      
+    </ul>
+
+<h3>The <font face="courier new"><b>Floor</b></font> class</h3>
+
+<font face="courier new"><b>Floor</b></font> should be modified as follows:
+
+  <ul>
+    <li>The <font face="courier new"><b>int passengersWaiting()</b></font> is no longer needed and
+    should be removed (or made non-public, if you need it for your
+    implementation).
+
+    <li>The <font face="courier new"><b>waitForElevator</b></font> method needs to be
+    modified. Change it to
+      <font face="courier new"><b>void waitForElevator(Passenger passenger, int
+    destinationFloor)</b></font>. This allows the <font face="courier new"><b>Floor</b></font>
+      to know which <font face="courier new"><b>Passenger</b></font> is waiting for the
+    <font face="courier new"><b>Elevator</b></font>. And by comparing <font face="courier new"><b>destinationFloor</b></font> to the
+      floor number, the <font face="courier new"><b>Floor</b></font> class knows whether the
+      <font face="courier new"><b>Passenger</b></font> is waiting to go up or down.
+
+    <li>Add <font face="courier new"><b>boolean isResident(Passenger passenger)</b></font> which
+    returns
+      <font face="courier new"><b>true</b></font> if the passenger is resident on the <font face="courier new"><b>Floor</b></font>, (i.e., not
+    waiting to go up and not waiting to go down), <font face="courier new"><b>false</b></font> otherwise.
+
+    <li>Add <font face="courier new"><b>void enterGroundFloor(Passenger passenger)</b></font>. This
+    method adds a passenger to the <font face="courier new"><b>Floor</b></font>'s residents.
+      
+  </ul>
+
+  <p>You will need to decide what fields the <font face="courier new"><b>Floor</b></font> class
+  should have.
+
+<h3>The <font face="courier new"><b>Building</b></font> class</h3>
+
+
+    <ul>
+      <li>Add <font face="courier new"><b>void enter(Passenger passenger)</b></font>: Simply
+      calls <font face="courier new"><b>Floor.enterGroundFloor(passenger)</b></font></tt> for
+      the <font face="courier new"><b>Floor</b></font>
+        representing the ground floor.
+
+    </ul>
+
+
+<h2>Testing</h2>
+
+Download <a href="HW3ElevatorSimulationTest.java">the test
+  code</a>. Note that it goes in the package <font face="courier new"><b>cscie55.hw3test</b></font>.
+
+<p>The unit tests in 
+<font face="courier new"><b>cscie55.hw3test.HW3ElevatorSimulationTest</b></font> are adapted from the Homework 2 test. They have been modified to test the more detailed simulation you
+are implementing for Homework 3.
+<p>[<b>Note</b>:  It's the tests that exercise the simulation.
+They create a <font face="courier new"><b>Building</b></font>
+, create <font face="courier new"><b>Passenger</b></font>s, have the <font face="courier new"><b>Passenger</b></font>s
+enter the <font face="courier new"><b>Building</b></font>,
+ and then go up and down, testing various requirements, by calling 
+<font face="courier new"><b>Floor.waitForElevator</b></font> and 
+<font face="courier new"><b>Elevator.move</b></font>. At
+various points, the state of the <font face="courier new"><b>Elevator</b></font> and 
+<font face="courier new"><b>Floor</b></font> are tested by
+calling <font face="courier new"><b>Floor.isResident(Passenger)</b></font> and checking the set of
+<font face="courier new"><b>Passenger</b></font>s in the <font face="courier new"><b>Elevator</b></font>.]
+
+    </body>
+</html>
+<!--  
+-->

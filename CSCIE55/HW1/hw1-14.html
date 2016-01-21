@@ -1,0 +1,150 @@
+<html>
+  <body>
+<p align="center"><font size="5"><b>Homework 1: Elevator
+Simulation</b>
+
+<p align="center"><font size=4><strong>Due: </strong>Monday, Feb 15
+<strong><br>
+Grading</strong>: 15%</font></p>
+
+<p align="center"><font size=4>Last Modified: <i><script>document.write(document.lastModified);</script></i>
+</font></p>
+    
+<h2>Specification of Requirements</h2>
+
+<p>In the first three homeworks, you will develop a simulation for a
+building's elevator system. The major objects you will deal with are:
+
+<ul>
+  <li><b>Building:</b> Contains multiple Floors and one
+  Elevator. (While multiple Elevators are possible, the homeworks will
+  only deal with one.)
+
+  <li><b>Elevator:</b> Carries Passengers between Floors. Has a
+  limited capacity.
+
+  <li><b>Floor:</b> Passengers spend some time on a Floor, and then use the
+    Elevator to go to another Floor. 
+
+  <li><b>Passenger:</b> A person who enters and leaves the Building. While inside
+    the Building, a Passenger is either on a Floor, or in the Elevator,
+    moving between Floors.
+</ul>
+
+<p>In the first homework, you will only be concerned with the Elevator
+object. The other objects will be added in later homeworks. This
+initial version of the Elevator class will keep track of the number of passengers  for each
+floor destined for each floor, and whether a
+stop on that floor is required. Any number of passengers may board the
+elevator. Elevator capacity will be limited in later homeworks.
+
+<p>The elevator starts on the ground floor and goes up. When it reaches
+the top floor it starts going down. It keeps moving, stopping only at
+destination floors.
+A stop on a floor is necessary if there are passengers destined for
+that floor. In later homeworks, a passenger on a floor may summon the
+elevator, requiring it to stop there, even if the elevator is not
+carrying any passengers who want to get off there.
+
+<p>When the elevator stops on a destination floor, it should discharge
+the passengers who wanted to go there, and note that the floor is no
+longer a destination.
+
+<h2>Tasks</h2>
+
+<h3>Elevator class</h3>
+
+Write an Elevator class as follows:
+
+<ul>
+  <li>Create an <font face="courier new"><b>Elevator</b></font> class in the package
+  <font face="courier new"><b>cscie55.hw1.elevator</b></font> .The class should have a no-argument
+  constructor that sets up the elevator's state.
+
+  <li>Define a constant, (i.e., a static final field), for the number
+    of floors in the building, and set it to 7. Use it where appropriate.
+
+  <li>Define fields for tracking the elevator's current floor, the
+    direction of travel.
+
+  <li>Define array-valued fields for tracking, for each floor, the
+    number of passengers destined for that floor, and whether a stop
+    is required for that floor.
+
+  <li>Define a <font face="courier new"><b>move()</b></font> method which, when called, modifies the
+    <font face="courier new"><b>Elevator</b></font>'s state, (i.e., updates the fields appropriately):
+
+    <ul>
+    
+      <li>Modifies the current floor.
+
+      <li>Modifies the direction of travel, if the ground floor or top
+  floor has been reached.
+
+      <li>Clears the array entry tracking the number of passengers destined
+  for the floor that the elevator has just arrived at.
+
+      <li>Clears the array entry indicating that a stop is required on
+  the floor that the elevator has just arrived at.
+
+    </ul>
+    
+  <li>Define a <font face="courier new"><b>boardPassenger(int floor)</b></font> method which adds to the elevator a
+    passenger destined for the indicated floor.
+
+  <li>Define a <font face="courier new"><b>toString()</b></font> method to aid in debugging and testing. The <font face="courier new"><b>String</b></font> returned by
+    <font face="courier new"><b>toString()</b></font> should indicate the number of passengers on 
+board, and the current floor.
+
+</ul>
+
+<p>This list defines <i>requirements</i> of the Elevator class. Your
+submission should therefore define all the fields and methods
+specified above, with appropriate access modes (private, public, etc.)
+You are free to provide additional fields and methods that you find to
+be useful.
+
+<p>Note that there are two arrays tracking per-floor information, one
+storing the number of passengers destined for a floor, and the other
+storing a flag indicating whether the elevator needs to stop at a
+floor. In this homework, the only reason to stop at a floor is that a
+passenger wants to get off there. However, in future homeworks,
+passengers on a floor who want to leave the building (for example)
+will summon the elevator, and then the elevator must stop there, even
+if nobody already on the elevator wants to stop there.
+
+<h3>Testing</h3>
+
+To demonstrate that your Elevator class is working properly, create an
+<font face="courier new"><b>ElevatorTest</b></font> class in the package <font face="courier new"><b>cscie55.hw1.elevatortest</b></font>. The <font face="courier new"><b>main()</b></font>
+method in this class should do the following:
+
+  <ul>
+    <li>Create an <font face="courier new"><b>Elevator</b></font> object.
+
+    <li>Board two passengers for the 3nd floor, and one for the 5th floor.
+
+    <li>Move the <font face="courier new"><b>Elevator</b></font> from the ground floor to the top floor, and
+  then back to the ground floor.
+
+    <li>Print the state of the elevator before the first move, and
+  after each move. Your output should look like this:
+
+<pre>
+  Floor 1: 3 passengers
+  Floor 2: 3 passengers
+  Floor 3: 1 passenger
+  Floor 4: 1 passenger
+  Floor 5: 0 passengers
+  Floor 6: 0 passengers
+  Floor 7: 0 passengers
+  Floor 6: 0 passengers
+  Floor 5: 0 passengers
+  Floor 4: 0 passengers
+  Floor 3: 0 passengers
+  Floor 2: 0 passengers
+  Floor 1: 0 passengers
+</pre>
+  </ul>
+    </body>
+</html>

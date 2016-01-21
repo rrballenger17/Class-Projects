@@ -1,0 +1,50 @@
+Ryan Ballenger
+CSCIE55 HW3
+
+How you solved the homework
+
+A significant part of the system is the same as homework 2 and in this overview, I will describe the major changes that were made. The largest change, obviously, is that passengers are objects instead of only tallied and get passed around between the floors and the elevator. The adjustments to the system to enable passenger objects and keep all the data correctly aligned is explained below. 
+	Within the elevator, there is now an ArrayList that contains ArrayLists of passengers. Specifically there is an ArrayList of passengers for each floor that holds the passengers that are in route to that particular floor. The collection structure is ArrayList<ArrayList<Passenger>> and gives simple access to add and release passengers onto the elevator according to their destination. 
+	The elevator releases passengers within its move() method by first confirming a stop is required at the current floor. Then, it marks all the departing passengers as arrived by the passengers’ arrive() method, adds the passengers to the residents on the current floor, and removes the passengers from the elevator’s storage. 
+	After releasing them, the elevator attempts to board passengers from the current floor if any exist. It uses the floor’s getBoardingPassenger() method which returns a passenger who wants to board with consideration for the elevator’s direction. It boards these passengers one by one with the elevator’s boardPassenger() method. Similar to homework 2, the boardPassenger() method checks the elevator’s capacity and will throw the ElevatorFullException if necessary. It marks the passenger as being boarded and adds him or her to the elevator’s storage for the current floor in the passengersByFloor ArrayList described earlier. Lastly, it marks a stop is needed at the passenger’s destination floor either in stopsGoingUp or stopsGoingDown depending on which way the destination floor is.
+	Since all passengers are no longer headed for floor 1, the stops required boolean array now consists of two arrays, one for stops in the upwards direction and the other for stops when the elevator is going downwards. A passenger only boards the elevator if its going in the appropriate direction to ensure a minimum amount of time spent on the elevator. 
+	For the floor class, there are now three collections of passengers corresponding to ones staying on that floor, ones with upwards destinations, and ones with downwards destinations. The getBoardingPassenger() method returns a passenger who wishes to board the elevator and is also headed in the elevator’s current direction, which is determined with the elevator’s goingUp() method. It also removes the passenger from the floor’s storage since they are boarding, of course.
+	As described in the handout, the floor’s other methods include waitForElevator() which marks the passenger as having a destination floor and communicating to the elevator a stop is needed. Depending on the destination, it also moves that passenger to the floor’s waitingUps or waitingDowns ArrayLists of passengers, that were introduced in the previous paragraph. The floor also has a test to determine if a passenger is a resident and the enterGroundFloor() method which puts a passenger into the floor’s residents. 
+	The only change to the building class, as directed, is the enter() method which puts a passenger into the ground floor’s residents. It gets the ground floor from the building’s floor collection and calls that floor’s enterGroundFloor() method with the new passenger as a parameter. 
+	The passenger class basically holds the passenger’s current and destination floors. The current floor is where he or she is or -1 if the passenger is on the elevator. The destination is where he or she is headed or -1 if the passenger is resident on a floor. The object shares these values with currentFloor() and destinationFloor() methods. The waitForElevator() method sets a new destination floor by parameter, meaning that the passenger is headed somewhere. Passengers also have boardElevator() and arrive() methods which update his or her values appropriately and are described in the homework handout. 
+	That concludes the major updates to the system for homework 3. Further explanations for how the methods work are contained within the source file’s JavaDoc descriptions.
+
+
+Any assumptions you made in the design
+
+Assumptions made in homework #3 include assuming all the passengers can be released onto their destination floor. This usually occurs within a building since floors are big enough to accommodate all the passengers. A floor may only consist of a special events room or something restrictively small with a capacity of 20 people, for example, which would necessitate having a capacity check for the floor as well. 
+	Secondly, as directed by the handout, it is assumed the elevator moves from the bottom floor to the top floor and all the way back down again. This is not an optimized path for an elevator that should go where the passengers need it too. This simplifies the construction of the program but it is assuming this elevator behaves unusually by going back and forth between the top and bottom floors. 
+	In terms of program design, the passengers are accessible through the elevator’s passengers() method. I am assuming that it is okay to give access to these objects publicly. Another program could retrieve the passengers and change their values causing the passenger variables to not align with what is happening. I assume the passengers() method should be used but in a production environment, more exclusive access should be given to these objects.
+	Lastly, the design assumes passengers do not want to board in the wrong direction. As a passenger, I have boarded an elevator in the wrong direction knowing I will eventually reach my destination and skipping the step of catching it on the way down. In this program it is assumed passengers only take the minimum path to their destination by boarding an elevator going his or her desired direction.
+
+
+The classes that you created
+
+As in previous versions, the Elevator class does most of the processing. It moves from floor to floor releasing passengers going to the current floor and picks up passengers waiting to board in its current direction. Specifically during the board, it checks the elevators capacity, marks the passenger as boarded, and records a stop is needed at that passenger’s floor. It also gives access to its data with several methods including currentFloor() and passengers().
+	The Floor class also behaves similarly to previous versions except it now stores collections of passengers for people staying put, waiting to go up, and waiting to go down. Instead of only decrementing the passenger count, it passes a passenger object to the elevator when someone leaves the floor. It also provides a test to determine if someone is a resident and enables a resident to designate a new destination floor. 
+	The Building class is the same as homework #2 except for the new enter method requested by the handout which adds a resident to the ground floor. The ElevatorFullException class has not changed since the previous homework. 
+	The Passenger class is new and stores data pertaining to that person. It stores and gives access to the current and destination floors. It can add a destination floor to the passenger with the waitForElevator() method’s parameter. It also marks a passenger as waiting, arrived, or boarded by setting the corresponding variables to -1 when they are not applicable. 
+
+
+How to execute your solution
+Option 1)
+In order to execute the program from the Jar file, as described in the submission policy, the following command executes the simulation test. Also the jar files hamcrest-core-1.3.jar and junit-4.11.jar must be in the current directory as outlined in the command line option in the homework handout.  
+
+java -cp ./hw3.jar:./hamcrest-core-1.3.jar:./junit-4.11.jar org.junit.runner.JUnitCore cscie55.hw3test.HW3ElevatorSimulationTest
+
+Option 2)
+Additionally, to compile and run the program manually, the jar file can be extracted followed by running this command to compile the program (note: the program is already compiled and contains the class files):
+
+javac -cp ./hamcrest-core-1.3.jar:./junit-4.11.jar cscie55/hw3/Elevator.java cscie55/hw3/Floor.java cscie55/hw3/Building.java cscie55/hw3/Passenger.java cscie55/hw3/ElevatorFullException.java cscie55/hw3test/HW3ElevatorSimulationTest.java
+
+Then, this command executes the newly compiled program (However, note this is not necessary and my homework is executable from the jar file command described first in this section):
+
+java -cp ./:./hamcrest-core-1.3.jar:./junit-4.11.jar org.junit.runner.JUnitCore cscie55.hw3test.HW3ElevatorSimulationTest
+
+
+

@@ -1,0 +1,313 @@
+<html>
+<head>
+<title>CSCI E55: Homework #2</title>
+</head>
+  <body>
+<center><h2>Homework #2: Expanded Elevator Model w/ Java Exceptions</h2>
+
+<h3><b>Due:</b> Monday, February 19th (Leap Day)
+<p><b>Grade:</b> 15%
+<p align="center"><font size=4>Last Modified: <i><script>document.write(document.lastModified);</script></i>
+</font></p></h3>
+
+</center>
+
+
+<h2> References:</h2>
+<ul>
+    <li><a
+        href="http://java.sun.com/docs/books/tutorial/essential/exceptions/index.html"><font
+        size=4>Exceptions</font></a></li>
+<li> <a href="UnitTesting.htm"> Unit Testing with JUnit</a>
+<li><a href="http://findbugs.sourceforge.net/">FindBugs</a> is a <a href="http://en.wikipedia.org/wiki/Static_code_analysis">static analysis tool</a> for finding coding mistakes in Java software.   Static analysis means that FindBugs can find bugs by simply inspecting a program's code: executing the program is not necessary.  This makes FindBugs very easy to use: in general, you should be able to use it to look for bugs in your code within a few minutes of downloading it.  FindBugs works by analyzing Java bytecode (compiled class files), so you don't even need the program's source code to use it.
+</ul>
+<h2>Specification of Requirements</h2>
+
+This homework extends <a href="http://courses.dce.harvard.edu/~cscie55/hw1-14.html">Homework 1</a> in
+the following ways:
+
+<ul>
+  <li>There are two new types of object, <tt>Building</tt>
+  and <tt>Floor</tt>. The <tt>Elevator</tt> moves passengers between
+  <tt>Floor</tt>s. The <tt>Elevator</tt> and all of
+  the <tt>Floor</tt>s are part of a
+  <tt>Building</tt>.
+
+  <li>The <tt>Elevator</tt> will limit the number of passengers it can
+    carry, throwing an exception if an attempt is made to board
+    passengers past this
+    limit.
+
+  <li>Instead of writing a <tt>main(String[] args)</tt>, your implementation will be tested
+    by a JUnit test that you can download from <a href="HW2ElevatorSimulationTest.java">here</a>.
+</ul>
+
+<p>While it is recommended that you extend your Homework 1 code, that is
+not required, and you may prefer to start Homework 2 from
+  scratch. Either approach is fine. The requirements given below are
+  written as an extension of the <a href="hw1-14.html">Homework 1</a> requirements.
+
+<p>The <tt>Elevator</tt> moves exactly as it did last time, stopping
+  at <tt>Floor</tt>s to disembark passengers, and to pick up new
+  passengers. But now, if a passenger tries to board
+  the <tt>Elevator</tt> when it is already loaded to capacity,
+  an <tt>ElevatorFullException</tt> will be thrown. That should
+  prevent the passenger from boarding. The <tt>Elevator</tt> will pick
+  up the passengers that could not be accommodated when it next visits
+  the
+  <tt>Floor</tt>. Remember that in Homework 1 the <tt>Elevator</tt>
+  class had an array of flags (one per floor) indicating if a stop was
+  needed on that floor. That flag should remain set if not all
+  passengers could board the <tt>Elevator</tt>. But if all passengers
+  waiting could board, the flag can be cleared.
+
+<h2>Tasks</h2>
+
+<h3>Code organization</h3>
+
+The <tt>Elevator</tt>, <tt>Floor</tt> and <tt>Building</tt> classes all go into the package
+cscie55.hw2. If you define any additional classes, they should also
+go into this package (and should <i>not</i> be declared public).
+
+<h3>The <tt>Elevator</tt> class</h3>
+
+Starting with <tt>Elevator</tt> from homework 1, add the following public
+  methods and fields*:
+
+    <ul>
+      <li><tt>int currentFloor()</tt>: Return the elevator's current
+      floor number. I.e., this is the number of the floor reached by
+      the last call to <tt>Elevator.move()</tt>.
+
+      <li><tt>int passengers()</tt>: Return the number of passengers
+      currently on the elevator.
+
+      <li><tt>void boardPassenger(int destinationFloorNumber) throws ElevatorFullException</tt>:
+        Board a passenger who wants to ride to the indicated
+        floor. Note that this method boards a single passenger and may throw
+        an <tt>ElevatorFullException</tt>.
+
+      <li><tt>Elevator.CAPACITY</tt> is a final static field that 
+      stores the number of passengers
+       that the elevator can accommodate. Set it to 10.
+
+    </ul>
+
+  <p>*[Note that the term <i>field</i> is used here as synonymous with the terms
+"instance variable" and "state variable".]
+  <p>Also, replace the <tt>Elevator()</tt> constructor
+  by <tt>Elevator(Building building)</tt>. (Hint: You may find it
+  useful to record the <tt>building</tt> in a new field of <tt>Elevator</tt>.)
+
+
+<h3>The <tt>Floor</tt> class</h3>
+
+This is a new class, representing one of the
+floors that the <tt>Elevator</tt> can visit. It should have the following
+public methods:
+
+  <ul>
+    <li><tt>int passengersWaiting()</tt>: Returns the number of
+    passengers on the floor who are waiting for the elevator.
+
+    <li><tt>void waitForElevator()</tt>: Called when a passenger on
+    the floor wants to wait for the elevator. Calling this should
+    cause the elevator to stop the next time it moves to the floor.
+    For this homework assume that passengers waiting for the elevator 
+    on floors 2 and above should all be boarded as going to the first 
+    floor. (We'll drop this assumption in the next homework.)
+
+    <li><tt>Floor(Building building, int floorNumber)</tt>:
+    The <tt>Floor</tt> constructor.      
+  </ul>
+
+  <p>You will need to decide what fields the <tt>Floor</tt> class
+  should have.  Note that to meet the first two requirements
+  a Floor object must retain a piece of state
+  that records the number of passengers it has waiting for an Elevator.
+
+<h3>The <tt>Building</tt> class</h3>
+
+This is a new class, which keeps track of one <tt>Elevator</tt> and
+  multiple <tt>Floor</tt>s. It provides access to these objects for
+  tests. <tt>Building</tt> has the following public methods and fields.
+
+    <ul>
+      <li><tt>Elevator elevator()</tt>: Returns the building's <tt>Elevator</tt>
+
+      <li><tt>Floor floor(int floorNumber)</tt>: Returns
+      the <tt>Floor</tt> object for the given floor number.
+
+      <li><tt>FLOORS</tt>: A static final field storing the number of floors
+      in the building. Set the value to 7.
+
+      <li><tt>Building()</tt>: The <tt>Building</tt> constructor
+      creates an <tt>Elevator</tt>, and one floor for each floor
+      number. (Move the <tt>FLOORS</tt> variable, that was in
+      the <tt>Elevator</tt> class in homework 1 to
+      the <tt>Building</tt> class.)
+
+    </ul>
+
+<p>These specifications are <i>requirements</i>. As such, they specify
+things that must be done in any correct implementation. You are, of
+course, free to add other methods (as long as they are not public) and
+any fields (that should probably not be public).
+          
+<h3>The <tt>ElevatorFullException</tt> class</h3>
+
+<p>This needs to be a public class,
+  extending <tt>java.lang.Exception</tt>.
+
+<p><tt>ElevatorFullException</tt>, like any other exception, must be
+<i>thrown</i> when something out of the ordinary happens. Because we do not
+want this exception to end execution of your program, some other code
+must <i>catch</i> <tt>ElevatorFullException</tt> and handle the
+situation, (i.e., that the elevator cannot board a 
+passenger when it is full).
+
+<p>In this case, <tt>Elevator.boardPassenger(int
+    destinationFloorNumber)</tt>
+    throws <tt>ElevatorFullException</tt> when the elevator is already at capacity.
+
+<p><tt>Elevator.boardPassenger(int
+    destinationFloorNumber)</tt> is called when the <tt>Elevator</tt>
+    stops on a floor, some passengers leave, and the passengers
+    waiting on that floor try to board. This code must catch the
+    exception, e.g.
+
+<pre>
+    try {
+        ...
+        elevator.boardPassenger(...); <font color=green>// May throw ElevatorFullException</font>
+        <font color=green>// The passenger boarded successfully</font>
+        ...
+    } catch (ElevatorFullException e) {
+        <font color=green>// The passenger was unable to board because the elevator is full.</font>
+        ...
+    }
+</pre>  
+<a name="design"/>
+<h2>Design Considerations and Gotchas</h2>
+It should be clear from the requirements that there must be communication between
+<font face="courier new"><b>Floor</b></font> objects and <font face="courier new"><b>Elevator</b></font>  objects.  This is in order that the
+ <font face="courier new"><b>Elevator</b></font> knows when there are 
+passengers waiting to board when it
+arrives at a <font face="courier new"><b>Floor</b></font> and that 
+the <font face="courier new"><b>Elevator</b></font>
+can tell its current<font face="courier new"><b> Floor</b></font> when it has boarded
+one of the waiting passengers.  In other words, your model must maintain data 
+integrity.  There are different design approaches to achieve this.  It's up to you
+which approach to take, so long as it works and so long as the code
+that implements it is easy to understand.
+<p>
+Array sizing and indexing present potentially fatal <i>gotchas</i>.  If you
+create an array to represent data for 7 floors and
+you size the array to be 7 cells, its <font face="courier new"><b>0</b></font>th element will map to floor
+number <font face="courier new"><b>1</b></font> and its 
+<font face="courier new"><b>6</b></font>th element will correspond to floor # 7.  When you want the data
+for the <font face="courier new"><b>i</b></font>th floor it will be in cell <font face="courier new"><b>i-1</b></font>.  The key to avoid indexing errors is careful
+attention to preserve this mapping.
+
+
+<h2>Testing</h2>
+
+<p>In Homework 1, you demonstrated that your code was working by writing
+a <tt>main(String[] args)</tt> method that created
+an <tt>Elevator</tt>, set up some passengers, and then
+called <tt>Elevator.move()</tt> and generated output to show that
+things were working properly.
+
+<p>A more common approach to testing is to write <i>self-testing</i>
+code. You write a test that sets up initial conditions, moves
+the <tt>Elevator</tt> a few times, and then examines the state of
+the <tt>Elevator</tt> to see that all is as expected. A program like
+this has no output if all works well. However, if any state
+is <i>not</i> as expected, this results in an assertion failure, which
+is printed, and that test is then reported as failing.
+<p>The most common self-testing framework for Java
+  is <a href="http://junit.org">JUnit</a>.
+
+<p>As before, submit the output you get when you run your program.
+  If all goes well, there should be minimal output, e.g.
+
+<pre>
+    JUnit version 4.11
+    ....
+    Time: 0.006
+
+    OK (4 tests)
+</pre>
+
+If you don't see something like this, and there is output indicating
+tests failing, and containing stack traces,
+then tests are failing. Figure out what's going wrong and keep
+debugging until you get a clean run.
+
+<h3>Getting started with JUnit</h3>
+<p>  For general background on JUnit see
+the lecture page <a href="UnitTesting.htm"> Unit Testing with JUnit</a>
+<p>The first thing to do is to
+  download <a href="HW2ElevatorSimulationTest.java">the test code</a>.
+  The class of this Java code is
+  <tt>cscie55.hw2test.HW2ElevatorSimulationTest</tt>. Note that the
+  package is <i>not</i> <tt>cscie55.hw2</tt>, it
+  is <tt>cscie55.hw2test</tt>.
+
+<p>Your code should be structured something like this:
+
+<pre>
+    src/
+        cscie55/
+            hw2/
+                Building.java
+                Elevator.java
+                ElevatorFullException.java
+                Floor.java
+    test/
+        cscie55/
+            hw2test/
+                HW2ElevatorSimulationTest.java
+</pre>  
+  
+<p>If you are using an IDE (probably Eclipse or Intellij), then it should
+already know how to run JUnit tests. E.g., in Intellij, create a new
+run configuration, selecting JUnit4 (not JUnit3).
+
+<h3>If you are not using an IDE</h3>
+  
+<p>If instead, you are using the command line, you will need to
+  download two jar files, and include them on your classpath. The two
+  jar files are:
+
+  <ul>
+    <li><a href="https://hamcrest.googlecode.com/files/hamcrest-core-1.3.jar">hamcrest-core-1.3.jar</a>
+    <li><a href="http://repo1.maven.org/maven2/junit/junit/4.11/junit-4.11.jar">junit-4.11.jar</a>
+  </ul>
+
+<p>Put these jar files somewhere convenient, e.g. in a <tt>lib</tt>
+  directory in your home directory. Your classpath must include both these
+  jar files as well as directions to the classes in your src and test
+  directories. (For jar files, your classpath must include each jar file
+  explicitly. If you just include a directory containing the jar files,
+  then the jar files themselves will not be found.)  This makes four separate paths
+  in your classpath, one each explicitly for the jar files, and separate paths
+  to locate the class files in the two packages.
+  
+
+<p>Because you are running a junit test, the class you run
+  is <tt>org.junit.runner.JUnitCore</tt>.
+  There is one argument, the name of the
+  test, <tt>cscie55.hw2test.HW2ElevatorSimulationTest</tt>
+
+<p>On my Mac, this command is as follows:
+
+<pre>
+    java -classpath "/Users/jao/jars/junit-4.11.jar:/Users/jao/jars/hamcrest-core-1.3.jar:/Users/jao/teaching/cscie55/spring2014/hw2/out/test/hw2:/Users/jao/teaching/cscie55/spring2014/hw2/out/production/hw2" org.junit.runner.JUnitCore cscie55.hw2test.HW2ElevatorSimulationTest
+</pre>
+
+<p> You will need to adjust this for your environment.
+
+
+    </body>
+</html>

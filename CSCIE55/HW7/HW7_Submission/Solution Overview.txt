@@ -1,0 +1,12 @@
+Ryan Ballenger
+HW7 - Solution Overview
+
+
+WordHistogram.java
+Like WordCount, WordHistogram tokenizes each line into words in the map method. It then finds the length of the word and stores it as an IntWritable. It writes to the context the IntWritable for the length and an IntWritable value of 1 to tally one occurrence of a word of that length. In the reduce method, the key is the word length and the Iterable<IntWritable> values are summed to calculate the total number of occurrences of words of the length specified by the key. Lastly the word length and total number of occurrences are written to the context in the reduce method.  
+
+WordCountByFile.java
+The map method writes the word and the filename to the context for each time a word occurs. That way the number of times a word occurred in a file is the number of times the filename is written to the context with that word. The reduce method has a hashmap for filename’s and number of occurrences of the word in that file. After iterating and summing the number of occurrences in each file, it creates a string from the key and value pairs that is the filenames and the number of occurrences of the key word in that file. Before combining the file names, it also sorts them so that file names occur in order. Lastly it outputs the key word and the string of file names and number of occurrences. 
+
+DocWordIndex.java
+The map method has a hashmap with word keys and a value that is the string of positions in a file. For each word, it adds that word and the position, or adds the position to the existing string of positions, to the hashmap. Lastly it writes the word and the file name combined with the string of positions to the context. In the reduce method, the file names + positions strings are sorted so they are in order in the final value string. Next they are all combined. The word and the string of file names and positions is then written to the context. 

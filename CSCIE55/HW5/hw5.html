@@ -1,0 +1,325 @@
+<html>
+<body>
+<h1>Homework #5: Due Monday April 11th<!-- April 15th-->, Grade: 15%</h1>
+
+
+<h2>Overview</h2>
+
+<p>This homework continues HW4 by placing a BankServer between the
+  Bank and its users. The BankServer handles simultaneous requests from 
+  a set of users, and assigns each request to be executed by one thread.
+  This sets the stage for building a distributed
+  system in which the Bank users are on different machines from the
+  Bank and BankServer. For now, everything still runs in a single Java
+  process.
+
+<p>As in HW4, some code will be provided and you will write some. Here
+  is an overview:
+
+<pre>
+          src/
+              cscie55/
+                  hw5/
+                      bank/
+                          command/
+                              Command                   Provided
+                              CommandDeposit            Provided
+                              CommandStop               Provided
+                              CommandTransfer           Provided
+                          Account                       Provided
+                          AccountImpl                   From HW4
+                          Bank                          Provided
+                          BankException                 Provided
+                          BankImpl                      From HW4
+                          BankServer                    Provided
+                          BankServerImpl                To be written
+                          CommandExecutionThread        To be written
+                          DuplicateAccountException     Provided
+                          InsufficientFundsException    Provided
+          test/
+              cscie55/
+                  hw5/
+                      Tester                            Provided
+</pre>
+
+<p>A jar file containing all of the provided code can be found <a href="hw5provided-sources.jar">here</a>.
+
+<p>The classes labeled "From HW4" should be copied into a new project and
+ package (<tt>cscie55.hw5.bank</tt>) and modified as described below.
+
+<p>You will be responsible for writing two
+classes, <tt>BankServerImpl</tt> and
+<tt>CommandExecutionThread</tt>. These classes form the basis of
+a <i>server</i>.
+<tt>BankServerImpl</tt>, which implements the
+<tt>BankServer</tt> interface, accepts incoming commands, which are objects
+of subtypes of <tt>Command</tt>. (The <tt>Command</tt> subtypes are
+provided.) <tt>BankServerImpl</tt> manages a queue containing
+commands. 
+
+<p>Your server also includes a set
+of <tt>CommandExecutionThread</tt>s. 
+<tt>CommandExecutionThread</tt> extends <tt>Thread</tt> and so 
+has a <tt>run()</tt> method. <tt>run()</tt>
+pulls <tt>Command</tt>s from the queue and executes them, using
+the <tt>Bank</tt> and <tt>Account</tt> classes that you will be
+adapting from HW4.
+
+<h2>Copy and modify your HW4 code</h2>
+
+You will need to copy the <tt>BankImpl</tt> and <tt>AccountImpl</tt> code from HW4 into
+your HW5 project, and modify it as follows:
+
+<ul>
+    <li>Change the package to <tt>cscie55.hw5.bank</tt>.
+    <li><tt>BankImpl</tt> has three transfer methods, which tried
+    different locking
+    strategies. Keep <tt>transferLockingAccount</tt>,
+      but rename it to <tt>transfer</tt>, and delete the other two.
+      Also, add a <tt>deposit(int accountId, long amount)</tt> method
+      to process deposits to the given account.
+</ul>
+
+<h2>Implement the BankServer interface</h2>
+
+<pre>
+    package cscie55.hw5.bank;
+    
+    import cscie55.hw5.bank.command.Command;
+    
+    public interface BankServer
+    {
+        /**
+         * Executes the given Command.
+         * @param command the Command to be executed.
+         */
+        void execute(Command command);
+    
+        /**
+         * Stop the BankServer. No further Commands will be executed.
+         * @throws InterruptedException
+         */
+        void stop() throws InterruptedException;
+    
+        /**
+         * Returns the total of all Account balances for all Accounts managed by the BankServer's Bank.
+         * @return The total of all Account balances for all Accounts  managed by the BankServer's Bank.
+         */
+        long totalBalances();
+    }
+</pre>
+
+Copy <tt>BankServer</tt> into your project and then define a class
+implementing it, named <tt>BankServerImpl</tt>. Your implementation
+should do the following:
+
+<ul>
+    <li><b>Manage
+    a <tt>Queue&lt;Command&gt;</tt></b>: <tt>Command</tt>s will reside
+    in this queue after being submitted by the <tt>execute</tt>
+    method, until they are removed from the queue and executed by
+    a <tt>CommandExecutionThread</tt>.
+
+    <li><b>Manage an array of <tt>CommandExecutionThread</tt>s.</b> These
+    threads do the actual work of the server,
+    pulling <tt>Command</tt>s off the queue and executing them.
+
+    <li><b>Define a constructor</b> that creates and starts
+    the <tt>CommandExecutionThread</tt>s.
+
+    <li><b>Implement the <tt>execute</tt> method.</b> This simply adds 
+      the given <tt>Command</tt> to the queue of commands.
+
+    <li><b>Implement the <tt>stop</tt> method.</b> This should add a
+    Stop command to the queue for each thread, and will cause
+    each <tt>CommandExecutionThread</tt> to terminate. After doing
+    this, call <tt>join()</tt> on each of these threads. Once all
+    the <tt>join()</tt> calls complete, this method will return.
+
+    <li><b>Implement the <tt>totalBalances()</tt> method</b>, by invoking 
+    <tt>Bank.totalBalances()</tt>.
+</ul>
+
+<h2>Implement CommandExecutionThread</h2>
+
+<p><tt>CommandExecutionThread</tt> extends <tt>Thread</tt>, and so
+  must provide a <tt>run()</tt> method. This <tt>run()</tt> method
+  will wait for the command queue to be non-empty. When this occurs,
+  one <tt>Command</tt> is removed from the queue and executed. After
+  execution, the thread needs to go back to waiting for its
+  next <tt>Command</tt> to arrive. (An alternative is for
+  the <tt>CommandExecutionThread</tt> to execute <i>all</i> commands
+  in the command queue, but this will result in a very uneven
+  distribution of commands to threads, which is undesirable. By
+  executing only one command at a time, other threads can assist in
+  removing and executing commands.)
+
+<p>One special command is Stop. Execution of Stop
+  does nothing. However, your <tt>run()</tt> method should return
+  (terminating the thread) once it sees the Stop command. You can test
+  whether a command is the Stop command by calling <tt>Command.isStop()</tt>.
+
+<p><tt>run()</tt> should have a top-level loop that continues as long as 
+<tt>Command.isStop()</tt> is false. Inside this loop is the wait loop
+followed by command execution.
+
+<p>You will need to write a constructor
+  for <tt>CommandExecutionThread</tt> which should take three
+  arguments:
+
+<ul>
+    <li><b><tt>Bank bank</tt></b>: The <tt>Bank</tt> on which the
+    commands execute. You will need to pass this <tt>Bank</tt> object
+    to the <tt>Command</tt>s being executed.
+
+    <li><b><tt>Queue&lt;Command&gt; commandQueue</tt></b>: This is the 
+    same command queue used by the <tt>BankServerImpl</tt>. <i>It is
+    crucial for the <tt>BankServerImpl</tt> and
+    the <tt>CommandExecutionThread</tt>s to synchronize on this
+    command queue.</i> More on this below.
+
+    <li><b><tt>boolean executeCommandInsideMonitor</tt></b>: Discussed
+    below.
+</ul>
+
+<h2>Synchronization</h2>
+
+<p>The <tt>BankServerImpl</tt> and all of
+the <tt>CommandExecutionThread</tt>s share the
+same <tt>Queue&lt;Command&gt;</tt> -- the <i>command queue</i>.
+The <tt>BankServerImpl</tt>'s <tt>execute</tt> method adds
+a <tt>Command</tt> to the command
+queue. The <tt>CommandExecutionTherad</tt>s watch the command
+queue. When a <tt>Command</tt> shows up in the queue, one of
+the <tt>CommandExecutionThread</tt>s will eventually remove it from
+the queue and execute it. In other words, there are multiple threads
+accessing the command queue, one adding items to it, and all of the
+others removing from it. Synchronization among these threads is needed
+to guarantee correct operation by ensuring that no more than one
+thread updates the queue at a time.
+
+<p>Because it is the command queue that is shared among these threads,
+  all of the classes involved must synchronize on this object,
+  i.e. operate on the command queue only inside
+  a <tt>synchronized</tt> block that "locks" the command queue. The
+  code inside such a <tt>synchronized</tt> block is said to be inside
+  a <i>monitor</i>.
+
+<p>You should review the synchronization examples from class, (e.g. 
+<a href="http://courses.dce.harvard.edu/~cscie55/CubbyHole.htm">CubbyHole</a>)
+to see how this synchronization works. A key part of synchronization
+involves signalling among threads. When the <tt>BankServerImpl</tt>
+adds a <tt>Command</tt> to the command queue, it needs to signal all
+of the <tt>CommandExecutionThread</tt>s that the queue is now not
+empty, and that one of them needs to act. It does this by
+calling <tt>notifyAll()</tt> on the command queue. This causes
+the <tt>CommandExecutionThread</tt>s to exit <tt>wait()</tt>. One of them
+will detect that the queue is non-empty and execute the first command in the queue, while
+the others will go back to waiting.
+
+<p>The <tt>CommandExecutionThread</tt> is a bit more
+  complicated. Inside its <tt>synchronized</tt> block, it needs to
+  sit in a loop waiting for the command queue to be non-empty. The
+  waiting is implemented using the <tt>wait()</tt> method, applied to
+  the command queue. When <tt>BankServerImpl</tt>
+  calls <tt>notifyAll()</tt> on the command queue, the threads sitting
+  inside <tt>wait()</tt> for the command queue wake up to check if the
+  queue is non-empty.
+
+<p>If a non-empty queue is detected, then a <tt>Command</tt> is
+  removed from the queue and executed. Note that
+  the <tt>synchronized</tt> block ensures that if the command queue
+  was observed to be empty, it <i>stays</i> empty until
+  a <tt>Command</tt> can be removed, (as long as the loop and the
+  removal are both inside the <tt>synchronized</tt> block).
+
+<p>There is one important choice to be made in coding the execution of
+  a <tt>Command</tt> removed from the queue: Should execution of
+  the <tt>Command</tt> be inside or outside the <tt>synchronized</tt>
+  block? <tt>Command</tt> execution may
+  involve significant delays in a distributed system. In fact, the
+  supplied <tt>Command</tt>s include a 1 msec. pause to simulate this
+  effect. If command execution is done inside the monitor, (i.e.,
+  inside the <tt>synchronized</tt> block), then you are blocking other
+  threads from making progress. Synchronization protects the command
+  queue from simultaneous updates. Command execution does not touch
+  the command queue. So is there any reason for command execution to
+  be inside the <tt>synchronized</tt> block? What is the impact of 
+  doing command execution there?
+
+<p>You should code your <tt>CommandExecutionThread</tt> to execute the
+  command in two different ways, inside and outside
+  the <tt>synchronized</tt> block, under control of the 
+  executeCommandInsideMonitor flag, passed to
+  the <tt>CommandExecutionThread</tt> constructor, e.g.
+
+<pre>
+    Command command;
+    synchronized (commandQueue) {
+        ...
+        command = commandQueue.remove();
+        if (executeCommandInsideMonitor) {
+            command.execute(bank);
+        }
+    }
+    if (!executeCommandInsideMonitor) {
+        command.execute(bank);
+    }
+</pre>
+
+<p>The provided test code will try execution both ways, and measure
+  the impact on performance.
+
+<h2>Your submission</h2>
+
+As in HW4, your submission should include the following:
+
+<ul>
+    <li><b>hw5.jar</b>: A jar file containing all of the class files
+    in packages <tt>cscie55.hw5.bank</tt> and <tt>cscie55.hw5.bank.command</tt>.
+
+    <li><b>hw5-sources.jar</b>: A jar file containing all of the java files
+    in packages <tt>cscie55.hw5.bank</tt> and <tt>cscie55.hw5.bank.command</tt>.
+
+    <li><b>hw5-output.txt</b>: A text file containing the result of
+    program output. <b>A blank file is not acceptable!</b>
+    you <b>must</b> include JUnit output (one dot for each test that
+    succees, along with the JUnit intro text). Run from the command
+    line if necessary. The output will also contain performance measurements.
+
+    <li><b>hw5-discussion.txt</b>: A discussion of the
+    performance measurements.
+</ul>
+
+<p>The JUnit test, cscie55.hw5.Tester contains three tests. 
+The code is available in 
+<a href="hw5provided-sources.jar">the provided jar file</a>
+and by itself 
+<a href="Tester.java">here</a>.
+
+
+<p>1) <tt>testSetup</tt> creates and then shuts down a <tt>BankServer</tt>,
+checking that the initial balances were deposited correctly.
+
+<p>2) <tt>testCorrectness</tt>
+runs 20 client threads, and 5 <tt>CommandExecutionThread</tt>s to
+execute 10,000 transactions. The test verifies that synchronization
+was done correctly.
+
+<p>3) <tt>measurePerformanceOfCommandInsideAndOutsideMonitor</tt> runs
+  the same test (20 client threads, 5 server threads, 10,000
+  transactions), twice, once with command execution inside the
+  monitor, once outside. Your submission should discuss the
+  differences in performance observed between these two runs. Which
+  way is faster? Why?
+
+<p>As in HW4, you should
+disable <tt>measurePerformanceOfCommandInsideAndOutsideMonitor</tt>
+until <tt>testCorrectness</tt> is running successfully, to completion.
+
+<p>Be sure to read the comment at the top of <tt>Tester</tt> to understand 
+what it is doing, in particular, how the <tt>BankServer</tt> is started, and how 
+<tt>Tester</tt> interacts with it.
+
+</body>
+</html>

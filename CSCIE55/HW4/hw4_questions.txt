@@ -1,0 +1,34 @@
+Homework#4 Questions
+
+1. Why does the NO_LOCKING test succeed for one thread and fail for 2-20 threads? (It is possible that you will see some successes for larger number of threads. But if you see no failures, then something is amiss.)
+
+NO_LOCKING fails for multiple threads because more than one thread tries to change the account balance at once. The account balance is stored in the account object and two threads try to change the value at once, not taking into consideration the other thread’s changes, which leads to errors. For example, the balance could be $25 and two different threads try to deposit $50 into the account. Both of these threads get the balance value while it is $25, do the addition to get a value of $75, and then set the new balance to $75. This is obviously an error because the new balance should be $25+$50+$50 = $125. This happens because there is no lock on the account balance meaning that neither thread knows the other thread is in the process of changing the balance. 
+
+2. How do you explain the change in performance for LOCK_BANK as threads increase from 1 to 20.
+
+The LOCK_BANK performance decreases with more threads because its inefficient to have more than one thread. Only one thread can do a transfer at a time, since it needs synchronization on the bank object, which means the other threads are all waiting. The waiting threads take CPU cycles but they are not getting anything done in terms of doing transfers. It is analogous to having a job only one person can work on at a time but hiring and paying lots of people to do it. All the other people besides one are inefficient because they need paid but are not getting anything done. 
+	For the LOCK_BANK tests, only one thread can get synchronization on the bank in order to do a transfer at once, meaning that additional threads are waiting and cause the program to run even slower. Even one additional thread causes a large decrease in speed from 3394.218874 transactions/msec to 2462.207446 transactions/msec. This example shows that extra threads create a lot of inefficiency when they are only waiting and not doing anything. 
+	In summary, the performance for LOCK_BANK decreases as the threads increase from 1 to 20, because only one transfer can occur at a time and additional threads create inefficiency. 
+
+3. How does the performance of LOCK_BANK compare to that of LOCK_ACCOUNTS? How do you explain this?
+
+Except for the single thread test, LOCK_ACCOUNTS outperforms LOCK_BANK and with 20 threads, their performances are very similar. I’ll explain why this happens in the sections below. 
+
+1 thread: LOCK_BANK outperforms LOCK_ACCOUNTS because they are both proceeding by doing one transaction at a time but LOCK_ACCOUNTS has to acquire two locks, one for each account in the transfer, while LOCK_BANK only gets the one lock on the bank object. This illustrates the processing costs of getting and releasing locks through the use of synchronization. Basically, both versions are a single thread doing all the transactions, but LOCK_ACCOUNTS is slower because it has to get and release two locks for each transaction instead of only one. 
+
+2 to 5 threads: LOCK_ACCOUNT outperforms LOCK_BANK because it does multiple transactions at once. While LOCK_ACCOUNTS presumably has threads that are waiting, it also has threads that get the needed locks and are doing transactions simultaneously. LOCK_BANK is slower because it still restricts to only one transaction at a time, by requiring synchronization on the bank object, even though there are many threads available. LOCK_ACCOUNT has the most improvement over LOCK_BANK in these scenarios. This is because it has few waiting threads, since there are at most 5, meaning the threads can usually get the required locks for the transactions, which allows LOCK_ACCOUNTs to do more processing at once than LOCK_BANK’s single transaction capability. 
+
+10 to 20 threads: LOCK_ACCOUNT and LOCK_BANK have similar processing speeds with LOCK_ACCOUNT doing slightly better. This occurs because LOCK_ACCOUNT’s threads are mostly waiting to get the required locks. All 10 or 20 threads are trying to get the locks they need which causes them be waiting and creating inefficiency. These scenarios illustrate how more threads do not always make a process faster even when multiple threads can be working at the same time. In general, LOCK_ACCOUNT does faster processing but only by a small margin over LOCK_BANK, because most of its threads are waiting for the required locks, which makes it similar to a one-transaction-at-a-time system like LOCK_BANK. 
+
+
+
+
+
+
+
+
+
+
+
+
+

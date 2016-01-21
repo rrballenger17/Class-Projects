@@ -1,0 +1,233 @@
+<html>
+<body>
+
+
+<h1>Homework # 4 Due Monday March 28th, Grade: 10%</h1>
+<h2>Overview</h2>
+
+<p>The purpose of this homework is to experiment with synchronizing
+access to objects shared by multiple threads. The 
+provided test
+program will create the threads. You will create Bank and Account
+objects, and synchronize operations on them performed by the threads.
+
+<p>You will write code to simulate a Bank, which manages a set of
+Accounts. Each Account has a balance. The only transaction processed
+by this Bank is the transfer of funds from one Account to
+another. Multiple threads will run these transfer operations
+simultaneously, so of course it is possible for the same Account to be
+accessed simultaneously by different threads. A correct implementation
+will find that the total of all Account balances is the same at the
+beginning and end of the simulation. Incorrect implementations are
+likely to fail either by having the beginning and ending balances
+disagree, or with some threads becoming stuck and never completing.
+
+<p>For example, suppose that there are three accounts, each with $100:
+
+<pre>
+    Account 1: 100
+    Account 2: 100
+    Account 3: 100
+</pre>
+
+<p>Suppose also that there are two threads, one transferring $25 from
+Account 1 to Account 2, and the other transferring $50 from Account 3
+to Account 1. Once both of these transactions are done, the accounts
+should have the following balances: 
+
+<pre>
+    Account 1: 125
+    Account 2: 125
+    Account 3:  50
+</pre>
+
+<p>Note that the sum of balances is $300 before the transactions run, and
+after both are complete.
+
+<p>Both transactions update Account 1, and if synchronization is not done
+correctly, then it is possible to lose one of the modifications of
+Account 1's balance. This would leave the final total different from
+$300. (You should see this happen while working on this homework.)
+
+<p>Your submission will
+combine <a href="hw4provided-sources.jar">provided code</a>, along
+with code that you
+write. The <a href="hw4provided-sources.jar">provided code</a>
+contains two interfaces that you will implement, some exception
+classes, and a JUnit test. The combined code should be organized as
+follows:
+
+<pre>
+          src/
+              cscie55/
+                  hw4/
+                      bank/
+                          AccountImpl                   To be written
+                          Account                       Provided
+                          BankImpl                      To be written
+                          Bank                          Provided
+                          DuplicateAccountException     Provided
+                          InsufficientFundsException    Provided
+          test/
+              cscie55/
+                  hw4/
+                      Tester                            Provided
+</pre>
+
+<h2>Implement the Account interface</h2>
+
+<pre>
+    package cscie55.hw4.bank;
+    
+    public interface Account
+    {
+        int id();
+        long balance();
+        void deposit(long amount);
+        void withdraw(long amount) throws InsufficientFundsException;
+    }
+</pre>
+
+<p>Copy Account into your project and then define a class implementing
+this interface, named AccountImpl. Balances are of type long, (you can
+think of the balance as tracking pennies instead of dollars). Your
+implementation should throw InsufficientFundsException if withdraw
+attempts to withdraw an amount exceeding the Account's balance.
+
+<h2>Implement the Bank interface</h2>
+
+<pre>
+    package cscie55.hw4.bank;
+
+    public interface BankInterface
+    {
+        void addAccount(Account account);
+        void transferWithoutLocking(int fromId, int toId, long amount) throws InsufficientFundsException;
+        void transferLockingBank(int fromId, int toId, long amount) throws InsufficientFundsException;
+        void transferLockingAccounts(int fromId, int toId, long amount) throws InsufficientFundsException;
+        long totalBalances();
+        int numberOfAccounts();
+    }
+</pre>
+
+<p>Copy Bank into your project and then define a class implementing this
+interface, named BankImpl. Note that there are three methods doing
+transfers between accounts:
+
+<ol>
+<li><b><tt>transferWithoutLocking</tt></b> just calls withdraw on one account, and
+deposit on the other, without doing any synchronization.  In other
+words, your implementation of BankImpl.transferWithoutLocking should
+not use the synchronized keyword at all.  This is completely wrong,
+but will give you some idea of what happens when synchronization is
+missing.
+
+<li><b><tt>transferLockingBank</tt></b> does the transfer while synchronizing on the
+Bank object. This means that only one thread can do a transfer at any
+given moment.  While this approach does not provide any concurrency,
+it should be correct.
+
+<li><b><tt>transferLockingAccounts</tt></b> does the transfer, locking
+just the two affected Accounts.  Your implementation should use the
+synchronized keyword twice, once on each Account.  This should provide
+for greater concurrency, because threads not touching the two Accounts
+will not be blocked. Think very carefully about how to lock the two
+Accounts.
+</ol>
+
+<p>The supplied test code (<tt>cscie55.hw4.Tester</tt>) will call these methods to try
+different locking strategies.
+
+<p>addAccount adds an Account to the Bank. No two Accounts should have
+the same id. If an Account is added with a duplicate id, then
+addAccount must throw DuplicateAccountException.
+
+<p>You can assume that the methods addAccount, totalBalances and
+numberOfAccounts do not require synchronization.
+
+<h2>Testing</h2>
+
+<p>You should not write a main() method. Instead, include
+<tt>cscie55.hw4.Tester</tt> which contains JUnit tests. You can run the tests
+from your IDE, or from the command line as follows:
+
+<pre>
+    java -classpath $CLASSPATH org.junit.runner.JUnitCore cscie55.hw4.Tester
+</pre>
+
+<p>where $CLASSPATH references all the class files resulting from
+<tt>cscie55.hw4</tt> and <tt>cscie55.hw4.bank</tt>, and the junit and
+hamcrest jar files. For example, my CLASSPATH looks like this (split up into separate 
+lines for readability):
+
+<pre>
+    /home/jao/cscie55/hw4/writeup/out/test/hw4:
+    /home/jao/cscie55/hw4/writeup/out/production/hw4:
+    /home/jao/cscie55/hw4/writeup/lib/junit-4.11.jar:
+    /home/jao/cscie55/hw4/writeup/lib/hamcrest-core-1.3.jar
+</pre>
+
+<p>Most of the tests within Tester are single-threaded, and ensure that
+Account and Bank handle their inputs correctly. testPerformance is
+quite different. It does not test correctness at all, i.e., it does
+not contain any JUnit assertions. This test has two purposes. First,
+unlike the other tests, it starts a number of threads, each submitting
+transfer requests to the Bank. If the Bank's totalBalances don't agree
+before and after the transfers, output will indicate this, although
+the test will not fail, (because we want to continue and gather output
+from the remaining scenarios.) Second, the test does timings,
+reporting the amount of time to do 5,000,000 transfers using 1, 2, 5,
+10, and 20 threads, for each of the three locking strategies.
+
+<p>You need to submit:
+
+<ul>
+<li>A source jar file containing the .java files in
+<tt>cscie55.hw4.bank</tt>. (This should contain the classes AccountImpl,
+Account, BankImpl, Bank, DuplicateAccountException, and
+InsufficientFundsException.)
+
+<li>A classes jar file containing the .class files in <tt>cscie55.hw4.bank</tt>.
+
+<li>Output from running the test.
+
+<li>Answers to the following questions regarding testPerformance output:
+<ol>
+<li>Why does the NO_LOCKING test succeed for one thread and fail for
+2-20 threads? (It is possible that you will see some successes for
+larger number of threads. But if you see no failures, then something
+is amiss.)
+
+<li>How do you explain the change in performance for LOCK_BANK as
+threads increase from 1 to 20.
+
+<li>How does the performance of LOCK_BANK compare to that of
+LOCK_ACCOUNTS? How do you explain this?
+</ol>
+</ul>
+
+<h2>Things to watch out for</h2>
+
+<ul>
+<li>If testPerformance never completes, it is possible that the test
+threads have become deadlocked. To get a start on this problem,
+figure out how to obtain and read a stack dump.
+
+<li>The Bank tranfer methods throw InsufficientFundsException on an
+attempt to withdraw more than the balance. If this happens, (and it
+will almost certainly happen during testPerformance), then the
+balances of both accounts must be left unmodified. You need to write
+code carefully to ensure that nothing has changed when
+InsufficientFundsException is thrown. Another approach, which is
+more complicated (and therefore inferior) discovers the need to
+throw InsufficientFundsException after one or both balances have
+been updated, in which case you need to ensure that the balances are
+restored to their previous values.
+
+<li><b>Strongly recommended:</b> Comment out testPerformance until the other
+tests are running successfully. Otherwise, you may waste a lot of
+time waiting for testPerformance to run when far more basic tests
+are failing.
+</ul>
+</body>
+</html>

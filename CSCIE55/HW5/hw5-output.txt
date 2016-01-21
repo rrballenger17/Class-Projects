@@ -1,0 +1,39 @@
+Ryans-MacBook-Pro:hw5 Ryan$ java -cp src:test:./hamcrest-core-1.3.jar:./junit-4.11.jar org.junit.runner.JUnitCore cscie55.hw5.Tester
+JUnit version 4.11
+...Command INSIDE monitor:  0.873479 txns/msec
+Command OUTSIDE monitor: 4.334535 txns/msec
+
+Time: 29.861
+
+OK (3 tests)
+
+
+
+
+
+
+Ryans-MacBook-Pro:hw5 Ryan$ java -cp src:test:./hamcrest-core-1.3.jar:./junit-4.11.jar org.junit.runner.JUnitCore cscie55.hw5.Tester
+JUnit version 4.11
+...Command INSIDE monitor:  0.867958 txns/msec
+Command OUTSIDE monitor: 4.325719 txns/msec
+
+Time: 30.023
+
+OK (3 tests)
+
+
+
+
+
+
+Ryans-MacBook-Pro:hw5 Ryan$ java -cp src:test:./hamcrest-core-1.3.jar:./junit-4.11.jar org.junit.runner.JUnitCore cscie55.hw5.Tester
+JUnit version 4.11
+...Command INSIDE monitor:  0.866732 txns/msec
+Command OUTSIDE monitor: 4.323555 txns/msec
+
+Time: 30.066
+
+OK (3 tests)
+
+
+

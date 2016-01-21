@@ -1,0 +1,73 @@
+
+3 outputs pasted below:
+
+
+Ryans-MacBook-Pro:hw4 Ryan$ java -classpath src:test:./hamcrest-core-1.3.jar:./junit-4.11.jar org.junit.runner.JUnitCore cscie55.hw4.Tester
+JUnit version 4.11
+.NO_LOCKING, 1 -- OK: 3477.418766 transactions/msec
+NO_LOCKING, 2 -- BROKEN: 6301.510516 transactions/msec	Expected total balances: 100000	Actual: 116963
+NO_LOCKING, 5 -- BROKEN: 5109.303169 transactions/msec	Expected total balances: 100000	Actual: 132571
+NO_LOCKING, 10 -- BROKEN: 7235.359655 transactions/msec	Expected total balances: 100000	Actual: 157661
+NO_LOCKING, 20 -- BROKEN: 8691.863096 transactions/msec	Expected total balances: 100000	Actual: 175424
+LOCK_BANK, 1 -- OK: 3394.218874 transactions/msec
+LOCK_BANK, 2 -- OK: 2462.207446 transactions/msec
+LOCK_BANK, 5 -- OK: 2308.409023 transactions/msec
+LOCK_BANK, 10 -- OK: 2423.741199 transactions/msec
+LOCK_BANK, 20 -- OK: 2371.210535 transactions/msec
+LOCK_ACCOUNTS, 1 -- OK: 2272.575407 transactions/msec
+LOCK_ACCOUNTS, 2 -- OK: 3245.310540 transactions/msec
+LOCK_ACCOUNTS, 5 -- OK: 2904.173901 transactions/msec
+LOCK_ACCOUNTS, 10 -- OK: 2792.771764 transactions/msec
+LOCK_ACCOUNTS, 20 -- OK: 2479.004567 transactions/msec
+........
+Time: 30.384
+
+OK (9 tests)
+
+
+
+Ryans-MacBook-Pro:hw4 Ryan$ java -classpath src:test:./hamcrest-core-1.3.jar:./junit-4.11.jar org.junit.runner.JUnitCore cscie55.hw4.Tester
+JUnit version 4.11
+.NO_LOCKING, 1 -- OK: 3550.615220 transactions/msec
+NO_LOCKING, 2 -- BROKEN: 5549.439820 transactions/msec	Expected total balances: 100000	Actual: 111746
+NO_LOCKING, 5 -- BROKEN: 5672.920206 transactions/msec	Expected total balances: 100000	Actual: 134496
+NO_LOCKING, 10 -- BROKEN: 5630.179373 transactions/msec	Expected total balances: 100000	Actual: 147951
+NO_LOCKING, 20 -- BROKEN: 7447.918623 transactions/msec	Expected total balances: 100000	Actual: 158768
+LOCK_BANK, 1 -- OK: 3304.814778 transactions/msec
+LOCK_BANK, 2 -- OK: 2314.253457 transactions/msec
+LOCK_BANK, 5 -- OK: 2360.409414 transactions/msec
+LOCK_BANK, 10 -- OK: 2294.308987 transactions/msec
+LOCK_BANK, 20 -- OK: 2269.367337 transactions/msec
+LOCK_ACCOUNTS, 1 -- OK: 2097.008528 transactions/msec
+LOCK_ACCOUNTS, 2 -- OK: 2933.054969 transactions/msec
+LOCK_ACCOUNTS, 5 -- OK: 2533.223133 transactions/msec
+LOCK_ACCOUNTS, 10 -- OK: 2474.808631 transactions/msec
+LOCK_ACCOUNTS, 20 -- OK: 2129.880757 transactions/msec
+........
+Time: 31.78
+
+OK (9 tests)
+
+
+
+Ryans-MacBook-Pro:hw4 Ryan$ java -classpath src:test:./hamcrest-core-1.3.jar:./junit-4.11.jar org.junit.runner.JUnitCore cscie55.hw4.Tester
+JUnit version 4.11
+.NO_LOCKING, 1 -- OK: 3423.256168 transactions/msec
+NO_LOCKING, 2 -- BROKEN: 3410.330495 transactions/msec	Expected total balances: 100000	Actual: 105355
+NO_LOCKING, 5 -- BROKEN: 4786.287107 transactions/msec	Expected total balances: 100000	Actual: 117297
+NO_LOCKING, 10 -- BROKEN: 5957.750112 transactions/msec	Expected total balances: 100000	Actual: 128943
+NO_LOCKING, 20 -- BROKEN: 7504.390357 transactions/msec	Expected total balances: 100000	Actual: 152451
+LOCK_BANK, 1 -- OK: 3326.508821 transactions/msec
+LOCK_BANK, 2 -- OK: 2253.353385 transactions/msec
+LOCK_BANK, 5 -- OK: 2331.133472 transactions/msec
+LOCK_BANK, 10 -- OK: 2207.551503 transactions/msec
+LOCK_BANK, 20 -- OK: 2085.465158 transactions/msec
+LOCK_ACCOUNTS, 1 -- OK: 2091.230796 transactions/msec
+LOCK_ACCOUNTS, 2 -- OK: 2688.140621 transactions/msec
+LOCK_ACCOUNTS, 5 -- OK: 2599.248634 transactions/msec
+LOCK_ACCOUNTS, 10 -- OK: 2351.148195 transactions/msec
+LOCK_ACCOUNTS, 20 -- OK: 2179.331252 transactions/msec
+........
+Time: 32.651
+
+OK (9 tests)

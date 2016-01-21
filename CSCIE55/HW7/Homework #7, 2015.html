@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Homework #7, 2015</title>
+</head>
+<body>
+<center><b><font size=5>
+Homework #7 -- Adventures in MapReduce, Part I, Adapting WordCount
+</font></b>
+<p align="center"><font size=4>Last Modified: <i><script>document.write(document.lastModified);</script></i>
+</font></p>
+Due: Monday May 2nd, Grading: 10%
+</center>
+<hr>
+<br><b>Downloads</b>: <a href="hw7-data.zip">hw7-data.zip</a>.
+<br><b>Submission requirements</b>: 
+A zip file containing 
+<ul>
+<li>All the Java files for each problem.  [All classes should belong to package 
+<font face="courier new"><b>cscie55.hw7</b></font>]
+<li>The output files [<font face="courier new"><b>part-r-00000</b></font>] 
+created by running
+the MR code (locally) for each class containing <font face="courier new"><b>main</b></font>.
+<li>A jar file containing all class files in a form suitable to run solutions
+for all three problems.
+<li>A solution overview, explaining each of the three MR solutions.
+</ul>
+<hr>
+<ul>
+<li> <b>Problem 1.</b> Using  <font face="courier new"><b>WordCount</b></font> 
+as a staring point create a new MR program 
+<font face="courier new"><b>WordHistogram.java</b></font> so that the final output of
+Map/Reduce is a histogram of &lt;<i>word-length, frequency</i>&gt;. For example 
+<font face="courier new"><b>output/part-r-00000</b></font> might contain these lines 
+<br><font face="courier new"><b>5 1254 <br>4 6934</b></font><br> 
+meaning there were 1,254 words
+of length 5 and 6,934 words of length 4. Besides making changes to the 
+<font face="courier new"><b>WordCount</b></font> computation, you will also need to
+change the parameterized types of your <font face="courier new"><b>Mapper</b></font>
+ and <font face="courier new"><b>Reducer</b></font> classes from those used by
+<font face="courier new"><b>WordCount</b></font>. As always,
+make sure the output K,V types of your <font face="courier new"><b>Mapper</b></font>
+match the K,V input types of your <font face="courier new"><b>Reducer</b></font> class.
+Submit the output for analyzing <font face="courier new"><b>mobydick.txt</b></font>,
+which comes in the data zip-file cited above.
+You may run it locally. 
+<p>
+<b>Extra credit</b>. Run your M/R app against HDFS; then catch the last ten lines sent by
+<br><font face="courier new"><b>$ hadoop fs -tail output/part-r-00000 | tail &gt; hd.tail</b></font><br> Catch the final 10 lines from the output running locally: 
+<br>
+<font face="courier new"><b>$ tail output/part-r-00000 &gt; local.tail</b></font>
+<br>Compare the local vs. HDFS results.
+<br><font face="courier new"><b>$ diff hd.tail local.tail</b></font> 
+<li><b>Problem 2.</b>  Define a new adaptation of 
+<font face="courier new"><b>WordCount</b></font>, call it 
+<font face="courier new"><b>WordCountByFile</b></font>. Design the new
+<font face="courier new"><b>Mapper</b></font> and 
+<font face="courier new"><b>Reducer</b></font> classes to report
+word counts by file name. 
+<ul>
+<li>Suppose the word "foo" appears 
+twice in the file <font face="courier new"><b>/Users/charliesawyer/java/input/f1.txt</b></font> and once in the file 
+<font face="courier new"><b>/Users/charliesawyer/java/input/f2.txt</b></font>. 
+Then the output (<font face="courier new"><b>output/part-r-00000</b></font>) should contain this line:
+<pre><b>foo file:/Users/charliesawyer/java/input/f1.txt: 2 file:/Users/charliesawyer/java/input/f2.txt: 1</b></pre>
+<li>
+To accomplish this you need something to report the name of each file
+that Hadoop is processing.
+Fortunately, Hadoop has a method that will do this among the myriad methods of the Hadoop API.
+You can learn what this API is by asking Google to search 
+with keywords "Hadoop" "file name" and "mapper".
+<li> Consider what types to provide for your <font face="courier new"><b>Mapper</b></font>
+and <font face="courier new"><b>Reducer</b></font> classes.
+<li>Arrange to run it on an input file containing the three "fleas" files.
+</ul>
+<li><b>Problem 3</b>. Write a new MR program 
+<font face="courier new"><b>DocWordIndex.java</b></font>, 
+which writes a report of indexed word
+usages such that for
+each word it cites its location (by word #) in the file, for each file. Here is sample
+ output :<pre><b>fleas /Users/charliesawyer/input/f1.txt: 2 9 /Users/charliesawyer/input/f2.txt: 4 </pre></b>
+The meaning is that the word "fleas" appears in file <font face="courier new"><b>f1.txt</b></font> as the 2nd and 9th word in that
+file and in <font face="courier new"><b>f2.txt</b></font> as the 4th word in that file.
+<p>Arrange to run it on an input file containing the three "fleas" files.
+<p><b>NB:</b> Do <b>not</b> set your <font face="courier new"><b>Reducer</b></font>
+as the <font face="courier new"><b>Combiner</b></font> class, i.e. don't call
+<font face="courier new"><b>job.setCombinerClass(WordIndexReducer.class)</b></font>
+</ul>
+</body>
+</html>
