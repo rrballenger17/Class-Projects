@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<!--[if gte IE 9 ]><html class="ie ie9 scripts-not-loaded" lang="en"> <![endif]-->
+<!--[if !(IE)]><!--> <html class="not-ie scripts-not-loaded" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Booster: XSLT Transform</title>
+  <!--[if lte IE 8]> <meta http-equiv=refresh content="0; URL=/ie-8-is-not-supported.html" /> <![endif]-->
+
+  <link href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" rel="apple-touch-icon" />
+
+  
+  <link href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/common-ae59afe451.css" media="all" rel="stylesheet" />
+  
+  <meta content="app-id=480883488" name="apple-itunes-app" />
+<meta content="app-id=com.instructure.candroid" name="google-play-app" />
+  <link href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/assignments-8685e0e7d6.css" media="all" rel="stylesheet" />
+<link href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/tinymce-8be04d0b5b.css" media="all" rel="stylesheet" />
+<link href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/learning_outcomes-a02a9de086.css" media="all" rel="stylesheet" />
+  
+  <link href="https://s3.amazonaws.com/tlt-static-prod/canvas/global/global.css" media="all" rel="stylesheet" />
+  <script>
+    // listen for any clicks on links that have href="#" and queue them to be fired on dom ready.
+      function _earlyClick(e){
+        var cur = e.target || e.srcElement;
+        while ( cur && cur.ownerDocument ) {
+          if ( cur.getAttribute('href') == '#' ) {
+            e.preventDefault();
+            _earlyClick.clicks = _earlyClick.clicks || [];
+            _earlyClick.clicks.push(cur);
+            break;
+          }
+          cur = cur.parentNode;
+        }
+      }
+      document.addEventListener('click', _earlyClick);
+  </script>
+</head>
+
+<body class="with-left-side course-menu-expanded with-right-side assignments context-course_4285">
+<noscript>
+  <div role="alert" class="ic-flash-static ic-flash-error">
+    <h1>You need to have JavaScript enabled in order to access this site.</h1>
+  </div>
+</noscript>
+
+
+
+
+<ul role="alert" aria-live="assertive" id="flash_message_holder"></ul>
+<div role="alert" aria-live="assertive" id="flash_screenreader_holder" class="screenreader-only"></div>
+
+<div id="application" >
+
+    <div id="header" class="no-print ">
+      <div id="header-inner">
+        <a href="#content" id="skip_navigation_link">Skip To Content</a>
+        <a id="header-logo" href="https://canvas.harvard.edu/">My Dashboard</a>
+        <b id="header-logo-secondary"></b>
+        <div id="topbar" role="navigation" aria-label="User Menu">
+    <ul id="identity">
+      <li class="user_name"><a href="/about/134345">Ryan Ballenger</a></li>
+      <li class="first inbox">
+        <a href="/conversations?">
+          <span>Inbox</span>
+              <b class="unread-messages-count" style="display: none;">0</b>
+        </a>
+      </li>
+      <li><a href="/profile/settings">Settings</a></li>
+    <li class="user_id" style="display: none;">134345</li>
+    <li class="course_id" style="display: none;">4285</li>
+    <li id="current_context_code" style="display: none;">course_4285</li>
+    <li class="user_long_name" style="display: none;">Ryan Ballenger</li>
+    <li class="logout">
+      <form accept-charset="UTF-8" action="/logout" id="identity-logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="delete" /><input name="authenticity_token" type="hidden" value="qvu1wtx9If/1prfpMFHk26br+IqN9DDMnbp9/tuCwPmeo+W66jFqtr3p/rx1BK6U65mW2f2bX7jx7CufrLWGyw==" /></div>
+        <a href="/logout" onclick="document.getElementById(&#39;identity-logout-form&#39;).submit(); return false">Logout</a>
+</form>    </li>
+    <li id="identity-help-container">
+      <a class="support_url help_dialog_trigger" data-track-category="help system" data-track-label="help button" href="http://help.instructure.com/">Help</a>
+    </li>
+</ul>
+
+</div>
+
+        
+          <ul role="navigation" id="menu" aria-label="Main Navigation">
+
+    <li id="courses_menu_item" class="menu-item">
+        <a href="/courses" class="menu-item-title">
+
+    Courses    <span class="menu-item-title-icon"></span> <i class="icon-mini-arrow-down"></i>
+  </a>
+  <div class="menu-item-drop">
+    <table cellspacing="0">
+      <tr>
+        <td class="menu-item-drop-column" id="menu_enrollments">
+  <div class="menu-item-header-container">
+    <span class="menu-item-heading">
+      My Courses
+    </span>
+    <div class="menu-item-customize">
+      <a class="customListOpen" href="/courses">View All or Customize (2)</a>
+    </div>
+  </div>
+  <ul class="menu-item-drop-column-list">
+    <li class="customListItem" data-id="4296">
+  <a href="/courses/4296">
+    <span class="name ellipsis" title="Java and the Hadoop Distributed File System - CSCI E-55 (14298)">Java and the Hadoop Distributed File System</span>
+      <span class="subtitle ellipsis enrollment_term menu-item-drop-float-right">2015-2016 Fall</span>
+    <span class="subtitle ellipsis">enrolled as: Student</span>
+  </a>
+</li>
+<li class="customListItem" data-id="4285">
+  <a href="/courses/4285">
+    <span class="name ellipsis" title="Web Development Using XML - CSCI E-18 (14297)">Web Development Using XML</span>
+      <span class="subtitle ellipsis enrollment_term menu-item-drop-float-right">2015-2016 Fall</span>
+    <span class="subtitle ellipsis">enrolled as: Student</span>
+  </a>
+</li>
+
+  </ul>
+</td>
+
+        
+        
+      </tr>
+    </table>
+  </div>
+
+    </li>
+    <li id="grades_menu_item" class="menu-item">
+      <a href="/grades" class="menu-item-no-drop">
+        Grades
+      </a>
+    </li>
+    <li id="calendar_menu_item" class="menu-item">
+      <a href="/calendar" class="menu-item-no-drop">
+        Calendar
+      </a>
+    </li>
+    
+  </ul>
+
+      </div>
+    </div>
+
+  <div id="instructure_ajax_error_box">
+    <div style="text-align: right; background-color: #fff;"><a href="#" class="close_instructure_ajax_error_box_link">Close</a></div>
+    <iframe id="instructure_ajax_error_result" src="about:blank" style="border: 0;"></iframe>
+  </div>
+
+  
+
+  <div id="wrapper-container" >
+    <div id="wrapper" >
+    
+          <div id="left-side" class="list-view ">
+              <h1 id="section-tabs-header">
+                CSCI E-18 (14297)
+              </h1>
+              <span id="section-tabs-header-subtitle" class="ellipsis">2015-2016 Fall</span>
+            <nav aria-label="context" role="navigation"><ul id="section-tabs"><li class="section"><a class="home" href="/courses/4285">Home</a></li><li class="section"><a aria-label="Course Announcements" class="announcements" href="/courses/4285/announcements">Announcements</a></li><li class="section"><a class="syllabus" href="/courses/4285/assignments/syllabus">Syllabus</a></li><li class="section"><a class="context_external_tool_10673" href="/courses/4285/external_tools/10673">Virtual Classroom</a></li><li class="section"><a class="context_external_tool_1" href="/courses/4285/external_tools/1">Chat</a></li><li class="section"><a aria-label="Course Discussions" class="discussions" href="/courses/4285/discussion_topics">Discussions</a></li><li class="section"><a class="conferences" href="/courses/4285/conferences">Conferences</a></li><li class="section"><a aria-label="Course Assignments" class="assignments active" href="/courses/4285/assignments">Assignments</a></li><li class="section"><a class="quizzes" href="/courses/4285/quizzes">Quizzes</a></li><li class="section"><a class="context_external_tool_7453" href="/courses/4285/external_tools/7453">Say Hello!</a></li><li class="section"><a class="context_external_tool_1869" href="/courses/4285/external_tools/1869">Student Locations</a></li><li class="section"><a class="context_external_tool_13815" href="/courses/4285/external_tools/13815">Student Resources</a></li><li class="section"><a class="context_external_tool_14120" href="/courses/4285/external_tools/14120">Library Reserves</a></li></ul></nav>
+        </div>
+        <div id="main" >
+          <div id="not_right_side" >
+            <div id="content-wrapper" >
+                <nav aria-label="breadcrumbs" id="breadcrumbs" role="navigation"><ul><li class="home"><a href="/"><span class="ellipsible">      <i class="icon-home"
+         title="My Dashboard">
+        <span class="screenreader-only">My Dashboard</span>
+      </i>
+</span></a></li><li><a href="/courses/4285"><span class="ellipsible">CSCI E-18 (14297)</span></a></li><li><a href="/courses/4285/assignments"><span class="ellipsible">Assignments</span></a></li><li><a href="https://canvas.harvard.edu/courses/4285/assignments/42016"><span class="ellipsible">Booster: XSLT Transform</span></a></li></ul></nav>
+                
+              <div id="content" role="main" class="container-fluid">
+                
+
+
+<div id="assignment_show" class="assignment content_underline_links">
+    <!--Student View-->
+    <div class='assignment-title'>
+      <div class='title-content'>
+        <h1 class="title">
+          Booster: XSLT Transform
+        </h1>
+      </div>
+      <div class="edit-content">
+        
+      </div>
+      <div class='assignment-buttons'>
+        <a class="btn btn-primary submit_assignment_link " href="#" style="margin-top: 5px">Re-submit Assignment</a>
+      </div>
+    </div>
+    <ul class='student-assignment-overview'>
+      <li>
+        <span class='title'>Due</span>
+        <span class='value'>
+          <span class="date_text">
+                <span class="display_date">Sep 15, 2015</span> by 
+                <span class="display_time">12:15pm</span>
+          </span>
+        </span>
+      </li>
+      <li>
+        <span class='title'>Points</span>
+        <span class='value'>5</span>
+      </li>
+        <li>
+          <span class='title'>Submitting</span>
+          <span class='value'>a file upload</span>
+        </li>
+          <li>
+            <span class='title'>File Types</span>
+            <span class='value'>html</span>
+          </li>
+      
+      <div class="clear"></div>
+    </ul>
+
+  <div class="clear"></div>
+
+
+  <div class="clear"></div>
+
+  <div class="description user_content student-version"><p>Perform an XSLT transformation with the given files:</p>
+<ul>
+<li><a id="" class="" title="" href="http://cscie18.dce.harvard.edu/assignment_files/2015/hello.xml" target="">hello.xml</a></li>
+<li><a id="" class="" title="" href="http://cscie18.dce.harvard.edu/assignment_files/2015/hello.xsl" target="">hello.xsl</a></li>
+</ul>
+<p>You can use Saxon from the command line, or you can execute the transformation from within Oxygen -- or both.  </p>
+<ul>
+<li>
+<strong>Saxon</strong>. <a id="" class="" title="" href="http://saxon.sourceforge.net/" target="">Download Saxon 9 HE</a> from <a href="http://saxon.sourceforge.net/">http://saxon.sourceforge.net/</a>. You'll need to unzip the file and then <a href="http://www.saxonica.com/documentation/#!using-xsl/commandline">follow the documentation to perform a command line transformation</a>
+</li>
+<li>
+<strong>Oxygen</strong>.  Information about Oxygen and the class license is at: <a id="" class="" title=" XML Editor License" href="/courses/4285/pages/xml-editor-license"> Oxygen XML Editor License</a>
+</li>
+</ul>
+<p>Your pick!</p>
+<p>Submit the resulting XHTML file here!</p></div>
+
+
+  <div style="display: none;">
+    <span class="timestamp">1442333700</span>
+    <span class="due_date_string">09/15/2015</span>
+    <span class="due_time_string">12:15pm</span>
+  </div>
+</div>
+
+
+  <div style="display: none;" id="submit_assignment" data-context_code="course_4285" data-asset_string="assignment_42016">
+  <div class="content" id="submit_assignment_tabs">
+    <ul>
+        <li><a href="#submit_online_upload_form" class="submit_online_upload_option">File Upload</a></li>
+        <li><a href="#submit_google_doc_form" class="submit_online_url_option">Google Doc</a></li>
+    </ul>
+    <form accept-charset="UTF-8" action="/courses/4285/assignments/42016/submissions" class="submit_assignment_form" enctype="multipart/form-data" id="submit_online_upload_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="JO1hnG70hO0HRrLjVyFebnrwJYkpECMwZLJZqD+2OnAQtTHkWLjPpE8J+7YSdBQhN4JL2ll/TEQI5A/JSIF8Qg==" /></div>
+    <input id="submission_submission_type" name="submission[submission_type]" type="hidden" value="online_upload" />
+    <input id="submission_attachment_ids" name="submission[attachment_ids]" type="hidden" value="" />
+    <table class="formtable" style="width: 100%;">
+      <tr>
+        <td colspan="2">
+          Upload a file, or choose a file you&#39;ve already uploaded.
+            
+        </td>
+      </tr><tr>
+        <td><label for="attachment_uploaded_data">File:</label></td>
+        <td>
+          <a href="#" class="add add_another_file_link"> Add Another File </a>
+          <div id="submission_attachment_blank" class="submission_attachment" style="display: none;">
+            <input type="file" name="attachments[-1][uploaded_data]" class="input-file"/>
+            <a href="#" class="remove_attachment_link no-hover" style="display: none;"><img alt="Delete circle f4242c3ba6" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/delete_circle-f4242c3ba6.png" /></a>
+              <div class='bad_ext_msg error_message' style="display: none">
+                This file type is not allowed. Accepted file types are: html
+              </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td style="font-size: 0.8em;">
+        <a href="#" class="toggle_uploaded_files_link">Click here to find a file you&#39;ve already uploaded</a><br/>
+        <div id="uploaded_files" style="display: none;">
+          
+          <ul>
+    <li class="folder  folder folder_147238">
+      <span class="id" style="display: none;">147238</span>
+      <span class="text name">my files</span>
+        <ul>
+    <li class="folder  folder folder_414458">
+      <span class="id" style="display: none;">414458</span>
+      <span class="text name">unfiled</span>
+        <ul>
+    <li class="file  zip file_755877">
+      <span class="id" style="display: none;">755877</span>
+      <span class="text name">harvard_dce.zip</span>
+    </li>
+    <li class="file  zip file_755947">
+      <span class="id" style="display: none;">755947</span>
+      <span class="text name">lunch_special.zip</span>
+    </li>
+    <li class="file  zip file_756848">
+      <span class="id" style="display: none;">756848</span>
+      <span class="text name">books.zip</span>
+    </li>
+    <li class="file  zip file_756871">
+      <span class="id" style="display: none;">756871</span>
+      <span class="text name">lunch_special-1.zip</span>
+    </li>
+    <li class="file  zip file_756875">
+      <span class="id" style="display: none;">756875</span>
+      <span class="text name">lunch_special-2.zip</span>
+    </li>
+    <li class="file  zip file_761019">
+      <span class="id" style="display: none;">761019</span>
+      <span class="text name">lunch_special-3.zip</span>
+    </li>
+    <li class="file  zip file_761253">
+      <span class="id" style="display: none;">761253</span>
+      <span class="text name">books-1.zip</span>
+    </li>
+    <li class="file  zip file_765384">
+      <span class="id" style="display: none;">765384</span>
+      <span class="text name">xformdeprecated.zip</span>
+    </li>
+    <li class="file  zip file_766274">
+      <span class="id" style="display: none;">766274</span>
+      <span class="text name">xformdeprecated-1.zip</span>
+    </li>
+    <li class="file  zip file_776014">
+      <span class="id" style="display: none;">776014</span>
+      <span class="text name">page_layout.zip</span>
+    </li>
+    <li class="file  zip file_778257">
+      <span class="id" style="display: none;">778257</span>
+      <span class="text name">page_layout-3.zip</span>
+    </li>
+    <li class="file  zip file_787278">
+      <span class="id" style="display: none;">787278</span>
+      <span class="text name">working_with_scss.zip</span>
+    </li>
+    <li class="file  zip file_787368">
+      <span class="id" style="display: none;">787368</span>
+      <span class="text name">js_events.zip</span>
+    </li>
+    <li class="file  zip file_796437">
+      <span class="id" style="display: none;">796437</span>
+      <span class="text name">table_sortable.zip</span>
+    </li>
+    <li class="file  zip file_814163">
+      <span class="id" style="display: none;">814163</span>
+      <span class="text name">gallery.zip</span>
+    </li>
+    <li class="file  zip file_815270">
+      <span class="id" style="display: none;">815270</span>
+      <span class="text name">gallery-1.zip</span>
+    </li>
+    <li class="file  file file_832182">
+      <span class="id" style="display: none;">832182</span>
+      <span class="text name">htaccess</span>
+    </li>
+    <li class="file  file file_832202">
+      <span class="id" style="display: none;">832202</span>
+      <span class="text name">.htaccess</span>
+    </li>
+    <li class="file  zip file_836786">
+      <span class="id" style="display: none;">836786</span>
+      <span class="text name">usconstitution.zip</span>
+    </li>
+    <li class="file  zip file_836891">
+      <span class="id" style="display: none;">836891</span>
+      <span class="text name">usconstitution-1.zip</span>
+    </li>
+    <li class="file  zip file_865621">
+      <span class="id" style="display: none;">865621</span>
+      <span class="text name">final3.zip</span>
+    </li>
+    <li class="file  doc file_865910">
+      <span class="id" style="display: none;">865910</span>
+      <span class="text name">project report.docx</span>
+    </li>
+    <li class="file  zip file_866032">
+      <span class="id" style="display: none;">866032</span>
+      <span class="text name">final3-1.zip</span>
+    </li>
+    <li class="file  pdf file_886936">
+      <span class="id" style="display: none;">886936</span>
+      <span class="text name">planning.pdf</span>
+    </li>
+    <li class="file  html file_1131856">
+      <span class="id" style="display: none;">1131856</span>
+      <span class="text name">output.html</span>
+    </li>
+    <li class="file  file file_1166608">
+      <span class="id" style="display: none;">1166608</span>
+      <span class="text name">cscie18-assignment1-0.1FINAL.xar</span>
+    </li>
+    <li class="file  file file_1168385">
+      <span class="id" style="display: none;">1168385</span>
+      <span class="text name">cscie18-assignment1-0.1FINAL3.xar</span>
+    </li>
+    <li class="file  file file_1168617">
+      <span class="id" style="display: none;">1168617</span>
+      <span class="text name">cscie18-assignment1-0.1FINAL4.xar</span>
+    </li>
+    <li class="file  file file_1168853">
+      <span class="id" style="display: none;">1168853</span>
+      <span class="text name">cscie18-assignment1-0.1FINAL5.xar</span>
+    </li>
+    <li class="file  code file_1228905">
+      <span class="id" style="display: none;">1228905</span>
+      <span class="text name">CASentors.xml</span>
+    </li>
+    <li class="file  pdf file_1388122">
+      <span class="id" style="display: none;">1388122</span>
+      <span class="text name">output.pdf</span>
+    </li>
+    <li class="file  file file_1395160">
+      <span class="id" style="display: none;">1395160</span>
+      <span class="text name">texas.svg</span>
+    </li>
+    <li class="file  file file_1395495">
+      <span class="id" style="display: none;">1395495</span>
+      <span class="text name">texas-1.svg</span>
+    </li>
+</ul>
+
+    </li>
+    <li class="folder  folder folder_147239">
+      <span class="id" style="display: none;">147239</span>
+      <span class="text name">profile pictures</span>
+        <ul>
+    <li class="file  image file_734757">
+      <span class="id" style="display: none;">734757</span>
+      <span class="text name">profile.jpg</span>
+    </li>
+</ul>
+
+    </li>
+</ul>
+
+    </li>
+</ul>
+
+        </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <textarea class="submission_comment_textarea" id="submission_comment" name="submission[comment]" placeholder="Comments..." title="Additional comments">
+</textarea>
+        </td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" class='button-container'>
+          <button type="button" class='cancel_button btn'>Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submit_file_button">Submit Assignment</button>
+        </td>
+      </tr><tr style="display: none;">
+        <td colspan="2" style="text-align: center;">
+          Submitting... <img src=""/>
+        </td>
+      </tr>
+    </table>
+</form>
+
+
+    <style>
+    #google_docs_tree li.folder {
+      cursor: pointer;
+    }
+    #google_docs_tree li.file {
+      cursor: pointer;
+      -moz-border-radius: 3px;
+      width: 80%;
+      padding-right: 20px;
+    }
+    #google_docs_tree li.file:hover {
+      background-color: #eee;
+    }
+    ul.instTree li span.active {
+      background: none;
+    }
+    #google_docs_tree li.file.leaf.active {
+      background-color: #ddd;
+    }
+    #google_docs_tree li.file .filename {
+      float: left;
+      max-width: 98%;
+    }
+    #google_docs_tree li.file .popout {
+      float: right;
+    }
+    </style>
+        <div id="submit_google_doc_form">
+          Before you can submit assignments directly from Google Drive you need to authorize Canvas to access your Google Drive account:
+          <div style="font-size: 1.1em; text-align: center; margin: 10px;">
+            <a class="btn" href="https://canvas.harvard.edu/oauth?return_to=https%3A%2F%2Fcanvas.harvard.edu%2Fcourses%2F4285%2Fassignments%2F42016%23submit_google_doc_form&amp;service=google_drive">Authorize Google Drive Access</a>
+          </div>
+        </div>
+
+
+
+  </div>
+</div>
+
+
+
+
+<div id="rubrics" style="margin-bottom: 10px;">
+  <div style="display: none;" id="rubric_parameters">
+    <input type="hidden" name="rubric_association[association_type]" value="Assignment"/>
+    <input type="hidden" name="rubric_association[association_id]" value="42016"/>
+    <input type="hidden" name="rubric_association[purpose]" value="grading"/>
+  </div>
+  <div id="rubric_long_description_dialog" style="display: none;">
+  <div class="description" style="border-bottom: 1px solid #ccc; padding: 5px 0; font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">
+  </div>
+  <div class="editing">
+    <textarea class="long_description" aria-label="Long Description" name="long_description" style="width: 370px;"></textarea>
+    <div class="button-container">
+      <button type="button" class="btn save_button">Update Description</button>
+      <button type="button" class="btn btn button-secondary cancel_button">Cancel</button>
+    </div>
+  </div>
+  <div class="displaying">
+    <div class="long_description">
+    </div>
+  </div>
+</div>
+<div id="rubric_criterion_comments_dialog" style="display: none;">
+  <div
+    class="criterion_description"
+    style="border-bottom: 1px solid #ccc; padding: 5px 0; font-size: 1.2em; font-weight: bold; margin-bottom: 5px;"
+    tabindex="-1"
+  ></div>
+  <div class="editing">
+    <label for="criterion_comments_textarea">
+      Additional Comments:
+    </label>
+    <textarea 
+      id="criterion_comments_textarea"
+      class="criterion_comments"
+      name="criterion_comments"
+      style="width: 370px;"></textarea>
+    <div class="button-container">
+      <button type="button" class="btn save_button">Update Comments</button>
+      <button type="button" class="btn btn button-secondary cancel_button">Cancel</button>
+    </div>
+  </div>
+  <div class="displaying">
+    Additional Comments:
+    <div class="criterion_comments" style="margin-top: 10px;">
+    </div>
+  </div>
+</div>
+
+</div>
+<div
+  class="rubric_container rubric  "
+  id="default_rubric"
+  style="display: none;"
+  tabindex="0"
+>
+  <div class="screenreader-only"><h2>Rubric</h2></div>
+  <div class="rubric_title">
+    <div style="float: right; display: none;" class="links displaying">
+      <a
+        href="/courses/4285/rubrics/%7B%7B%20id%20%7D%7D"
+        class=" edit_rubric_link no-print no-hover"
+        style=""
+        title="Edit Rubric"
+        aria-label="Edit Rubric"
+        role="button"
+      ><i class="icon-edit standalone-icon"></i></a>
+      <a
+        href="https://canvas.harvard.edu/search/rubrics?q="
+        class="find_rubric_link no-print no-hover"
+        style=""
+        title="Find Another Rubric"
+        aria-label="Find Another Rubric"
+        role="button"
+      ><i class="icon-search standalone-icon"></i></a>
+        <a
+          href="/courses/4285/rubric_associations/%7B%7B%20rubric_association_id%20%7D%7D"
+          class="delete_rubric_link no-print no-hover"
+          style=""
+          title="Delete Rubric"
+          aria-label="Delete Rubric"
+          role="button"
+        ><i class="icon-trash standalone-icon"></i></a>
+      <div style="display: none;">
+        <div class="use_for_grading">&nbsp;</div>
+        <div class="free_form_criterion_comments">&nbsp;</div>
+        <div class="hide_score_total">&nbsp;</div>
+        <div class="rubric_association_id">&nbsp;</div>
+        <div class="user_id">&nbsp;</div>
+        <div class="assessment_type"></div>
+        <a href="/courses/4285/rubric_associations/%7B%7B%20rubric_association_id%20%7D%7D/assessments/%7B%7B%20assessment_id%20%7D%7D" rel="nofollow" class="edit_assessment_link">&nbsp;</a>
+        <a href="/courses/4285/rubrics/%7B%7B%20rubric_id%20%7D%7D" class="edit_rubric_url">&nbsp;</a>
+          <a href="/courses/4285/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url">&nbsp;</a>
+      </div>
+    </div>
+    <div style="float: right; font-size: 0.8em; display: none;" class="links displaying locked">
+      <span style="">Can&#39;t change a rubric once you&#39;ve started using it.</span>
+        <a href="/courses/4285/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url" style="display: none;">&nbsp;</a>
+    </div>
+
+    <div class="editing" style="float: right;">
+      <a href="https://canvas.harvard.edu/search/rubrics?q=" class="find_rubric_link icon-search" style="" title="Find Existing Rubric">Find a Rubric</a>
+    </div>
+    <div class="editing" style="text-align: left">
+      <label for="rubric-title">Title:</label>
+      <input id="rubric-title" type="text" class="no-margin-bottom" name="title" value="Some Rubric" style="width: 200px;" maxlength="255" aria-label="Title:"/>
+      <a href="https://canvas.harvard.edu/search/rubrics?q=" style="display: none;"><img alt="Find 6164443e2a" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/find-6164443e2a.png" /> Find Rubric</a>
+    </div>
+    <div class="displaying">
+      <span class="title" tabindex="-1">Title</span>
+    </div>
+    <div class="has-assessments-warning" style="display: none;">
+      You&#39;ve already rated students with this rubric.  Any major changes could affect their assessment results.
+    </div>
+  </div>
+<table class="rubric_table">
+<caption>
+  <div class="screenreader-only">
+    <span class="title">Title</span>
+  </div>
+</caption>
+<thead>
+  <tr>
+    <th scope="col">Criteria</th>
+    <th scope="col">Ratings</th>
+    <th scope="col">Pts</th>
+    <th scope="col" class="editing">&nbsp;</th>
+  </tr>
+</thead>
+<tbody>
+  
+<tr id="criterion_blank" class="criterion blank  " style="display: none;">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">Description of criterion</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;"></span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points">5</span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <table class="ratings" style=""><tr>
+          <td id="rating_blank" class="rating edge_rating" tabindex="0">
+          <div class="container">
+            <div class="description rating_description_value">Full Marks</div>
+            <span class="nobr"><span class="points">5</span> pts</span>
+            <span class="rating_id" style="display: none;">blank</span>
+              <div class="links">
+                <a href="#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+                <a href="#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+                <!-- Hidden if last -->
+                <a href="#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+              </div>
+          </div>
+          </td>
+          <td id="rating_blank_2" class="rating edge_rating" tabindex="0">
+          <div class="container">
+            <div class="description rating_description_value">No Marks</div>
+            <span class="nobr"><span class="points">0</span> pts</span>
+            <span class="rating_id" style="display: none;">blank_2</span>
+              <div class="links">
+                <a href="#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+                <a href="#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+                <!-- Hidden if last -->
+                <a href="#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+              </div>
+          </div>
+          </td>
+      </tr></table>
+      <div style="display: none; font-style: italic; font-size: 0.8em; margin: 5px;" class="custom_ratings">
+        This area will be used by the assessor to leave
+        comments related to this criterion.
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="5" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">5</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+        <a href="#" class="no-hover criterion_comments_link" title="Additional Comments">
+          <img alt="Additional Comments" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/rubric_comment-ddae8546ab.png" />
+        </a>
+        <div class="custom_rating" style="display: none;"></div>
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+  <tr class="summary" style="">
+    <td colspan="4">
+      <div style="float: right;" class="total_points_holder">
+        <span style="padding-right: 10px;">Total Points:
+            <span class="rubric_total">5</span> <span class="assessing">out of 5</span>
+        </span>
+      </div>
+      <div style="float: left;" class="editing">
+      <a href="#" class="icon-add add_criterion_link">Add Criterion</a>
+      &nbsp;&nbsp;<a href="#" class="icon-search find_outcome_link outcome">Find Outcome</a>
+      </div>
+      <div class="clear"></div>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<table style="display: none;">
+  <tr id="edit_rubric">
+    <td colspan="4">
+      <form id="edit_rubric_form" class="edit-rubric-form no-margin-bottom">
+        <div class="rubric_custom_ratings" style="">
+          <input type="checkbox" id="rubric_custom_rating" class="rubric_custom_rating" />
+          <label for="rubric_custom_rating">I&#39;ll write free-form comments when assessing students</label>
+        </div>
+          <div class="rubric_grading" style="">
+            <input type="checkbox" id="grading_rubric" class="grading_rubric_checkbox" />
+            <label for="grading_rubric">Use this rubric for assignment grading</label>
+          </div>
+        <div class="totalling_rubric" style="">
+          <input type="checkbox" id="totalling_rubric" class="totalling_rubric_checkbox" />
+          <label for="totalling_rubric">Hide score total for assessment results</label>
+        </div>
+        <div class="button-container">
+          <button type="button" class="btn btn-small cancel_button">Cancel</button>
+          <button type="submit" class="btn btn-small save_button btn-primary">Create Rubric</button>
+        </div>
+      </form>
+    </td>
+  </tr>
+</table>
+
+
+
+              </div>
+            </div>
+            <div id="right-side-wrapper" >
+              <aside id="right-side" role="complementary">
+                <div id="sidebar_content">
+
+    <div class="details">
+  <h3>Submission</h3>
+    <div class="header">
+        <img alt="Graded e649ddc42a" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/graded-e649ddc42a.png" /> Turned In!
+    </div>
+  <div class="content">
+    <span class="">
+        Sep 15, 2015 at  9:03am
+    </span>
+
+    <a href="/courses/4285/assignments/42016/submissions/134345" class="forward">
+      Submission Details
+    </a>
+
+        <a href="/courses/4285/assignments/42016/submissions/134345?download=1131856" class='file-big'>
+          Download output.html
+        </a>
+
+    <div class="module">
+          <div>Grade: 5 <span style="font-size: 0.8em;">(5 pts possible)</span></div>
+          <div>Graded Anonymously: no</div>
+
+    </div>
+
+
+    <div class="comments module">
+      <h4>Comments: </h4>
+
+      No Comments
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+              </aside>
+            </div>
+          </div>
+        </div>
+      
+      <footer role="contentinfo" id="footer" >
+  <a href="http://www.instructure.com" class="footer-logo ">
+    <span class="screenreader-only">
+      By Instructure
+    </span>
+  </a>
+  <span
+    id="footer-links"
+    >
+    <a target="_blank" href="http://eepurl.com/1LSkT">User Research</a>
+      <a class="support_url help_dialog_trigger" data-track-category="help system" data-track-label="help button" href="http://help.instructure.com/">Help</a>
+    <a href="https://canvas.harvard.edu/privacy_policy">Privacy policy</a>
+<a href="https://canvas.harvard.edu/terms_of_use">Terms of service</a>
+<a href="http://facebook.com/instructure">Facebook</a>
+<a href="http://twitter.com/instructure">Twitter</a>
+
+  </span>
+</footer>
+
+    </div>
+  </div>
+
+
+
+    <div style="display:none;"><!-- Everything inside of this should always stay hidden -->
+        <div id="page_view_id">c8978317-e9a4-457d-a65f-ceb9c27bbbd7</div>
+    </div>
+    <div id="cant_record_dialog" style="display: none;">
+  <div>
+    In order to create video or audio recordings your computer needs to be 
+    webcam-enabled.  If you don&#39;t have a webcam on your computer, you can still
+    record audio-only messages by first installing the Google Video Chat
+    plugin.
+  </div>
+  <div style="text-align: center; font-size: 1.5em; margin: 10px;">
+    <a href="http://www.google.com/chat/video" target="_blank" class="btn">Install the Video Plugin</a>
+  </div>
+  <div class="links" style="text-align: right; font-size: 0.8em; display: none;">
+    <a href="#" class="cant_record_link">Don&#39;t have a webcam?</a>
+  </div>
+</div>
+  <div id='aria_alerts' class='hide-text affix' role="alert" aria-live="assertive"></div>
+  <script>
+  INST = {"environment":"production","allowMediaComments":true,"kalturaSettings":{"domain":"nv.instructuremedia.com","resource_domain":"nv.instructuremedia.com","rtmp_domain":"fms-prod.instructuremedia.com","partner_id":"9","subpartner_id":"0","player_ui_conf":"0","kcw_ui_conf":"0","upload_ui_conf":"0","max_file_size_bytes":534773760,"do_analytics":false,"hide_rte_button":false,"js_uploader":true},"googleAnalyticsAccount":"UA-9138420-1","disableScribdPreviews":true,"enableHtml5FirstVideos":true,"logPageViews":true,"maxVisibleEditorButtons":3,"editorButtons":[{"name":"Course Info","id":6077,"url":"https:\/\/dce-course-info.herokuapp.com\/course_info\/lti_launch","icon_url":"https:\/\/dce-course-info.herokuapp.com\/static\/images\/course-info.png","canvas_icon_class":null,"width":800,"height":400},{"name":"Vimeo","id":6737,"url":"https:\/\/www.edu-apps.org\/lti_public_resources\/?tool_id=vimeo","icon_url":"https:\/\/www.edu-apps.org\/assets\/lti_public_resources\/vimeo_icon.png","canvas_icon_class":null,"width":560,"height":600},{"name":"YouTube","id":6738,"url":"https:\/\/www.edu-apps.org\/lti_public_resources\/?tool_id=youtube","icon_url":"https:\/\/www.edu-apps.org\/assets\/lti_public_resources\/youtube_icon.png","canvas_icon_class":null,"width":560,"height":600},{"name":"GitHub","id":10121,"url":"https:\/\/www.edu-apps.org\/tool_redirect?id=github","icon_url":"https:\/\/www.edu-apps.org\/tools\/github\/icon.png","canvas_icon_class":null,"width":600,"height":320},{"name":"Google Charts","id":10122,"url":"https:\/\/www.edu-apps.org\/tool_redirect?id=google_chart","icon_url":"https:\/\/www.edu-apps.org\/tools\/google_chart\/icon.png","canvas_icon_class":null,"width":930,"height":360}]};
+  ENV = {"ASSET_HOST":"https:\/\/du11hjcvx0uqb.cloudfront.net","active_brand_config":null,"url_to_what_gets_loaded_inside_the_tinymce_editor_css":"https:\/\/du11hjcvx0uqb.cloudfront.net\/dist\/brandable_css\/legacy_normal_contrast\/bundles\/what_gets_loaded_inside_the_tinymce_editor-71d4c6884f.css","current_user_id":"134345","current_user":{"id":"134345","display_name":"Ryan Ballenger","avatar_image_url":"https:\/\/harvard.instructure.com\/images\/thumbnails\/734757\/uylDtwvJK72YNJ7IpEGqFIsRw6wEGM61nKbPS4KA","html_url":"https:\/\/canvas.harvard.edu\/about\/134345"},"current_user_roles":["user","student"],"files_domain":"cluster28-files.instructure.com","DOMAIN_ROOT_ACCOUNT_ID":18750000000000001,"use_new_styles":false,"k12":false,"use_high_contrast":false,"SETTINGS":{"open_registration":false},"page_view_update_url":"\/page_views\/c8978317-e9a4-457d-a65f-ceb9c27bbbd7?page_view_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpIjoiYzg5NzgzMTctZTlhNC00NTdkLWE2NWYtY2ViOWMyN2JiYmQ3IiwidSI6MTg3NTAwMDAwMDAxMzQzNDUsImMiOiIyMDE2LTAxLTIxVDEzOjM2OjU0Ljg0WiJ9.HJ4dtgJBZ8zFAs-WcWf8_18RDSwOlM3z2Om0rb1WA6w","context_asset_string":"course_4285","ping_url":"https:\/\/canvas.harvard.edu\/api\/v1\/courses\/4285\/ping","TIMEZONE":"America\/New_York","CONTEXT_TIMEZONE":"America\/New_York","LOCALE":"en-US","TOURS":[],"ROOT_OUTCOME_GROUP":{"id":"2997","title":"Web Development Using XML","vendor_guid":null,"url":"\/api\/v1\/courses\/4285\/outcome_groups\/2997","subgroups_url":"\/api\/v1\/courses\/4285\/outcome_groups\/2997\/subgroups","outcomes_url":"\/api\/v1\/courses\/4285\/outcome_groups\/2997\/outcomes","can_edit":false,"import_url":"\/api\/v1\/courses\/4285\/outcome_groups\/2997\/import","context_id":"4285","context_type":"Course","description":null},"COURSE_ID":4285,"ASSIGNMENT_ID":42016,"EXTERNAL_TOOLS":[],"SUBMIT_ASSIGNMENT":{"ALLOWED_EXTENSIONS":["html"],"ID":42016},"badge_counts":{"submissions":0},"notices":[]};
+
+    // TODO: move this out when we have a single require call
+    require = {
+      translate: true,
+      baseUrl: '/optimized',
+      paths: {
+    "common":"compiled\/bundles\/common",
+    "jqueryui":"vendor\/jqueryui",
+    "compiled\/tinymce":"compiled\/tinymce.js?v2",
+    "demo_site":"plugins\/demo_site",
+    "migration_tool":"plugins\/migration_tool",
+    "catalog_provisioner":"plugins\/catalog_provisioner",
+    "instructure_misc_plugin":"plugins\/instructure_misc_plugin",
+    "analytics":"plugins\/analytics",
+    "multiple_root_accounts":"plugins\/multiple_root_accounts",
+    "canvasnet_registration":"plugins\/canvasnet_registration",
+    "compiled\/registration\/main_without_extensions":"compiled\/registration\/main",
+    "compiled\/registration\/main":"compiled\/registration\/main_with_extensions",
+    "compiled\/registration\/signupDialog_without_extensions":"compiled\/registration\/signupDialog",
+    "compiled\/registration\/signupDialog":"compiled\/registration\/signupDialog_with_extensions",
+    "compiled\/bundles\/modules\/account_quota_settings_without_extensions":"compiled\/bundles\/modules\/account_quota_settings",
+    "compiled\/bundles\/modules\/account_quota_settings":"compiled\/bundles\/modules\/account_quota_settings_with_extensions",
+    "canvas_quizzes":"client_apps\/canvas_quizzes",
+    "app\/config\/environments\/production":"empty:"},
+      packages : [{"name":"ic-ajax","location":"bower\/ic-ajax\/dist\/amd"},{"name":"ic-styled","location":"bower\/ic-styled"},{"name":"ic-menu","location":"bower\/ic-menu"},{"name":"ic-tabs","location":"bower\/ic-tabs\/dist\/amd"},{"name":"ic-droppable","location":"bower\/ic-droppable\/dist\/amd"},{"name":"ic-sortable","location":"bower\/ic-sortable\/dist\/amd"},{"name":"ic-modal","location":"bower\/ic-modal\/dist\/amd"},{"name":"ic-lazy-list","location":"bower\/ic-lazy-list"},{"name":"ember-qunit","location":"bower\/ember-qunit\/dist\/amd"}],
+      shim: {
+    'bower/react-router/build/umd/ReactRouter': {
+      deps: ['react'],
+      exports: 'ReactRouter'
+    },
+    'bower/react-tray/dist/react-tray': {
+      deps: ['react']
+    },
+    'bower/react-modal/dist/react-modal': {
+      deps: ['react']
+    },
+    'bower/react-tokeninput/dist/react-tokeninput': {
+      deps: ['react'],
+    },
+    'bower/react-select-box/dist/react-select-box': {
+      deps: ['react'],
+    },
+    'bower/ember/ember': {
+      deps: ['jquery', 'handlebars'],
+      exports: 'Ember'
+    },
+    'bower/ember-data/ember-data': {
+      deps: ['ember'],
+      exports: 'DS'
+    },
+    'bower/handlebars/handlebars.runtime': {
+      exports: 'Handlebars'
+    },
+    'bower/reflux/dist/reflux.js': {
+      deps: ['react'],
+      exports: 'Reflux'
+    },
+    'vendor/FileAPI/FileAPI.min': {
+      deps: ['jquery', 'vendor/FileAPI/config'],
+      exports: 'FileAPI'
+    },
+    'fixed-data-table': {
+      deps: ['object_assign', 'react'],
+      exports: 'fixed-data-table'
+    },
+    'vendor/bootstrap-select/bootstrap-select' : {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    'vendor/jquery.jcrop': {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    'vendor/jquery.smartbanner': {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    'vendor/md5': {
+      exports: 'CryptoJS'
+    },
+    'handlebars': {
+      deps: ['bower/handlebars/handlebars.runtime.amd'],
+      exports: 'Handlebars'
+    },
+    'vendor/i18n': {
+      exports: 'I18n'
+    },
+    'vendor/react-infinite-scroll.min' : {
+      deps: ['react'],
+      exports: 'InfiniteScroll'
+    },
+    'bower/tinymce/tinymce' : {
+      exports: 'tinymce'
+    },
+    'bower/axios/dist/axios' : {
+      exports: 'axios'
+    },
+    'bower/tinymce/themes/modern/theme' : {
+      deps: ['bower/tinymce/tinymce'],
+      exports: 'tinymce'
+    }
+  }
+,
+      map: {"canvas_quizzes":{"lodash":"underscore","d3":"vendor\/d3.v3","backbone":"vendor\/backbone","jquery\/instructure_date_and_time":"jquery.instructure_date_and_time","react":"old_unsupported_dont_use_react","react-router":"old_unsupported_dont_use_react-router"},"*":{"React":"react"}},
+      waitSeconds: 60
+    };
+</script>
+
+  <script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/vendor/require-749d0c60e9.js"></script>
+
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/common-207e11b422.js"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/assignment_show-d9061a2767.js"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/submit_assignment-d62b42a2d4.js"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/edit_rubric-44b52e5557.js"></script>
+<script>
+//<![CDATA[
+          require(['jquery'], function () {
+            ["https:\/\/s3.amazonaws.com\/tlt-static-prod\/canvas\/global\/global.js","https:\/\/harvard-dce.github.io\/canvas-ext\/ext.js"].forEach(function (src) {
+              var s = document.createElement('script');
+              s.src = src;
+              document.body.appendChild(s);
+            });
+          });
+
+//]]>
+</script>
+
+
+
+  <script>
+  // Determines if the scripts are loaded.
+  // When we get everything out of the views, and have a single top-level
+  // `require`, this becomes meaningless and will be abandoned.
+  (function() {
+    var attempts = 0;
+    var timeout = 10;
+    var check = function() {
+      attempts++;
+      var done = !window.requirejs.s.contexts._.defQueue.length
+      var giveup = attempts === 100; // 1 second
+      if (done || giveup) {
+        var className = document.documentElement.className;
+        document.documentElement.className = className.replace(/scripts-not-loaded/, '');
+        return;
+      }
+      setTimeout(check, timeout);
+    };
+
+    check();
+  }).call(this);
+  </script>
+
+
+</div> <!-- #application -->
+</body>
+</html>

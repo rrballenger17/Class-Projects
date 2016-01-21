@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!--
+        The Texas state flag is the 1839 national flag of the Republic of Texas. The state flag is a rectangle that has a width to length ratio of two to three. It contains one blue vertical stripe that has a width equal to one-third the length of the flag, and two equal horizontal stripes, with the upper stripe white, the lower stripe red, and each having a length equal to two-thirds the length of the flag. The flag has one white, regular five-pointed star. The five-pointed star is located in the center of the blue stripe, oriented so that one point faces upward, and sized so that the diameter of a circle passing through the five points of the star is equal to three-fourths the width of the blue stripe. The red and blue of the state flag are the same colors used in the United States flag. The red, white, and blue of the state flag represent, respectively, bravery, purity and loyalty.
+        
+        https://www.tsl.texas.gov/ref/abouttx/flagdes.html
+        
+        height:length 2:3
+        blue vertical stripe: 1/3 of length
+        white and red horizontal stripes each 1/2 of height
+        star located on center of blue stripe;
+        one point upward;
+        circle of star points is 3/4 of blue vertical stripe
+        
+        +=================
+        We'll use 600 h by 900 w for the flag dimensions
+        therefore, blue stripe is 300 h x 600 w
+
+        colors are same as US flag:
+        red   rgb(187,19,62)
+        blue  rgb(0,33,71)
+        white rgb(256,256,256)
+    -->
+    <defs>
+        <g id="cartesianstar">
+            <!-- I could easily calculate coordinates in Cartesian space -->
+            <polygon
+                points="0,100 
+                -58.8,-80.9
+                95.1,30.9
+                -95.1,30.9
+                58.8,-80.9"
+                />
+        </g>
+        <!-- TODO:  Change stroke to "none" and fill with correct rgb values -->
+        <g id="lonestar">
+            <!-- Transform the Cartesian coordinates into SVG coordinate system;
+            flip about y-axis scale it so the circle that inscribes the star
+            is 3/4 of the blue field width
+            radius is 100 to start; 
+            blue field is (1/3)*900 = 300;
+            (3/4)*300 = 225 
+            therefore radius should be 225/2 = 112.5
+            So we need to scale the lone star by a factor of 112.5/100 = 1.125
+        -->
+            <use xlink:href="#cartesianstar" transform="scale(1.125,-1.125)"
+                style="stroke:none;fill:rgb(256,256,256);"/>
+        </g>
+        <g id="blue-stripe">
+            <rect x="0" y="0" height="600" width="300" style="stroke:none;fill:rgb(0,33,71)"/>
+        </g>
+        <g id="white-stripe">
+            <rect x="0" y="0" height="300" width="600" style="stroke:none;fill:rgb(256,256,256)"/>
+        </g>
+        <g id="red-stripe">
+            <rect x="0" y="0" height="300" width="600" style="stroke:none;fill:rgb(187,19,62)"/>
+        </g>
+         <g id="border">
+            <rect x="0" y="0" height="600" width="900" style="stroke:black;fill:none"/>
+        </g>
+
+
+        <g id="flag">
+            <!-- TODO:  Add correct x and y positions when you "use" the parts -->
+            <use xlink:href="#white-stripe" x="302" y="2"/>
+            <use xlink:href="#red-stripe"  x="302" y="302"/>
+            <use xlink:href="#blue-stripe"  x="2" y="2"/>
+            <use xlink:href="#lonestar"  x="152" y="302"/>
+            <use xlink:href="#border"  x="2" y="2"/>
+        </g>
+        <g id="label">
+            <text x="440" y="710"
+                style="font-family: Verdana,Helvetica,sans-serif; font-weight: bold; font-size: 72pt; stroke: black; fill: black; text-anchor:middle"
+                > Texas </text>
+        </g>
+    </defs>
+    <use xlink:href="#flag" x="2" y="2"/>
+    <use xlink:href="#label" />
+</svg>
