@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="current_observation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="credit"/>
+                <xs:element ref="credit_URL"/>
+                <xs:element ref="image"/>
+                <xs:element ref="suggested_pickup"/>
+                <xs:element ref="suggested_pickup_period"/>
+                <xs:element ref="location"/>
+                <xs:element ref="station_id"/>
+                <xs:element ref="latitude"/>
+                <xs:element ref="longitude"/>
+                <xs:element ref="observation_time"/>
+                <xs:element ref="observation_time_rfc822"/>
+                <xs:element ref="weather"/>
+                <xs:element ref="temperature_string"/>
+                <xs:element ref="temp" maxOccurs="unbounded"/>
+                <xs:element ref="relative_humidity"/>
+                <xs:element ref="wind_string"/>
+                <xs:element ref="wind_dir"/>
+                <xs:element ref="wind_degrees"/>
+                <xs:element ref="wind_mph"/>
+                <xs:element ref="wind_kt"/>
+                <xs:element ref="pressure"/>
+                <xs:element ref="dewpoint_string"/>
+                <xs:element ref="dewpoint" maxOccurs="unbounded"/>
+                <xs:element ref="windchill_string"/>
+                <xs:element ref="windchill" maxOccurs="unbounded"/>
+                <xs:element ref="visibility_mi"/>
+                <xs:element ref="icon_url"/>
+                <xs:element ref="two_day_history_url"/>
+                <xs:element ref="ob_url"/>
+                <xs:element ref="disclaimer_url"/>
+                <xs:element ref="copyright_url"/>
+                <xs:element ref="privacy_policy_url"/>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="credit" type="xs:string"/>
+    <xs:element name="credit_URL" type="xs:string"/>
+    <xs:element name="image">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="url"/>
+                <xs:element ref="title"/>
+                <xs:element ref="link"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>    
+    <xs:element name="url">
+        <xs:complexType>
+            <xs:attribute name="value" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>     
+    <xs:element name="title">
+        <xs:complexType>
+            <xs:attribute name="value" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="link">
+        <xs:complexType>
+            <xs:attribute name="value" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="suggested_pickup" type="xs:string"/>
+    <xs:element name="suggested_pickup_period" type="xs:string"/> 
+    <xs:element name="location" type="xs:string"/> 
+    <xs:element name="station_id" type="xs:string"/> 
+    <xs:element name="latitude" type="xs:string"/> 
+    <xs:element name="longitude" type="xs:string"/> 
+    <xs:element name="observation_time" type="xs:string"/>
+    <xs:element name="observation_time_rfc822" type="xs:string"/>
+    <xs:element name="weather" type="xs:string"/>
+    <xs:element name="temperature_string" type="xs:string"/>
+    <xs:element name="temp">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="system" type="xs:string"/>
+                    <xs:attribute name="units" type="xs:string"/>
+                    <xs:attribute name="label" type="xs:string"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element> 
+    <xs:element name="relative_humidity" type="xs:string"/>
+    <xs:element name="wind_string" type="xs:string"/>
+    <xs:element name="wind_dir" type="xs:string"/>
+    <xs:element name="wind_degrees" type="xs:string"/>
+    <xs:element name="wind_mph" type="xs:string"/>
+    <xs:element name="wind_kt" type="xs:string"/>
+    <xs:element name="pressure">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="string"/>
+                <xs:element ref="mb"/>
+                <xs:element ref="in"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>    
+    <xs:element name="string" type="xs:string"/> 
+    <xs:element name="mb" type="xs:string"/>
+    <xs:element name="in" type="xs:string"/>
+    <xs:element name="dewpoint_string" type="xs:string"/>
+    <xs:element name="dewpoint">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="system" type="xs:string"/>
+                    <xs:attribute name="units" type="xs:string"/>
+                    <xs:attribute name="label" type="xs:string"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element> 
+    <xs:element name="windchill_string" type="xs:string"/>
+    <xs:element name="windchill">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="system" type="xs:string"/>
+                    <xs:attribute name="units" type="xs:string"/>
+                    <xs:attribute name="label" type="xs:string"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>  
+    <xs:element name="visibility_mi" type="xs:string"/>
+    
+    <xs:element name="icon_url" >
+        <xs:complexType>
+            <xs:attribute name="href" type="xs:string"/>
+            <xs:attribute name="label" type="xs:string"/>
+            <xs:attribute name="role" type="xs:string"/>
+            <xs:attribute name="title" type="xs:string"/>        
+        </xs:complexType>
+    </xs:element>  
+    <xs:element name="two_day_history_url">
+        <xs:complexType>
+            <xs:attribute name="href" type="xs:string"/>
+            <xs:attribute name="label" type="xs:string"/>
+            <xs:attribute name="role" type="xs:string"/>
+            <xs:attribute name="title" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>  
+    <xs:element name="ob_url">
+        <xs:complexType>
+            <xs:attribute name="href" type="xs:string"/>
+            <xs:attribute name="label" type="xs:string"/>
+            <xs:attribute name="role" type="xs:string"/>
+            <xs:attribute name="title" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>  
+    <xs:element name="disclaimer_url">
+        <xs:complexType>
+            <xs:attribute name="href" type="xs:string"/>
+            <xs:attribute name="label" type="xs:string"/>
+            <xs:attribute name="role" type="xs:string"/>
+            <xs:attribute name="title" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>  
+    <xs:element name="copyright_url">
+        <xs:complexType>
+            <xs:attribute name="href" type="xs:string"/>
+            <xs:attribute name="label" type="xs:string"/>
+            <xs:attribute name="role" type="xs:string"/>
+            <xs:attribute name="title" type="xs:string"/>
+        </xs:complexType>
+    </xs:element> 
+    <xs:element name="privacy_policy_url">
+        <xs:complexType>
+            <xs:attribute name="href" type="xs:string"/>
+            <xs:attribute name="label" type="xs:string"/>
+            <xs:attribute name="role" type="xs:string"/>
+            <xs:attribute name="title" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

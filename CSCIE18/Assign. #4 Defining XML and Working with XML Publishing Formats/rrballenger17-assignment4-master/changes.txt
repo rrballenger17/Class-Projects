@@ -1,0 +1,109 @@
+
+
+1. I used the nesting to group elements about the same topic, specifically pressure, instead of tying them together with a prefix in the element name. It is clear which elements pertain to pressure instead someone needing to search all the element names.
+	Original code:
+		<pressure_string>1012.4 mb</pressure_string>
+    		<pressure_mb>1012.4</pressure_mb>
+    		<pressure_in>29.90</pressure_in>
+	Improved code:
+		<pressure>
+        			<string>1012.4 mb</string>
+        			<mb>1012.4</mb>
+        			<in>29.90</in>
+    		</pressure>
+
+2. For the six elements regarding temperature, I removed the metadata from the element name and put this information into attributes. This makes less distinct element names and enables easier access in processing tasks.
+
+	Original code:
+		 <temp_f>48.0</temp_f>
+    		<temp_c>8.9</temp_c>
+
+		<dewpoint_f>45.0</dewpoint_f>
+    		<dewpoint_c>7.2</dewpoint_c>
+
+		<windchill_f>45</windchill_f>
+   		<windchill_c>7</windchill_c>
+
+	Improved code:
+		<temp system="english" units="Fahrenheit" label="&#176;F">48.0</temp>
+    		<temp system="metric"  units="Celsius" label="&#176;C">8.9</temp>
+
+		<dewpoint system="english" units="Fahrenheit" label="&#176;F">45.0</dewpoint>
+    		<dewpoint system="metric"  units="Celsius" label="&#176;C">7.2</dewpoint>
+
+		<windchill system="english" units="Fahrenheit" label="&#176;F">45</windchill>
+    		<windchill system="metric"  units="Celsius" label="&#176;C">7</windchill>
+
+3. I used mixed content to contain the image element’s data, instead of only attributes or elements. Using attributes causes smaller file sizes and mixed content is consider good XML, as noted in lecture.
+	Original code: 
+		<image>
+       			<url>http://weather.gov/images/xml_logo.gif</url>
+        			<title>NOAA's National Weather Service</title>
+        			<link>http://weather.gov</link>
+    		</image>
+
+
+	Improved code:
+		<image>
+        			<url value="http://weather.gov/images/xml_logo.gif"/>
+        			<title value="NOAA's National Weather Service"/>
+        			<link value="http://weather.gov"/>
+    		</image>
+
+
+4. In the two elements containing times, I converted the string to the international date format. This makes processing the XML easier and standardized, as opposed to having a custom time string that requires custom handling.
+	Original code:
+		<observation_time>Last Updated on Nov 12 2015, 10:54 am EST</observation_time>
+    		<observation_time_rfc822>Thu, 12 Nov 2015 10:54:00 -0500</observation_time_rfc822>
+
+	Improved code:
+		<observation_time>2015-11-12T10:54:00-0400</observation_time>
+    		<observation_time_rfc822>2015-11-12T10:54:00-0500</observation_time_rfc822>
+
+5. I converted the url elements to have the form of an HTML link with attributes for the href, role, label, and title. This matches the formatting on the web page and gives the XML author precise control over the name of the link and the link’s title that appear to the user.
+
+	Original code:
+		<icon_url_base>http://forecast.weather.gov/images/wtf/small/</icon_url_base>
+    		<two_day_history_url>http://www.weather.gov/data/obhistory/KBOS.html</two_day_history_url>
+    		<icon_url_name>fg.png</icon_url_name>
+    		<ob_url>http://www.weather.gov/data/METAR/KBOS.1.txt</ob_url>
+    		<disclaimer_url>http://weather.gov/disclaimer.html</disclaimer_url>
+    		<copyright_url>http://weather.gov/disclaimer.html</copyright_url>
+    		<privacy_policy_url>http://weather.gov/notice.html</privacy_policy_url>
+
+
+	Improved code:
+		<icon_url
+       	 		href="fg.png"
+        			label="Icon link"
+        			role="http://forecast.weather.gov/images/wtf/small"
+        			title="View image" />
+    		<two_day_history_url
+        			href="KBOS.html"
+        			label="Previous history"
+        			role="http://www.weather.gov/data/obhistory"
+        			title="Information on weather for the past two days" />
+    		<ob_url
+        			href="KBOS.1.txt"
+        			label="Location data"
+        			role="http://www.weather.gov/data/METAR"
+        			title="More data on this location" />
+    		<disclaimer_url
+        			href="disclaimer.html"
+        			label="Disclaimer"
+        			role="http://weather.gov"
+        			title="Data use information for user" />
+    		<copyright_url
+        			href="disclaimer.html"
+        			label="Copyright"
+        			role="http://weather.gov"
+        			title="Information on use of this page's data" />
+   		<privacy_policy_url
+        			href="notice.html"
+        			label="Privacy Policy"
+        			role="http://weather.gov"
+        			title="Full privacy policy" />
+
+
+
+

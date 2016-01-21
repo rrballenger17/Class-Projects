@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<!--[if gte IE 9 ]><html class="ie ie9 scripts-not-loaded" lang="en"> <![endif]-->
+<!--[if !(IE)]><!--> <html class="not-ie scripts-not-loaded" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>XSL-FO and SVG</title>
+  <!--[if lte IE 8]> <meta http-equiv=refresh content="0; URL=/ie-8-is-not-supported.html" /> <![endif]-->
+
+  <link href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" rel="apple-touch-icon" />
+
+  
+  <link href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/common-ae59afe451.css" media="all" rel="stylesheet" />
+  
+  <meta content="app-id=480883488" name="apple-itunes-app" />
+<meta content="app-id=com.instructure.candroid" name="google-play-app" />
+  <link href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/assignments-8685e0e7d6.css" media="all" rel="stylesheet" />
+<link href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/learning_outcomes-a02a9de086.css" media="all" rel="stylesheet" />
+  
+  <link href="https://s3.amazonaws.com/tlt-static-prod/canvas/global/global.css" media="all" rel="stylesheet" />
+  <script>
+    // listen for any clicks on links that have href="#" and queue them to be fired on dom ready.
+      function _earlyClick(e){
+        var cur = e.target || e.srcElement;
+        while ( cur && cur.ownerDocument ) {
+          if ( cur.getAttribute('href') == '#' ) {
+            e.preventDefault();
+            _earlyClick.clicks = _earlyClick.clicks || [];
+            _earlyClick.clicks.push(cur);
+            break;
+          }
+          cur = cur.parentNode;
+        }
+      }
+      document.addEventListener('click', _earlyClick);
+  </script>
+</head>
+
+<body class="with-left-side course-menu-expanded with-right-side assignments context-course_4285">
+<noscript>
+  <div role="alert" class="ic-flash-static ic-flash-error">
+    <h1>You need to have JavaScript enabled in order to access this site.</h1>
+  </div>
+</noscript>
+
+
+
+
+<ul role="alert" aria-live="assertive" id="flash_message_holder"></ul>
+<div role="alert" aria-live="assertive" id="flash_screenreader_holder" class="screenreader-only"></div>
+
+<div id="application" >
+
+    <div id="header" class="no-print ">
+      <div id="header-inner">
+        <a href="#content" id="skip_navigation_link">Skip To Content</a>
+        <a id="header-logo" href="https://canvas.harvard.edu/">My Dashboard</a>
+        <b id="header-logo-secondary"></b>
+        <div id="topbar" role="navigation" aria-label="User Menu">
+    <ul id="identity">
+      <li class="user_name"><a href="/about/134345">Ryan Ballenger</a></li>
+      <li class="first inbox">
+        <a href="/conversations?">
+          <span>Inbox</span>
+              <b class="unread-messages-count" style="display: none;">0</b>
+        </a>
+      </li>
+      <li><a href="/profile/settings">Settings</a></li>
+    <li class="user_id" style="display: none;">134345</li>
+    <li class="course_id" style="display: none;">4285</li>
+    <li id="current_context_code" style="display: none;">course_4285</li>
+    <li class="user_long_name" style="display: none;">Ryan Ballenger</li>
+    <li class="logout">
+      <form accept-charset="UTF-8" action="/logout" id="identity-logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="delete" /><input name="authenticity_token" type="hidden" value="uHkD6PHKDFGgUGNyNLL4nM0nB/qqhak4p4rDX3omyniMIVOQx4ZHGOgfKidx57LTgFVpqdrqxkzL3JU+DRGMSg==" /></div>
+        <a href="/logout" onclick="document.getElementById(&#39;identity-logout-form&#39;).submit(); return false">Logout</a>
+</form>    </li>
+    <li id="identity-help-container">
+      <a class="support_url help_dialog_trigger" data-track-category="help system" data-track-label="help button" href="http://help.instructure.com/">Help</a>
+    </li>
+</ul>
+
+</div>
+
+        
+          <ul role="navigation" id="menu" aria-label="Main Navigation">
+
+    <li id="courses_menu_item" class="menu-item">
+        <a href="/courses" class="menu-item-title">
+
+    Courses    <span class="menu-item-title-icon"></span> <i class="icon-mini-arrow-down"></i>
+  </a>
+  <div class="menu-item-drop">
+    <table cellspacing="0">
+      <tr>
+        <td class="menu-item-drop-column" id="menu_enrollments">
+  <div class="menu-item-header-container">
+    <span class="menu-item-heading">
+      My Courses
+    </span>
+    <div class="menu-item-customize">
+      <a class="customListOpen" href="/courses">View All or Customize (2)</a>
+    </div>
+  </div>
+  <ul class="menu-item-drop-column-list">
+    <li class="customListItem" data-id="4296">
+  <a href="/courses/4296">
+    <span class="name ellipsis" title="Java and the Hadoop Distributed File System - CSCI E-55 (14298)">Java and the Hadoop Distributed File System</span>
+      <span class="subtitle ellipsis enrollment_term menu-item-drop-float-right">2015-2016 Fall</span>
+    <span class="subtitle ellipsis">enrolled as: Student</span>
+  </a>
+</li>
+<li class="customListItem" data-id="4285">
+  <a href="/courses/4285">
+    <span class="name ellipsis" title="Web Development Using XML - CSCI E-18 (14297)">Web Development Using XML</span>
+      <span class="subtitle ellipsis enrollment_term menu-item-drop-float-right">2015-2016 Fall</span>
+    <span class="subtitle ellipsis">enrolled as: Student</span>
+  </a>
+</li>
+
+  </ul>
+</td>
+
+        
+        
+      </tr>
+    </table>
+  </div>
+
+    </li>
+    <li id="grades_menu_item" class="menu-item">
+      <a href="/grades" class="menu-item-no-drop">
+        Grades
+      </a>
+    </li>
+    <li id="calendar_menu_item" class="menu-item">
+      <a href="/calendar" class="menu-item-no-drop">
+        Calendar
+      </a>
+    </li>
+    
+  </ul>
+
+      </div>
+    </div>
+
+  <div id="instructure_ajax_error_box">
+    <div style="text-align: right; background-color: #fff;"><a href="#" class="close_instructure_ajax_error_box_link">Close</a></div>
+    <iframe id="instructure_ajax_error_result" src="about:blank" style="border: 0;"></iframe>
+  </div>
+
+  
+
+  <div id="wrapper-container" >
+    <div id="wrapper" >
+    
+          <div id="left-side" class="list-view ">
+              <h1 id="section-tabs-header">
+                CSCI E-18 (14297)
+              </h1>
+              <span id="section-tabs-header-subtitle" class="ellipsis">2015-2016 Fall</span>
+            <nav aria-label="context" role="navigation"><ul id="section-tabs"><li class="section"><a class="home" href="/courses/4285">Home</a></li><li class="section"><a aria-label="Course Announcements" class="announcements" href="/courses/4285/announcements">Announcements</a></li><li class="section"><a class="syllabus" href="/courses/4285/assignments/syllabus">Syllabus</a></li><li class="section"><a class="context_external_tool_10673" href="/courses/4285/external_tools/10673">Virtual Classroom</a></li><li class="section"><a class="context_external_tool_1" href="/courses/4285/external_tools/1">Chat</a></li><li class="section"><a aria-label="Course Discussions" class="discussions" href="/courses/4285/discussion_topics">Discussions</a></li><li class="section"><a class="conferences" href="/courses/4285/conferences">Conferences</a></li><li class="section"><a aria-label="Course Assignments" class="assignments active" href="/courses/4285/assignments">Assignments</a></li><li class="section"><a class="quizzes" href="/courses/4285/quizzes">Quizzes</a></li><li class="section"><a class="context_external_tool_7453" href="/courses/4285/external_tools/7453">Say Hello!</a></li><li class="section"><a class="context_external_tool_1869" href="/courses/4285/external_tools/1869">Student Locations</a></li><li class="section"><a class="context_external_tool_13815" href="/courses/4285/external_tools/13815">Student Resources</a></li><li class="section"><a class="context_external_tool_14120" href="/courses/4285/external_tools/14120">Library Reserves</a></li></ul></nav>
+        </div>
+        <div id="main" >
+          <div id="not_right_side" >
+            <div id="content-wrapper" >
+                <nav aria-label="breadcrumbs" id="breadcrumbs" role="navigation"><ul><li class="home"><a href="/"><span class="ellipsible">      <i class="icon-home"
+         title="My Dashboard">
+        <span class="screenreader-only">My Dashboard</span>
+      </i>
+</span></a></li><li><a href="/courses/4285"><span class="ellipsible">CSCI E-18 (14297)</span></a></li><li><a href="/courses/4285/assignments"><span class="ellipsible">Assignments</span></a></li><li><a href="https://canvas.harvard.edu/courses/4285/assignments/40768"><span class="ellipsible">XSL-FO and SVG</span></a></li></ul></nav>
+                
+              <div id="content" role="main" class="container-fluid">
+                
+
+
+<div id="assignment_show" class="assignment content_underline_links">
+    <!--Student View-->
+    <div class='assignment-title'>
+      <div class='title-content'>
+        <h1 class="title">
+          XSL-FO and SVG
+        </h1>
+      </div>
+      <div class="edit-content">
+        
+      </div>
+      <div class='assignment-buttons'>
+        
+      </div>
+    </div>
+    <ul class='student-assignment-overview'>
+      <li>
+        <span class='title'>Due</span>
+        <span class='value'>
+          <span class="date_text">
+                <span class="display_date">Nov 13, 2015</span> by 
+                <span class="display_time">12:15pm</span>
+          </span>
+        </span>
+      </li>
+      <li>
+        <span class='title'>Points</span>
+        <span class='value'>200</span>
+      </li>
+      
+      <div class="clear"></div>
+    </ul>
+
+  <div class="clear"></div>
+
+
+  <div class="clear"></div>
+
+  <div class="description user_content student-version"><p>Assignment 3 focuses on creating print (PDF via XSL-FO) and graphics (SVG) content using XQuery, XSLT, and eXist.  The data is from course data from the FAS at Harvard which you have already worked with in Assignment 2.  An example of a single course file is at: <a id="" class="" title="" href="https://gist.github.com/dpheitmeyer/e1f4c5f4e6ee2327bbb6" target="">SCIPHUNV 27 - The Science of Cooking</a></p>
+<p>This assignment is distributed via a GitHub repository, and you will need to submit the assignment via GitHub as well. The GitHub repository that has been created for you is in the form of <code>jharvard-assignment3</code>, where <i>jharvard</i> is your GitHub username.</p>
+<p>The repository contains essential files for your eXist application, including course data. You will need to clone your repository, build the xar file, deploy to eXist. Once you deploy, check it out in your browser — you should see a test page that we put in so you can confirm things are working! <br><img src="/courses/4285/files/1369795/preview" alt="assignment3-index.png" width="379" height="291"><br>You'll then edit the project files, periodically synchronizing (exporting) the files from eXist back to your local repository.</p>
+<p>For this assignment, we have given you a completely functional <code>controller.xql</code> file as well as a working <code>xquery/pdf.xq</code> file (this does the transform and rendering).  You do not need to edit these at all, but feel free to inspect them to see what they are doing!</p>
+<h3>Courses - PDF via XSL-FO</h3>
+<p>Here you will author an XSLT (<code>xsl/course-listing-fo.xsl</code>) that will produce XSL-FO from course data.  Example PDF files are at (these aren't meant to be reproduced exactly, but to give an idea of what to aim for):</p>
+<ul>
+<li><a id="" class=" instructure_scribd_file instructure_file_link" title="astronomy.pdf" href="/courses/4285/files/1369828/download?wrap=1">astronomy.pdf</a></li>
+<li><a id="" class=" instructure_scribd_file instructure_file_link" title="gened.pdf" href="/courses/4285/files/1369827/download?wrap=1">gened.pdf</a></li>
+</ul>
+<p><img src="/courses/4285/files/1369798/preview" alt="assignment3-pdf-toc.png" width="369" height="266"><img src="/courses/4285/files/1369799/preview" alt="sciphunv27-pdf-annotated.png" width="362" height="261"></p>
+<p>You can also take inspiration from how course details are displayed from the official "my.harvard" site:<br> <img src="/courses/4285/files/1369862/preview" alt="sciphunv27-myharvard.png" width="462" height="265"></p>
+<h4>Requirements and Suggestions</h4>
+<ul>
+<li>Your PDF should have a table of contents.</li>
+<li>The table of contents entries should be linked internally to the course content.</li>
+<li>Courses should be sorted based on course group (see the "Gened" PDF), then by numeric part of the short title, and lastly by section (@section).</li>
+<li>About @section label:  Section labels are used to distinguish different classes of the same course. For an example, see "ASTRON 300" — a single course with many classes, each having different section labels within each term.  By default, section labels are "001" — these are typically not displayed unless there are other classes with the same course.  Compare SCIPHUNV 27 with ASTRON 300 for examples — the former has a section of "001" but is not displayed because there is only one class of the SCIPHUNV 27 course, whereas the latter has has several classes of the same course, so the section labels are displayed.</li>
+<li>Instructor names should be sorted by @role and then by @seniority_sort (both are data-type="number")</li>
+<li>Your detailed course listing should include:
+<ul>
+<li>Title</li>
+<li>Short title, section if appropriate</li>
+<li>Instructor names</li>
+<li>Term</li>
+<li>Meeting days and times</li>
+<li>Description</li>
+<li>Notes</li>
+</ul>
+</li>
+<li>PDF should contain a header or footer that includes the page number and total number of pages (e.g. "Page X of Y")</li>
+<li>Use <code>xsl:attribute-set</code> to define sets of styles you will use</li>
+<li>Page break after you are done with the table of contents</li>
+</ul>
+<h3>SVG Chart of Top 25 Courses by Enrollment</h3>
+<p><span>The main purpose of this exercise is to write XQuery that produces an SVG graph of the "Top 25 Largest Enrolled Courses". You'll need to edit </span><code>xquery/top25courses.xq</code><span> and use the data in </span><code>data/enrollment.xml</code>.</p>
+<p>The PDF you will produce should look something like:<br><img src="/courses/4285/files/1369802/preview" alt="top25enrollments.png"></p>
+<h4>Requirements</h4>
+<ul>
+<li>Top 25 courses by greatest "total enrollment" should be displayed.</li>
+<li>XQuery should generate a valid SVG file.  You can validate the SVG files at<br><a href="https://validator.w3.org/#validate_by_input">https://validator.w3.org/#validate_by_input</a>
+</li>
+<li>Label each part of your chart with the course "short_title"</li>
+<li>Include a label that contains the value of the total enrollment</li>
+</ul>
+<h4>Hints</h4>
+<ul>
+<li>
+<strong>data( ) function.</strong>  To get the attribute value (as opposed to the attribute node itself), you'll need to use the <code>data()</code> function.<br>See:  <a href="https://gist.github.com/dpheitmeyer/7a3d12aa94fb71a2e6b3">https://gist.github.com/dpheitmeyer/7a3d12aa94fb71a2e6b3</a> </li>
+<li>
+<strong>Sorting</strong>. Create a <code>$sorted-courses</code> variable where you sort the enrollments by <code>@total_enrollment</code> (descending). Use this sorted course list to get the top 25<br>See:  <a href="https://gist.github.com/dpheitmeyer/dbab9cff7662b0cf3bfc">https://gist.github.com/dpheitmeyer/dbab9cff7662b0cf3bfc</a> </li>
+<li>
+<strong>subsequence( ) function.</strong>  To grab the first 25 of your sorted list, you'll want to look at the <code>subsequence()</code> function.<br>See:  <a href="https://gist.github.com/dpheitmeyer/dbab9cff7662b0cf3bfc">https://gist.github.com/dpheitmeyer/dbab9cff7662b0cf3bfc</a> </li>
+<li>
+<strong>Getting the "position".</strong>  Knowing the position will be helpful so you know how to position rectangle and labels for that course. For this, you'll want to use the <code>at</code> expression within the <code>for</code> of your <code>FLWOR</code> statement — e.g. <br><code>for $course at $position in $sorted-courses ...</code> <br>so that you will have access to both <code>$course</code> and <code>$position</code> (starts with 1). Note that the <code>position()</code> function won't work in an XQuery iteration like it does within an XSLT iteration.<br>See: <a href="https://gist.github.com/dpheitmeyer/d3115952822b5277fd4d">https://gist.github.com/dpheitmeyer/d3115952822b5277fd4d</a> and <br><a href="https://gist.github.com/dpheitmeyer/932ff269aa0bae7f5e4a">https://gist.github.com/dpheitmeyer/932ff269aa0bae7f5e4a</a>
+</li>
+</ul></div>
+
+
+  <div style="display: none;">
+    <span class="timestamp">1447434900</span>
+    <span class="due_date_string">11/13/2015</span>
+    <span class="due_time_string">12:15pm</span>
+  </div>
+</div>
+
+
+
+
+
+<div id="rubrics" style="margin-bottom: 10px;">
+    <div
+  class="rubric_container rubric  for_grading"
+  id="rubric_1212"
+  style=""
+  tabindex="0"
+>
+  <div class="screenreader-only"><h2>Rubric</h2></div>
+  <div class="rubric_title">
+    <div style="float: right; display: none;" class="links displaying">
+      <a
+        href="/courses/4285/rubrics/1212?rubric_association_id=1993"
+        class="copy_edit edit_rubric_link no-print no-hover"
+        style="display: none;"
+        title="Edit Rubric"
+        aria-label="Edit Rubric"
+        role="button"
+      ><i class="icon-edit standalone-icon"></i></a>
+      <a
+        href="https://canvas.harvard.edu/search/rubrics?q="
+        class="find_rubric_link no-print no-hover"
+        style="display: none;"
+        title="Find Another Rubric"
+        aria-label="Find Another Rubric"
+        role="button"
+      ><i class="icon-search standalone-icon"></i></a>
+        <a
+          href="/courses/4285/rubric_associations/1993"
+          class="delete_rubric_link no-print no-hover"
+          style="display: none;"
+          title="Delete Rubric"
+          aria-label="Delete Rubric"
+          role="button"
+        ><i class="icon-trash standalone-icon"></i></a>
+      <div style="display: none;">
+        <div class="use_for_grading">true</div>
+        <div class="free_form_criterion_comments">true</div>
+        <div class="hide_score_total">&nbsp;</div>
+        <div class="rubric_association_id">1993</div>
+        <div class="user_id">&nbsp;</div>
+        <div class="assessment_type"></div>
+        <a href="/courses/4285/rubric_associations/1993/assessments/%7B%7B%20assessment_id%20%7D%7D" rel="nofollow" class="edit_assessment_link">&nbsp;</a>
+        <a href="/courses/4285/rubrics/%7B%7B%20rubric_id%20%7D%7D" class="edit_rubric_url">&nbsp;</a>
+          <a href="/courses/4285/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url">&nbsp;</a>
+      </div>
+    </div>
+    <div style="float: right; font-size: 0.8em; display: none;" class="links displaying locked">
+      <span style="">Can&#39;t change a rubric once you&#39;ve started using it.</span>
+        <a href="/courses/4285/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url" style="display: none;">&nbsp;</a>
+    </div>
+
+    <div class="editing" style="float: right;">
+      <a href="https://canvas.harvard.edu/search/rubrics?q=" class="find_rubric_link icon-search" style="display: none;" title="Find Existing Rubric">Find a Rubric</a>
+    </div>
+    <div class="editing" style="text-align: left">
+      <label for="rubric-title">Title:</label>
+      <input id="rubric-title" type="text" class="no-margin-bottom" name="title" value="XSL-FO and SVG" style="width: 200px;" maxlength="255" aria-label="Title:"/>
+      <a href="https://canvas.harvard.edu/search/rubrics?q=" style="display: none;"><img alt="Find 6164443e2a" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/find-6164443e2a.png" /> Find Rubric</a>
+        <div class="editing" style="font-size: 0.8em;">Keep in mind that 33 students have already been assessed using this rubric.  Changing it will affect their evaluations.</div>
+    </div>
+    <div class="displaying">
+      <span class="title" tabindex="-1">XSL-FO and SVG</span>
+    </div>
+    <div class="has-assessments-warning" style="display: none;">
+      You&#39;ve already rated students with this rubric.  Any major changes could affect their assessment results.
+    </div>
+  </div>
+<table class="rubric_table">
+<caption>
+  <div class="screenreader-only">
+    <span class="title">XSL-FO and SVG</span>
+  </div>
+</caption>
+<thead>
+  <tr>
+    <th scope="col">Criteria</th>
+    <th scope="col">Ratings</th>
+    <th scope="col">Pts</th>
+    <th scope="col" class="editing">&nbsp;</th>
+  </tr>
+</thead>
+<tbody>
+      
+<tr id="criterion_1212_6277" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">PDF should have a table of contents</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_6277</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_6277" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_6277">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="30" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">30</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_313" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">The table of contents entries should be linked internally to the course content.</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_313</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_313" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_313">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="30" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">30</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_1960" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">Courses should be sorted based on course group (see the &quot;Gened&quot; PDF), then by numeric part of the short title, and lastly by section (@section).</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_1960</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_1960" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_1960">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="12" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">12</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_5377" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">About @section label</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_5377</span>
+      <div class="long_description_holder editing ">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;">About @section label: Section labels are used to distinguish different classes of the same course. For an example, see &quot;ASTRON 300&quot; — a single course with many classes, each having different section labels within each term.  By default, section labels are &quot;001&quot; — these are typically not displayed unless there are other classes with the same course.  Compare SCIPHUNV 27 with ASTRON 300 for examples — the former has a section of &quot;001&quot; but is not displayed because there is only one class of the SCIPHUNV 27 course, whereas the latter has has several classes of the same course, so the section labels are displayed.</textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; " class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+              <option value="*%20Sections%20not%20conditionally%20displayed%20as%20expected%20(-6%20pts)" class="comment">* Sections not conditionally displayed as expected </option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_5377" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_5377">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="12" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">12</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_37" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">Instructor names should be sorted by @role and then by @seniority_sort (both are data-type=&quot;number&quot;)</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_37</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_37" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_37">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="10" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">10</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_6003" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">detailed course listing should include: Title, Short title, section if appropriate, Instructor names, Term, Meeting days and times, Description and Notes</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_6003</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_6003" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_6003">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="16" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">16</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_4264" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">PDF should contain a header or footer that includes the page number and total number of pages (e.g. &quot;Page X of Y&quot;)</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_4264</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_4264" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_4264">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="14" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">14</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_1301" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">Use xsl:attribute-set to define sets of styles you will use</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_1301</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_1301" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_1301">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="10" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">10</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_4746" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">Page break after you are done with the table of contents</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_4746</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_4746" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_4746">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="10" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">10</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_9026" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">Top 25 courses by greatest &quot;total enrollment&quot; should be displayed</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_9026</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_9026" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_9026">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="30" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">30</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_7405" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">XQuery should generate a valid SVG file</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_7405</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_7405" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_7405">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="10" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">10</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_7203" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">Label each part of your chart with the course &quot;short_title&quot;</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_7203</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_7203" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_7203">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="8" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">8</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+      
+<tr id="criterion_1212_7133" class="criterion   " style="">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">Include a label that contains the value of the total enrollment</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;">1212_7133</span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points"></span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <div class="custom_ratings_entry assessing">
+        <div style="margin-left: 5px; margin-top: 2px; display: none;" class="saved_custom_rating_holder">
+          <select class="saved_custom_rating">
+            <option value="">[ Select ]</option>
+          </select>
+        </div>
+        <textarea style="margin: 5px; min-width: 100px; height: 35px;" class="custom_rating_field"></textarea>
+        <div>
+          <input type="checkbox" id="save_criterion_message_1212_7133" class="save_custom_rating" value="1"/>
+          <label for="save_criterion_message_1212_7133">Save this comment for reuse</label>
+        </div>
+      </div>
+      <div class="displaying custom_rating_comments not_assessing" style="font-size: 0.8em; padding: 0px 5px;">
+        
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="8" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">8</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+  
+<tr id="criterion_blank" class="criterion blank  " style="display: none;">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">Description of criterion</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;"></span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points">5</span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <table class="ratings" style=""><tr>
+          <td id="rating_blank" class="rating edge_rating" tabindex="0">
+          <div class="container">
+            <div class="description rating_description_value">Full Marks</div>
+            <span class="nobr"><span class="points">5</span> pts</span>
+            <span class="rating_id" style="display: none;">blank</span>
+              <div class="links">
+                <a href="#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+                <a href="#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+                <!-- Hidden if last -->
+                <a href="#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+              </div>
+          </div>
+          </td>
+          <td id="rating_blank_2" class="rating edge_rating" tabindex="0">
+          <div class="container">
+            <div class="description rating_description_value">No Marks</div>
+            <span class="nobr"><span class="points">0</span> pts</span>
+            <span class="rating_id" style="display: none;">blank_2</span>
+              <div class="links">
+                <a href="#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+                <a href="#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+                <!-- Hidden if last -->
+                <a href="#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+              </div>
+          </div>
+          </td>
+      </tr></table>
+      <div style="display: none; font-style: italic; font-size: 0.8em; margin: 5px;" class="custom_ratings">
+        This area will be used by the assessor to leave
+        comments related to this criterion.
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="5" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">5</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+        <a href="#" class="no-hover criterion_comments_link" title="Additional Comments">
+          <img alt="Additional Comments" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/rubric_comment-ddae8546ab.png" />
+        </a>
+        <div class="custom_rating" style="display: none;"></div>
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+  <tr class="summary" style="">
+    <td colspan="4">
+      <div style="float: right;" class="total_points_holder">
+        <span style="padding-right: 10px;">Total Points:
+            <span class="rubric_total">200</span> <span class="assessing">out of 200</span>
+        </span>
+      </div>
+      <div style="float: left;" class="editing">
+      <a href="#" class="icon-add add_criterion_link">Add Criterion</a>
+      &nbsp;&nbsp;<a href="#" class="icon-search find_outcome_link outcome">Find Outcome</a>
+      </div>
+      <div class="clear"></div>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<table style="display: none;">
+  <tr id="edit_rubric">
+    <td colspan="4">
+      <form id="edit_rubric_form" class="edit-rubric-form no-margin-bottom">
+        <div class="rubric_custom_ratings" style="">
+          <input type="checkbox" id="rubric_custom_rating" class="rubric_custom_rating" checked/>
+          <label for="rubric_custom_rating">I&#39;ll write free-form comments when assessing students</label>
+        </div>
+          <div class="rubric_grading" style="">
+            <input type="checkbox" id="grading_rubric" class="grading_rubric_checkbox" checked/>
+            <label for="grading_rubric">Use this rubric for assignment grading</label>
+          </div>
+        <div class="totalling_rubric" style="">
+          <input type="checkbox" id="totalling_rubric" class="totalling_rubric_checkbox" />
+          <label for="totalling_rubric">Hide score total for assessment results</label>
+        </div>
+        <div class="button-container">
+          <button type="button" class="btn btn-small cancel_button">Cancel</button>
+          <button type="submit" class="btn btn-small save_button btn-primary">Create Rubric</button>
+        </div>
+      </form>
+    </td>
+  </tr>
+</table>
+
+  <div style="display: none;" id="rubric_parameters">
+    <input type="hidden" name="rubric_association[association_type]" value="Assignment"/>
+    <input type="hidden" name="rubric_association[association_id]" value="40768"/>
+    <input type="hidden" name="rubric_association[purpose]" value="grading"/>
+  </div>
+  <div id="rubric_long_description_dialog" style="display: none;">
+  <div class="description" style="border-bottom: 1px solid #ccc; padding: 5px 0; font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">
+  </div>
+  <div class="editing">
+    <textarea class="long_description" aria-label="Long Description" name="long_description" style="width: 370px;"></textarea>
+    <div class="button-container">
+      <button type="button" class="btn save_button">Update Description</button>
+      <button type="button" class="btn btn button-secondary cancel_button">Cancel</button>
+    </div>
+  </div>
+  <div class="displaying">
+    <div class="long_description">
+    </div>
+  </div>
+</div>
+<div id="rubric_criterion_comments_dialog" style="display: none;">
+  <div
+    class="criterion_description"
+    style="border-bottom: 1px solid #ccc; padding: 5px 0; font-size: 1.2em; font-weight: bold; margin-bottom: 5px;"
+    tabindex="-1"
+  ></div>
+  <div class="editing">
+    <label for="criterion_comments_textarea">
+      Additional Comments:
+    </label>
+    <textarea 
+      id="criterion_comments_textarea"
+      class="criterion_comments"
+      name="criterion_comments"
+      style="width: 370px;"></textarea>
+    <div class="button-container">
+      <button type="button" class="btn save_button">Update Comments</button>
+      <button type="button" class="btn btn button-secondary cancel_button">Cancel</button>
+    </div>
+  </div>
+  <div class="displaying">
+    Additional Comments:
+    <div class="criterion_comments" style="margin-top: 10px;">
+    </div>
+  </div>
+</div>
+
+</div>
+<div
+  class="rubric_container rubric  "
+  id="default_rubric"
+  style="display: none;"
+  tabindex="0"
+>
+  <div class="screenreader-only"><h2>Rubric</h2></div>
+  <div class="rubric_title">
+    <div style="float: right; display: none;" class="links displaying">
+      <a
+        href="/courses/4285/rubrics/%7B%7B%20id%20%7D%7D"
+        class=" edit_rubric_link no-print no-hover"
+        style=""
+        title="Edit Rubric"
+        aria-label="Edit Rubric"
+        role="button"
+      ><i class="icon-edit standalone-icon"></i></a>
+      <a
+        href="https://canvas.harvard.edu/search/rubrics?q="
+        class="find_rubric_link no-print no-hover"
+        style=""
+        title="Find Another Rubric"
+        aria-label="Find Another Rubric"
+        role="button"
+      ><i class="icon-search standalone-icon"></i></a>
+        <a
+          href="/courses/4285/rubric_associations/%7B%7B%20rubric_association_id%20%7D%7D"
+          class="delete_rubric_link no-print no-hover"
+          style=""
+          title="Delete Rubric"
+          aria-label="Delete Rubric"
+          role="button"
+        ><i class="icon-trash standalone-icon"></i></a>
+      <div style="display: none;">
+        <div class="use_for_grading">&nbsp;</div>
+        <div class="free_form_criterion_comments">&nbsp;</div>
+        <div class="hide_score_total">&nbsp;</div>
+        <div class="rubric_association_id">&nbsp;</div>
+        <div class="user_id">&nbsp;</div>
+        <div class="assessment_type"></div>
+        <a href="/courses/4285/rubric_associations/%7B%7B%20rubric_association_id%20%7D%7D/assessments/%7B%7B%20assessment_id%20%7D%7D" rel="nofollow" class="edit_assessment_link">&nbsp;</a>
+        <a href="/courses/4285/rubrics/%7B%7B%20rubric_id%20%7D%7D" class="edit_rubric_url">&nbsp;</a>
+          <a href="/courses/4285/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url">&nbsp;</a>
+      </div>
+    </div>
+    <div style="float: right; font-size: 0.8em; display: none;" class="links displaying locked">
+      <span style="">Can&#39;t change a rubric once you&#39;ve started using it.</span>
+        <a href="/courses/4285/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url" style="display: none;">&nbsp;</a>
+    </div>
+
+    <div class="editing" style="float: right;">
+      <a href="https://canvas.harvard.edu/search/rubrics?q=" class="find_rubric_link icon-search" style="" title="Find Existing Rubric">Find a Rubric</a>
+    </div>
+    <div class="editing" style="text-align: left">
+      <label for="rubric-title">Title:</label>
+      <input id="rubric-title" type="text" class="no-margin-bottom" name="title" value="Some Rubric" style="width: 200px;" maxlength="255" aria-label="Title:"/>
+      <a href="https://canvas.harvard.edu/search/rubrics?q=" style="display: none;"><img alt="Find 6164443e2a" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/find-6164443e2a.png" /> Find Rubric</a>
+    </div>
+    <div class="displaying">
+      <span class="title" tabindex="-1">Title</span>
+    </div>
+    <div class="has-assessments-warning" style="display: none;">
+      You&#39;ve already rated students with this rubric.  Any major changes could affect their assessment results.
+    </div>
+  </div>
+<table class="rubric_table">
+<caption>
+  <div class="screenreader-only">
+    <span class="title">Title</span>
+  </div>
+</caption>
+<thead>
+  <tr>
+    <th scope="col">Criteria</th>
+    <th scope="col">Ratings</th>
+    <th scope="col">Pts</th>
+    <th scope="col" class="editing">&nbsp;</th>
+  </tr>
+</thead>
+<tbody>
+  
+<tr id="criterion_blank" class="criterion blank  " style="display: none;">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged question e2565888dd" class="learning_outcome_flag" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/flagged_question-e2565888dd.png" title="This criterion is linked to a Learning Outcome" />
+      <span class="description criterion_description_value">Description of criterion</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;"></span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points">5</span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <table class="ratings" style=""><tr>
+          <td id="rating_blank" class="rating edge_rating" tabindex="0">
+          <div class="container">
+            <div class="description rating_description_value">Full Marks</div>
+            <span class="nobr"><span class="points">5</span> pts</span>
+            <span class="rating_id" style="display: none;">blank</span>
+              <div class="links">
+                <a href="#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+                <a href="#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+                <!-- Hidden if last -->
+                <a href="#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+              </div>
+          </div>
+          </td>
+          <td id="rating_blank_2" class="rating edge_rating" tabindex="0">
+          <div class="container">
+            <div class="description rating_description_value">No Marks</div>
+            <span class="nobr"><span class="points">0</span> pts</span>
+            <span class="rating_id" style="display: none;">blank_2</span>
+              <div class="links">
+                <a href="#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+                <a href="#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+                <!-- Hidden if last -->
+                <a href="#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+              </div>
+          </div>
+          </td>
+      </tr></table>
+      <div style="display: none; font-style: italic; font-size: 0.8em; margin: 5px;" class="custom_ratings">
+        This area will be used by the assessor to leave
+        comments related to this criterion.
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="5" class="criterion_points span1 no-margin-bottom" /> pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">5</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+        <a href="#" class="no-hover criterion_comments_link" title="Additional Comments">
+          <img alt="Additional Comments" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/rubric_comment-ddae8546ab.png" />
+        </a>
+        <div class="custom_rating" style="display: none;"></div>
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+  <tr class="summary" style="">
+    <td colspan="4">
+      <div style="float: right;" class="total_points_holder">
+        <span style="padding-right: 10px;">Total Points:
+            <span class="rubric_total">5</span> <span class="assessing">out of 5</span>
+        </span>
+      </div>
+      <div style="float: left;" class="editing">
+      <a href="#" class="icon-add add_criterion_link">Add Criterion</a>
+      &nbsp;&nbsp;<a href="#" class="icon-search find_outcome_link outcome">Find Outcome</a>
+      </div>
+      <div class="clear"></div>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<table style="display: none;">
+  <tr id="edit_rubric">
+    <td colspan="4">
+      <form id="edit_rubric_form" class="edit-rubric-form no-margin-bottom">
+        <div class="rubric_custom_ratings" style="">
+          <input type="checkbox" id="rubric_custom_rating" class="rubric_custom_rating" />
+          <label for="rubric_custom_rating">I&#39;ll write free-form comments when assessing students</label>
+        </div>
+          <div class="rubric_grading" style="">
+            <input type="checkbox" id="grading_rubric" class="grading_rubric_checkbox" />
+            <label for="grading_rubric">Use this rubric for assignment grading</label>
+          </div>
+        <div class="totalling_rubric" style="">
+          <input type="checkbox" id="totalling_rubric" class="totalling_rubric_checkbox" />
+          <label for="totalling_rubric">Hide score total for assessment results</label>
+        </div>
+        <div class="button-container">
+          <button type="button" class="btn btn-small cancel_button">Cancel</button>
+          <button type="submit" class="btn btn-small save_button btn-primary">Create Rubric</button>
+        </div>
+      </form>
+    </td>
+  </tr>
+</table>
+
+
+
+              </div>
+            </div>
+            <div id="right-side-wrapper" >
+              <aside id="right-side" role="complementary">
+                <div id="sidebar_content">
+
+    <div class="details">
+  <h3>Submission</h3>
+  <div class="content">
+    <span class="">
+        
+    </span>
+
+    <a href="/courses/4285/assignments/40768/submissions/134345" class="forward">
+      Submission Details
+    </a>
+
+
+    <div class="module">
+          <div>Grade: 200 <span style="font-size: 0.8em;">(200 pts possible)</span></div>
+          <div>Graded Anonymously: no</div>
+
+        <a href="/courses/4285/assignments/40768/submissions/134345#rubric" class='rubric'>
+          View Rubric Evaluation
+        </a>
+    </div>
+
+
+    <div class="comments module">
+      <h4>Comments: </h4>
+
+      
+        <div id="comment-276547" class="comment">
+          Perfect score. Excellent work. Please email me if you have any questions.
+          <div class="comment_attachments">
+          </div>
+          <div class="signature" style="font-size: 0.8em; text-align: right; color: #888;">
+            Michael D. Hilborn, Nov 28, 2015 at  5:05pm
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+              </aside>
+            </div>
+          </div>
+        </div>
+      
+      <footer role="contentinfo" id="footer" >
+  <a href="http://www.instructure.com" class="footer-logo ">
+    <span class="screenreader-only">
+      By Instructure
+    </span>
+  </a>
+  <span
+    id="footer-links"
+    >
+    <a target="_blank" href="http://eepurl.com/1LSkT">User Research</a>
+      <a class="support_url help_dialog_trigger" data-track-category="help system" data-track-label="help button" href="http://help.instructure.com/">Help</a>
+    <a href="https://canvas.harvard.edu/privacy_policy">Privacy policy</a>
+<a href="https://canvas.harvard.edu/terms_of_use">Terms of service</a>
+<a href="http://facebook.com/instructure">Facebook</a>
+<a href="http://twitter.com/instructure">Twitter</a>
+
+  </span>
+</footer>
+
+    </div>
+  </div>
+
+
+
+    <div style="display:none;"><!-- Everything inside of this should always stay hidden -->
+        <div id="page_view_id">6798e855-c839-454c-b55b-1a0ab314ccd8</div>
+    </div>
+    <div id="cant_record_dialog" style="display: none;">
+  <div>
+    In order to create video or audio recordings your computer needs to be 
+    webcam-enabled.  If you don&#39;t have a webcam on your computer, you can still
+    record audio-only messages by first installing the Google Video Chat
+    plugin.
+  </div>
+  <div style="text-align: center; font-size: 1.5em; margin: 10px;">
+    <a href="http://www.google.com/chat/video" target="_blank" class="btn">Install the Video Plugin</a>
+  </div>
+  <div class="links" style="text-align: right; font-size: 0.8em; display: none;">
+    <a href="#" class="cant_record_link">Don&#39;t have a webcam?</a>
+  </div>
+</div>
+  <div id='aria_alerts' class='hide-text affix' role="alert" aria-live="assertive"></div>
+  <script>
+  INST = {"environment":"production","allowMediaComments":true,"kalturaSettings":{"domain":"nv.instructuremedia.com","resource_domain":"nv.instructuremedia.com","rtmp_domain":"fms-prod.instructuremedia.com","partner_id":"9","subpartner_id":"0","player_ui_conf":"0","kcw_ui_conf":"0","upload_ui_conf":"0","max_file_size_bytes":534773760,"do_analytics":false,"hide_rte_button":false,"js_uploader":true},"googleAnalyticsAccount":"UA-9138420-1","disableScribdPreviews":true,"enableHtml5FirstVideos":true,"logPageViews":true,"maxVisibleEditorButtons":3,"editorButtons":[{"name":"Course Info","id":6077,"url":"https:\/\/dce-course-info.herokuapp.com\/course_info\/lti_launch","icon_url":"https:\/\/dce-course-info.herokuapp.com\/static\/images\/course-info.png","canvas_icon_class":null,"width":800,"height":400},{"name":"Vimeo","id":6737,"url":"https:\/\/www.edu-apps.org\/lti_public_resources\/?tool_id=vimeo","icon_url":"https:\/\/www.edu-apps.org\/assets\/lti_public_resources\/vimeo_icon.png","canvas_icon_class":null,"width":560,"height":600},{"name":"YouTube","id":6738,"url":"https:\/\/www.edu-apps.org\/lti_public_resources\/?tool_id=youtube","icon_url":"https:\/\/www.edu-apps.org\/assets\/lti_public_resources\/youtube_icon.png","canvas_icon_class":null,"width":560,"height":600},{"name":"GitHub","id":10121,"url":"https:\/\/www.edu-apps.org\/tool_redirect?id=github","icon_url":"https:\/\/www.edu-apps.org\/tools\/github\/icon.png","canvas_icon_class":null,"width":600,"height":320},{"name":"Google Charts","id":10122,"url":"https:\/\/www.edu-apps.org\/tool_redirect?id=google_chart","icon_url":"https:\/\/www.edu-apps.org\/tools\/google_chart\/icon.png","canvas_icon_class":null,"width":930,"height":360}]};
+  ENV = {"ASSET_HOST":"https:\/\/du11hjcvx0uqb.cloudfront.net","active_brand_config":null,"url_to_what_gets_loaded_inside_the_tinymce_editor_css":"https:\/\/du11hjcvx0uqb.cloudfront.net\/dist\/brandable_css\/legacy_normal_contrast\/bundles\/what_gets_loaded_inside_the_tinymce_editor-71d4c6884f.css","current_user_id":"134345","current_user":{"id":"134345","display_name":"Ryan Ballenger","avatar_image_url":"https:\/\/harvard.instructure.com\/images\/thumbnails\/734757\/uylDtwvJK72YNJ7IpEGqFIsRw6wEGM61nKbPS4KA","html_url":"https:\/\/canvas.harvard.edu\/about\/134345"},"current_user_roles":["user","student"],"files_domain":"cluster28-files.instructure.com","DOMAIN_ROOT_ACCOUNT_ID":18750000000000001,"use_new_styles":false,"k12":false,"use_high_contrast":false,"SETTINGS":{"open_registration":false},"page_view_update_url":"\/page_views\/6798e855-c839-454c-b55b-1a0ab314ccd8?page_view_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpIjoiNjc5OGU4NTUtYzgzOS00NTRjLWI1NWItMWEwYWIzMTRjY2Q4IiwidSI6MTg3NTAwMDAwMDAxMzQzNDUsImMiOiIyMDE2LTAxLTIxVDEzOjEzOjM5LjU4WiJ9.uLWrnMTTlgvRvt-4fmQ2mqc2m8PDl9RDu--JFmSzcjs","context_asset_string":"course_4285","ping_url":"https:\/\/canvas.harvard.edu\/api\/v1\/courses\/4285\/ping","TIMEZONE":"America\/New_York","CONTEXT_TIMEZONE":"America\/New_York","LOCALE":"en-US","TOURS":[],"ROOT_OUTCOME_GROUP":{"id":"2997","title":"Web Development Using XML","vendor_guid":null,"url":"\/api\/v1\/courses\/4285\/outcome_groups\/2997","subgroups_url":"\/api\/v1\/courses\/4285\/outcome_groups\/2997\/subgroups","outcomes_url":"\/api\/v1\/courses\/4285\/outcome_groups\/2997\/outcomes","can_edit":false,"import_url":"\/api\/v1\/courses\/4285\/outcome_groups\/2997\/import","context_id":"4285","context_type":"Course","description":null},"COURSE_ID":4285,"ASSIGNMENT_ID":40768,"EXTERNAL_TOOLS":[],"badge_counts":{"submissions":0},"notices":[]};
+
+    // TODO: move this out when we have a single require call
+    require = {
+      translate: true,
+      baseUrl: '/optimized',
+      paths: {
+    "common":"compiled\/bundles\/common",
+    "jqueryui":"vendor\/jqueryui",
+    "compiled\/tinymce":"compiled\/tinymce.js?v2",
+    "demo_site":"plugins\/demo_site",
+    "migration_tool":"plugins\/migration_tool",
+    "catalog_provisioner":"plugins\/catalog_provisioner",
+    "instructure_misc_plugin":"plugins\/instructure_misc_plugin",
+    "analytics":"plugins\/analytics",
+    "multiple_root_accounts":"plugins\/multiple_root_accounts",
+    "canvasnet_registration":"plugins\/canvasnet_registration",
+    "compiled\/registration\/main_without_extensions":"compiled\/registration\/main",
+    "compiled\/registration\/main":"compiled\/registration\/main_with_extensions",
+    "compiled\/registration\/signupDialog_without_extensions":"compiled\/registration\/signupDialog",
+    "compiled\/registration\/signupDialog":"compiled\/registration\/signupDialog_with_extensions",
+    "compiled\/bundles\/modules\/account_quota_settings_without_extensions":"compiled\/bundles\/modules\/account_quota_settings",
+    "compiled\/bundles\/modules\/account_quota_settings":"compiled\/bundles\/modules\/account_quota_settings_with_extensions",
+    "canvas_quizzes":"client_apps\/canvas_quizzes",
+    "app\/config\/environments\/production":"empty:"},
+      packages : [{"name":"ic-ajax","location":"bower\/ic-ajax\/dist\/amd"},{"name":"ic-styled","location":"bower\/ic-styled"},{"name":"ic-menu","location":"bower\/ic-menu"},{"name":"ic-tabs","location":"bower\/ic-tabs\/dist\/amd"},{"name":"ic-droppable","location":"bower\/ic-droppable\/dist\/amd"},{"name":"ic-sortable","location":"bower\/ic-sortable\/dist\/amd"},{"name":"ic-modal","location":"bower\/ic-modal\/dist\/amd"},{"name":"ic-lazy-list","location":"bower\/ic-lazy-list"},{"name":"ember-qunit","location":"bower\/ember-qunit\/dist\/amd"}],
+      shim: {
+    'bower/react-router/build/umd/ReactRouter': {
+      deps: ['react'],
+      exports: 'ReactRouter'
+    },
+    'bower/react-tray/dist/react-tray': {
+      deps: ['react']
+    },
+    'bower/react-modal/dist/react-modal': {
+      deps: ['react']
+    },
+    'bower/react-tokeninput/dist/react-tokeninput': {
+      deps: ['react'],
+    },
+    'bower/react-select-box/dist/react-select-box': {
+      deps: ['react'],
+    },
+    'bower/ember/ember': {
+      deps: ['jquery', 'handlebars'],
+      exports: 'Ember'
+    },
+    'bower/ember-data/ember-data': {
+      deps: ['ember'],
+      exports: 'DS'
+    },
+    'bower/handlebars/handlebars.runtime': {
+      exports: 'Handlebars'
+    },
+    'bower/reflux/dist/reflux.js': {
+      deps: ['react'],
+      exports: 'Reflux'
+    },
+    'vendor/FileAPI/FileAPI.min': {
+      deps: ['jquery', 'vendor/FileAPI/config'],
+      exports: 'FileAPI'
+    },
+    'fixed-data-table': {
+      deps: ['object_assign', 'react'],
+      exports: 'fixed-data-table'
+    },
+    'vendor/bootstrap-select/bootstrap-select' : {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    'vendor/jquery.jcrop': {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    'vendor/jquery.smartbanner': {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    'vendor/md5': {
+      exports: 'CryptoJS'
+    },
+    'handlebars': {
+      deps: ['bower/handlebars/handlebars.runtime.amd'],
+      exports: 'Handlebars'
+    },
+    'vendor/i18n': {
+      exports: 'I18n'
+    },
+    'vendor/react-infinite-scroll.min' : {
+      deps: ['react'],
+      exports: 'InfiniteScroll'
+    },
+    'bower/tinymce/tinymce' : {
+      exports: 'tinymce'
+    },
+    'bower/axios/dist/axios' : {
+      exports: 'axios'
+    },
+    'bower/tinymce/themes/modern/theme' : {
+      deps: ['bower/tinymce/tinymce'],
+      exports: 'tinymce'
+    }
+  }
+,
+      map: {"canvas_quizzes":{"lodash":"underscore","d3":"vendor\/d3.v3","backbone":"vendor\/backbone","jquery\/instructure_date_and_time":"jquery.instructure_date_and_time","react":"old_unsupported_dont_use_react","react-router":"old_unsupported_dont_use_react-router"},"*":{"React":"react"}},
+      waitSeconds: 60
+    };
+</script>
+
+  <script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/vendor/require-749d0c60e9.js"></script>
+
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/common-207e11b422.js"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/assignment_show-d9061a2767.js"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/edit_rubric-44b52e5557.js"></script>
+<script>
+//<![CDATA[
+          require(['jquery'], function () {
+            ["https:\/\/s3.amazonaws.com\/tlt-static-prod\/canvas\/global\/global.js","https:\/\/harvard-dce.github.io\/canvas-ext\/ext.js"].forEach(function (src) {
+              var s = document.createElement('script');
+              s.src = src;
+              document.body.appendChild(s);
+            });
+          });
+
+//]]>
+</script>
+
+
+
+  <script>
+  // Determines if the scripts are loaded.
+  // When we get everything out of the views, and have a single top-level
+  // `require`, this becomes meaningless and will be abandoned.
+  (function() {
+    var attempts = 0;
+    var timeout = 10;
+    var check = function() {
+      attempts++;
+      var done = !window.requirejs.s.contexts._.defQueue.length
+      var giveup = attempts === 100; // 1 second
+      if (done || giveup) {
+        var className = document.documentElement.className;
+        document.documentElement.className = className.replace(/scripts-not-loaded/, '');
+        return;
+      }
+      setTimeout(check, timeout);
+    };
+
+    check();
+  }).call(this);
+  </script>
+
+
+</div> <!-- #application -->
+</body>
+</html>

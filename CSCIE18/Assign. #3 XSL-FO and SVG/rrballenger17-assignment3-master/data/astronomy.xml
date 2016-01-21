@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<courses>
+    <course academic_year="2015" course_id="109578" class_number="10455" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 253">Plasma Astrophysics</title>
+            <notes> This course offered in alternate years.</notes>
+            <prereq>Recommended: Knowledge of intermediate electromagnetism, partial differential equations, and fluid dynamics.</prereq>
+            <description>This course provides an introduction to plasma physics and plasma processes in an astrophysical context. Topics include charged particle motions, kinetic theory, magnetohydrodynamics, waves, shocks, instabilities, partially ionized plasmas, collisionless plasmas, magnetized turbulence, particle acceleration, astrophysical dynamos, and magnetic reconnection.&amp;nbsp; Astrophysical applications may include accretion disks, interstellar turbulence, cosmic rays, galactic magnetic fields, solar/stellar flares, and space weather in the Solar System and around exoplanets.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Monday Wednesday" end_time="16:59:00" location="" start_time="15:30:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e325803a1310" role="1" seniority_sort="1">
+                <display_name>Nicholas Murphy</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="109579" class_number="16383" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 215HFA">Topics in Contemporary Astrophysics</title>
+            <exam_group>FAS01_A</exam_group>
+            <notes> This course offered alternate years.</notes>
+            <prereq>Recommended: This course is open to all astronomy graduate students or by request.</prereq>
+            <description>This full year half course will cover a broad range of contemporary topics in observational and theoretical astrophysics through a set of 10-12 two-week modules taught by members of the Astronomy Department faculty. The course will meet twice per week, and each module will be comprised of a stand-alone topic with a single homework assignment. Enrolled students will be required to sign up for the full year and attend half of the offered modules. Students must complete both parts of this course (parts A and B) within the same academic year in order to receive credit.	&amp;nbsp;</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Seminar</course_type>
+            <credits>0</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Tuesday Thursday" end_time="11:29:00" location="Observatory A 101 (FAS)" start_time="10:00:00"/>
+            </meeting_schedule>
+            <exam_date>2015-12-11</exam_date>
+        </catalog_info>
+        <staff>
+            <person id="d1e8095a1310" role="1" seniority_sort="1">
+                <display_name>Edo Berger</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="110822" class_number="10904" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 91R">Supervised Reading and Research</title>
+            <notes>Abraham Loeb and members of the Department  Students must arrange for course supervision with an individual member of the Department. The course may be counted only once toward the concentration requirements, and may not be taken more than twice. This course is offered each semester.</notes>
+            <prereq>Prerequisite: Astronomy 16 OR Astronomy 17</prereq>
+            <description>Supervised reading and research in a subject of astrophysics that is not normally included in the regular course offerings of the department.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Tutorial</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e49169a1310" role="1" seniority_sort="1">
+                <display_name>Abraham Loeb</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="110822" class_number="10904" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 91R">Supervised Reading and Research</title>
+            <notes>Abraham Loeb and members of the Department  Students must arrange for course supervision with an individual member of the Department. The course may be counted only once toward the concentration requirements, and may not be taken more than twice. This course is offered each semester.</notes>
+            <prereq>Prerequisite: Astronomy 16 OR Astronomy 17</prereq>
+            <description>Supervised reading and research in a subject of astrophysics that is not normally included in the regular course offerings of the department.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Tutorial</course_type>
+            <credits>4</credits>
+        </catalog_info>
+    </course>
+    <course academic_year="2015" course_id="111053" class_number="15201" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 219">High Energy Astrophysics</title>
+            <notes> This course offered in alternate years.</notes>
+            <description>Discussion of relativistic and high-energy astrophysical phenomena and observational techniques. Accretion onto compact stars (white dwarfs, neutron stars, black holes); active galactic nuclei, galaxy clusters. Gamma-ray bursts and cosmic rays. X-ray and gamma-ray background.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Monday Wednesday" end_time="15:29:00" location="" start_time="14:00:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e86417a1310" role="1" seniority_sort="1">
+                <display_name>Jonathan Grindlay</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="111305" class_number="10515" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 2">Celestial Navigation</title>
+            <exam_group>FAS04_C</exam_group>
+            <notes>Class meets during lunch each Tuesday in the Classroom and again just after dinner the same day in Phillips Auditorium.  Minimal lecturing; predominantly practical activities with individual attention from teaching staff. Math beyond high school trigonometry and geometry unnecessary. This course is offered each year.</notes>
+            <description>Never be lost again! Find your way on sea, land, or air by employing celestial and terrestrial techniques. Acquire expertise in using navigators' tools (sextant, compass, and charts) while learning the steps to the celestial dance of the sun, moon, stars, and planets. This 108-year-old course continues to rely on practical skills and collaborative problem-solving, while utilizing historical artifacts (instruments, maps, captains' logs) and student-built devices. Culminating in a day-long cruise to practice navigation skills.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Tuesday" end_time="12:59:00" location="Observatory A 101 (FAS)" start_time="11:30:00"/>
+                <meeting days_of_week="Tuesday" end_time="21:59:00" location="Observatory D PA2 Aud (FAS)" start_time="19:00:00"/>
+            </meeting_schedule>
+            <exam_date>2015-12-12</exam_date>
+        </catalog_info>
+        <staff>
+            <person id="d1e43939a1310" role="1" seniority_sort="1">
+                <display_name>Philip Sadler</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="111660" class_number="11500" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 202B">Cosmology</title>
+            <notes> This course offered in alternate years.</notes>
+            <description>The cosmological principle: isotropy and homogeneity, cosmological world models, thermal history of the Big Bang, the microwave background, inflation, growth of density fluctuations, large scale structure and other topics at the frontiers of cosmology.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Monday Wednesday" end_time="12:29:00" location="" start_time="11:00:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e245027a1310" role="1" seniority_sort="1">
+                <display_name>Daniel Eisenstein</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="112022" class_number="15455" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 218">Radio Astronomy</title>
+            <exam_group>FAS03_A</exam_group>
+            <notes> This course offered in alternate years.</notes>
+            <prereq>Prerequisite: Astronomy 200 OR Physics 153</prereq>
+            <description>Historical development; diffraction theory of antennas and interferometers; signal detection and measurement techniques. Thermal, synchrotron and spectral-line emission in the context of radio observations of the sun, planets, pulsars, masers, hydrogen clouds, molecular clouds, ionized regions, active galaxies, quasars, and the cosmic background. Observational projects and laboratory exercises carried out with the Submillimeter Array, Haystack Observatory and the CMB Laboratory.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Tuesday Thursday" end_time="15:29:00" location="Observatory A 101 (FAS)" start_time="14:00:00"/>
+            </meeting_schedule>
+            <exam_date>2015-12-12</exam_date>
+        </catalog_info>
+        <staff>
+            <person id="d1e192865a1310" role="1" seniority_sort="1">
+                <display_name>Lincoln Greenhill</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="112487" class_number="11798" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 98">Research Tutorial in Astrophysics</title>
+            <exam_group>FAS08_G</exam_group>
+            <prereq>REQ; Astronomy 98</prereq>
+            <description>This tutorial introduces students to research at the forefront of astrophysics, and provides opportunities for students to meet with research scientists and individuals active in science policy, education, and journalism. Students meet weekly for a lecture and discussion over dinner with a guest speaker, preceded by a reading and a preparatory seminar. Students will be mentored throughout the term on a research project of their choosing. The Harvard-Smithsonian Center for Astrophysics is home to one of the largest groups of astronomers in the world, providing extensive opportunities for undergraduate research.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Junior Tutorial</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Monday" end_time="14:29:00" location="Perkin G04 (FAS)" start_time="13:00:00"/>
+                <meeting days_of_week="Tuesday" end_time="19:29:00" location="" start_time="17:30:00"/>
+            </meeting_schedule>
+            <exam_date>2015-12-15</exam_date>
+        </catalog_info>
+        <staff>
+            <person id="d1e27172a1310" role="1" seniority_sort="1">
+                <display_name>David Charbonneau</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="113262" class_number="15199" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 191">Astrophysics Laboratory</title>
+            <notes> Primarily for concentrators in astrophysics or combined concentrators with physics. Students with physics as their primary concentration, but with a serious interest in astrophysics, may take this to satisfy their laboratory requirement (in lieu of Physics 191) upon petition to the Head Tutor in Physics. This course is offered each year.</notes>
+            <prereq>Prerequisite Astronomy 191: Astronomy 16, OR Astronomy 17, OR Physics 15C</prereq>
+            <description>Laboratory and observational projects in astrophysics. Students design and undertake two projects from a selection including: observational studies of the cosmic microwave background radiation, molecules in interstellar clouds, the rotation of the galaxy, galactic molecular sources with the submillimeter array (SMA), stars and clusters with the Clay Telescope; and laboratory experiments including super-conducting submillimeter detectors, x-ray CCDs, and hard x-ray imaging detectors and telescopes.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Friday" end_time="16:59:00" location="" start_time="14:00:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e243800a1310" role="1" seniority_sort="1">
+                <display_name>John Kovac</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="116041" class_number="15019" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 99A">Senior Thesis in Astrophysics</title>
+            <exam_group>FAS03_D</exam_group>
+            <notes> This course is offered each year.</notes>
+            <prereq>Prerequisite: Astronomy 98</prereq>
+            <description>Individually supervised reading and research leading to the senior thesis. The Harvard-Smithsonian Center for Astrophysics is home to one of the largest groups of astronomers in the world, providing extensive opportunities for undergraduate research. Part one of a two part series.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Senior Tutorial</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Thursday" end_time="16:59:00" location="" start_time="14:30:00"/>
+            </meeting_schedule>
+            <exam_date>2015-12-12</exam_date>
+        </catalog_info>
+        <staff>
+            <person id="d1e27172a1310" role="1" seniority_sort="1">
+                <display_name>David Charbonneau</display_name>
+            </person>
+            <person id="d1e27175a1310" role="1" seniority_sort="2">
+                <display_name>Alicia Soderberg</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="117515" class_number="12041" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 302">Scientists Teaching Science</title>
+            <notes>Open to graduate students in all areas of science. Assignments help illustrate research findings from life, earth, and physical science education. Undergraduates with an interest in teaching at the pre-college level may be admitted with instructor permission. This course offered each year.   Open to graduate students in all areas of science. Assignments help illustrate research findings from life, earth, and physical science education. Undergraduates with an interest in teaching at the pre-college level may be admitted with instructor permission. This course offered each year.</notes>
+            <prereq>Recommended: Experience as a teaching fellow or tutor.</prereq>
+            <description>Learn the secrets of lecturing well, leading discussions, connecting to real-world applications, and creating tests in any scientific discipline as we focus on relevant educational research and case studies, plus engage in practical classroom activities.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Tuesday" end_time="15:29:00" location="" start_time="14:00:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e43939a1310" role="1" seniority_sort="1">
+                <display_name>Philip Sadler</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="118136" class_number="14839" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 16">Stellar and Planetary Astronomy</title>
+            <notes> This course, when taken for a letter grade, meets the General Education requirement for Science of the Physical Universe. This course is offered each year.</notes>
+            <prereq>Prerequisite: Physics 15a, Physics 16, or Physical Sciences 12a.  May be taken concurrently.</prereq>
+            <description>This course provides an introduction to the physical principles describing the formation and evolution of stars and their planetary companions. Topics include thermal radiation and stellar spectra; telescopes; energy generation in stars; stellar evolution; orbital dynamics; the Solar system; and exoplanets. This course includes an observational component: students will determine the distance to the Sun, and use the Clay Telescope atop the Science Center to study stellar evolution and detect exoplanets.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Tuesday Thursday" end_time="15:59:00" location="" start_time="14:30:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e245119a1310" role="1" seniority_sort="1">
+                <display_name>Karin Oberg</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="118139" class_number="11957" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 202A">Galaxies and Dynamics</title>
+            <exam_group>FAS17_B</exam_group>
+            <notes> This course offered in alternate years.</notes>
+            <description>An overview of extragalactic astronomy. Galaxy formation, evolution and properties, galactic dynamics, clustering, gas dynamics, star formation and other topics at the frontiers of extragalactic astronomy.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Monday Wednesday" end_time="10:59:00" location="Observatory A 101 (FAS)" start_time="09:30:00"/>
+            </meeting_schedule>
+            <exam_date>2015-12-21</exam_date>
+        </catalog_info>
+        <staff>
+            <person id="d1e160964a1310" role="1" seniority_sort="1">
+                <display_name>Charles Conroy</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="121382" class_number="16385" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 301HFA">Journal Club</title>
+            <exam_group>FAS05_C</exam_group>
+            <notes> This course is offered each semester (parts A and B) and attendance is required for all registered graduate students in Astronomy.</notes>
+            <description>Each week two speakers (faculty, lecturers, and students) will report on current research in astronomy, providing students with an opportunity to practice the organization and presentation of technical material. A minimum of one presentation will be expected from each student each year focused on their own research or new results in the literature. Faculty will similarly discuss recent results from the literature, as well as their own research as a way to provide an overview of research activities at the Harvard Astronomy Department. The course is intended as an opportunity for substantive discussion, as an opportunity to find out about research activities, and to foster interaction between the students and faculty. Students must complete both parts of this course (parts A and B) within the same academic year in order to receive credit.	&amp;nbsp;</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>0</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Tuesday" end_time="16:59:00" location="Perkin G04 (FAS)" start_time="16:00:00"/>
+            </meeting_schedule>
+            <exam_date>2015-12-14</exam_date>
+        </catalog_info>
+        <staff>
+            <person id="d1e8095a1310" role="1" seniority_sort="1">
+                <display_name>Edo Berger</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="12825" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e245350a1310" role="1" seniority_sort="1">
+                <display_name>Charles Lada</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="12907" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16108" school_id="fas" section="002" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e59058a1310" role="1" seniority_sort="1">
+                <display_name>Alyssa Goodman</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16109" school_id="fas" section="003" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e49169a1310" role="1" seniority_sort="1">
+                <display_name>Abraham Loeb</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16110" school_id="fas" section="004" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e160964a1310" role="1" seniority_sort="1">
+                <display_name>Charles Conroy</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16111" school_id="fas" section="005" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e27172a1310" role="1" seniority_sort="1">
+                <display_name>David Charbonneau</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16112" school_id="fas" section="006" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e245027a1310" role="1" seniority_sort="1">
+                <display_name>Daniel Eisenstein</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16113" school_id="fas" section="007" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e242564a1310" role="1" seniority_sort="1">
+                <display_name>Douglas Finkbeiner</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16114" school_id="fas" section="008" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e244122a1310" role="1" seniority_sort="1">
+                <display_name>Dimitar Sasselov</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16115" school_id="fas" section="009" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e244076a1310" role="1" seniority_sort="1">
+                <display_name>David Wilner</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16116" school_id="fas" section="010" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e8095a1310" role="1" seniority_sort="1">
+                <display_name>Edo Berger</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16117" school_id="fas" section="011" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e165375a1310" role="1" seniority_sort="1">
+                <display_name>John Johnson</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16118" school_id="fas" section="012" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e243800a1310" role="1" seniority_sort="1">
+                <display_name>John Kovac</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16119" school_id="fas" section="013" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e245119a1310" role="1" seniority_sort="1">
+                <display_name>Karin Oberg</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16120" school_id="fas" section="014" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e243984a1310" role="1" seniority_sort="1">
+                <display_name>Lars Hernquist</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16121" school_id="fas" section="015" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e243938a1310" role="1" seniority_sort="1">
+                <display_name>Ramesh Narayan</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16122" school_id="fas" section="016" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e243892a1310" role="1" seniority_sort="1">
+                <display_name>Sean Andrews</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16123" school_id="fas" section="017" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e27175a1310" role="1" seniority_sort="1">
+                <display_name>Alicia Soderberg</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="122728" class_number="16124" school_id="fas" section="018" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 300">Topics in Modern Astrophysics</title>
+            <description>A seminar, reading, or research course may be arranged with any of the faculty listed. Students can also arrange to obtain Astronomy 300 credit for reading or research with scientific staff members of the Harvard-Smithsonian Center for Astrophysics; consult Astronomy Department office.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e86417a1310" role="1" seniority_sort="1">
+                <display_name>Jonathan Grindlay</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="124099" class_number="15470" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 151">Astrophysical Fluid Dynamics</title>
+            <notes> This course offered alternate years.</notes>
+            <description>Fluid and gas dynamics with applications drawn from astrophysical phenomena. Topics include: kinetic theory, diffusive effects, incompressible fluids, inviscid and viscous flows, boundary layer theory, accretion disks, fluid instabilities, turbulence, convection, gas dynamics, linear (sound) waves, method of characteristics, Riemann invariants, supersonic flow, non-linear waves, shocks, similarity solutions, blast waves, radiative shocks, ionization fronts, magnetohygrodynamics, hydromagnetic shocks, dynamos, gravitational collapse, principles of plasma physics, Landau damping, computational approaches, stability criteria, particle based (Lagrangian) methods, adaptive mesh refinement, radiation hydrodynamics.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Monday Wednesday Friday" end_time="10:59:00" location="" start_time="10:00:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e243984a1310" role="1" seniority_sort="1">
+                <display_name>Lars Hernquist</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="124966" class_number="14213" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 200">Radiative Processes in Astrophysics</title>
+            <exam_group>FAS08_A</exam_group>
+            <notes> Open to seniors concentrating in Astrophysics or Physics. This course is offered each year.</notes>
+            <prereq>Recommended: Physics 143a.</prereq>
+            <description>This course offers a survey of radiative processes of astrophysical importance from radio waves to gamma rays. Topics include thermal and non-thermal processes, including bremsstrahlung, synchrotron radiation, and Compton scattering; radiation in plasmas; aspects of atomic and molecular spectra.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Monday Wednesday" end_time="14:29:00" location="Observatory A 101 (FAS)" start_time="13:00:00"/>
+            </meeting_schedule>
+            <exam_date>2015-12-15</exam_date>
+        </catalog_info>
+        <staff>
+            <person id="d1e243938a1310" role="1" seniority_sort="1">
+                <display_name>Ramesh Narayan</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="125880" class_number="16931" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 100">Methods of Observational Astronomy</title>
+            <notes> This course is offered each year.</notes>
+            <prereq>Prerequisite: Astronomy 16 OR Astronomy 17</prereq>
+            <description>In this course we will learn the basic tools of modern astronomical research, including telescopes, detectors, imaging, spectroscopy, and common software. Emphasis will be placed on both the theory behind telescopes and their use, and hands-on experience with real data. Using this basic knowledge we will analyze science-level astronomical data from a wide range of telescopes and review the basic properties of stars, galaxies, and other astronomical objects of interest. The course includes a trip to the F. L. Whipple Observatory on Mount Hopkins, Arizona, to gather data with various telescopes.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Laboratory</course_type>
+            <credits>4</credits>
+        </catalog_info>
+        <staff>
+            <person id="d1e8095a1310" role="1" seniority_sort="1">
+                <display_name>Edo Berger</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="125883" class_number="13734" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 130">Cosmology</title>
+            <notes> This course offered alternate years.</notes>
+            <prereq>Prerequisite: Astronomy 17 OR Physics 15c</prereq>
+            <description>The physical model describing the initial conditions, evolution, and ultimate fate of the Universe. Topics include cosmic dynamics; the Robertson-Walker Metric; curvature; estimating cosmological parameters; the accelerating universe; dark matter; gravitational lensing; the cosmic microwave background; nucleosynthesis; inflation and the very early universe; formation of structure. Note: Offered in alternate years.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Tuesday Thursday" end_time="15:29:00" location="" start_time="14:00:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e242564a1310" role="1" seniority_sort="1">
+                <display_name>Douglas Finkbeiner</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="125884" class_number="16445" school_id="fas" section="001" term_code="fall">
+        <catalog_info>
+            <title short_title="ASTRON 17">Galactic and Extragalactic Astronomy</title>
+            <exam_group>FAS14_D</exam_group>
+            <notes> This course, when taken for a letter grade, meets the General Education requirement for Science of the Physical Universe. This course is offered each year.</notes>
+            <prereq>Prerequisite: An introductory course in mechanics, which may be taken concurrently, satisfied by Physics 15a, Physics16, or Physical Sciences 12a.REQ; Astronomy 17</prereq>
+            <description>This course provides an introduction to the physical principles describing galaxies and the composition and evolution of the Universe. Topics include the interstellar medium; star clusters; the structure and dynamics of the Milky Way; other galaxies; clusters of galaxies; active galaxies and quasars; cosmology; and the early universe. This course includes an observational component: In addition to observing galaxies with the Science Center Clay Telescope, students will use the millimeter-wavelength telescope at the Harvard-Smithsonian Center for Astrophysics to measure the rotation velocity of the Milky Way galaxy and to determine its mass.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Lecture</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Monday Wednesday" end_time="15:59:00" location="Science Ctr 102 (FAS)" start_time="14:30:00"/>
+            </meeting_schedule>
+            <exam_date>2015-12-18</exam_date>
+        </catalog_info>
+        <staff>
+            <person id="d1e165375a1310" role="1" seniority_sort="1">
+                <display_name>John Johnson</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="159800" class_number="14864" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 99B">Senior Thesis in Astrophysics</title>
+            <prereq>Recommended: Astronomy 98.</prereq>
+            <description>Individually supervised reading and research leading to the senior thesis. The Harvard-Smithsonian Center for Astrophysics is home to one of the largest groups of astronomers in the world, providing extensive opportunities for undergraduate research. Part one of a two part series.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Senior Tutorial</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Thursday" end_time="16:59:00" location="" start_time="14:30:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e27172a1310" role="1" seniority_sort="1">
+                <display_name>David Charbonneau</display_name>
+            </person>
+            <person id="d1e27175a1310" role="1" seniority_sort="2">
+                <display_name>Alicia Soderberg</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="160576" class_number="16152" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 215HFB">Topics in Contemporary Astrophysics</title>
+            <prereq>Recommended: This course is open to all astronomy graduate students or by request.</prereq>
+            <description>This full year half course will cover a broad range of contemporary topics in observational and theoretical astrophysics through a set of 10-12 two-week modules taught by members of the Astronomy Department faculty. The course will meet twice per week, and each module will be comprised of a stand-alone topic with a single homework assignment. Enrolled students will be required to sign up for the full year and attend half of the offered modules. Students must complete both parts of this course (parts A and B) within the same academic year in order to receive credit.</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Seminar</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Tuesday Thursday" end_time="11:29:00" location="" start_time="10:00:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e8095a1310" role="1" seniority_sort="1">
+                <display_name>Edo Berger</display_name>
+            </person>
+        </staff>
+    </course>
+    <course academic_year="2015" course_id="160577" class_number="16153" school_id="fas" section="001" term_code="spring">
+        <catalog_info>
+            <title short_title="ASTRON 301HFB">Journal Club</title>
+            <notes> This course is offered each semester (parts A and B) and attendance is required for all registered graduate students in Astronomy.</notes>
+            <description>Each week two speakers (faculty, lecturers, and students) will report on current research in astronomy, providing students with an opportunity to practice the organization and presentation of technical material. A minimum of one presentation will be expected from each student each year focused on their own research or new results in the literature. Faculty will similarly discuss recent results from the literature, as well as their own research as a way to provide an overview of research activities at the Harvard Astronomy Department. The course is intended as an opportunity for substantive discussion, as an opportunity to find out about research activities, and to foster interaction between the students and faculty. Students must complete both parts of this course (parts A and B) within the same academic year in order to receive credit.	&amp;nbsp;</description>
+            <department code="ASTR">Astronomy</department>
+            <course_group code="ASTRON">Astronomy</course_group>
+            <course_type>Reading and Research</course_type>
+            <credits>4</credits>
+            <meeting_schedule>
+                <meeting days_of_week="Tuesday" end_time="16:59:00" location="" start_time="16:00:00"/>
+            </meeting_schedule>
+        </catalog_info>
+        <staff>
+            <person id="d1e8095a1310" role="1" seniority_sort="1">
+                <display_name>Edo Berger</display_name>
+            </person>
+        </staff>
+    </course>
+</courses>

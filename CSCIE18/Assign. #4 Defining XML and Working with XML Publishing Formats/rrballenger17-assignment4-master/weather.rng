@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <define name="current_observation">
+        <element name="current_observation">
+            <ref name="credit"/>
+            <ref name="credit_URL"/>
+            <ref name="image"/>
+            <ref name="suggested_pickup"/>
+            <ref name="suggested_pickup_period"/>
+            <ref name="location"/>
+            <ref name="station_id"/>
+            <ref name="latitude"/>
+            <ref name="longitude"/>
+            <ref name="observation_time"/>
+            <ref name="observation_time_rfc822"/>
+            <ref name="weather"/>
+            <ref name="temperature_string"/>
+            <oneOrMore>
+                <ref name="temp"/>
+            </oneOrMore>
+            
+            <ref name="relative_humidity"/>
+            <ref name="wind_string"/>
+            <ref name="wind_dir"/>
+            <ref name="wind_degrees"/>
+            <ref name="wind_mph"/>
+            <ref name="wind_kt"/>
+            <ref name="pressure"/>
+
+            <ref name="dewpoint_string"/>
+            <oneOrMore>
+                <ref name="dewpoint"/>
+            </oneOrMore>
+            <ref name="windchill_string"/>
+            <oneOrMore>
+                <ref name="windchill"/>
+            </oneOrMore>
+            
+            <ref name="visibility_mi"/>
+            <ref name="icon_url"/>
+            <ref name="two_day_history_url"/>
+    
+            <ref name="ob_url" />
+            <ref name="disclaimer_url" />
+            <ref name="copyright_url" />
+            <ref name="privacy_policy_url" />
+            <attribute name="version">
+                <text/>
+            </attribute>
+        </element>
+    </define>
+    
+    <define name="credit">
+        <element name="credit">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="credit_URL">
+        <element name="credit_URL">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="image">
+        <element name="image">
+        <element name="url">
+            <attribute name="value"><text/></attribute>
+        </element>
+        <element name="title">
+                <attribute name="value"><text/></attribute>
+        </element>
+        <element name="link">
+                <attribute name="value"><text/></attribute>
+        </element>
+        </element>
+    </define>
+    
+    <define name="suggested_pickup">
+        <element name="suggested_pickup">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="suggested_pickup_period">
+        <element name="suggested_pickup_period">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="location">
+        <element name="location">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="station_id">
+        <element name="station_id">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="latitude">
+        <element name="latitude">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="longitude">
+        <element name="longitude">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="observation_time">
+        <element name="observation_time">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="observation_time_rfc822">
+        <element name="observation_time_rfc822">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="weather">
+        <element name="weather">
+            <text/>
+        </element>
+    </define>
+    
+    <define name="temperature_string">
+        <element name="temperature_string">
+            <text/>
+        </element>
+    </define>
+    
+    
+    <define name="temp">
+        <element name="temp">
+        <attribute name="system">
+            <text/>
+        </attribute>
+        <attribute name="units">
+            <text/>
+        </attribute>
+        <attribute name="label">
+            <text/>
+        </attribute>
+            <text/>
+        </element>
+    </define>
+    
+    
+    <define name="relative_humidity">
+        <element name="relative_humidity">
+            <text/>
+        </element>
+    </define>
+    <define name="wind_string">
+        <element name="wind_string">
+            <text/>
+        </element>
+    </define>
+    <define name="wind_dir">
+        <element name="wind_dir">
+            <text/>
+        </element>
+    </define>
+    <define name="wind_degrees">
+        <element name="wind_degrees">
+            <text/>
+        </element>
+    </define>
+    <define name="wind_mph">
+        <element name="wind_mph">
+            <text/>
+        </element>
+    </define>
+    <define name="wind_kt">
+        <element name="wind_kt">
+            <text/>
+        </element>
+    </define>
+    <define name="pressure">
+        <element name="pressure">
+            <element name="string">
+                <text/>
+            </element>
+            <element name="mb">
+                <text/>
+            </element>
+            <element name="in">
+                <text/>
+            </element>
+        </element>
+    </define>
+    <define name="dewpoint_string">
+        <element name="dewpoint_string">
+            <text/>
+        </element>
+    </define>
+    <define name="dewpoint">
+        <element name="dewpoint">
+            <attribute name="system">
+                <text/>
+            </attribute>
+            <attribute name="units">
+                <text/>
+            </attribute>
+            <attribute name="label">
+                <text/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="windchill_string">
+        <element name="windchill_string">
+            <text/>
+        </element>
+    </define>
+    <define name="windchill">
+        <element name="windchill">
+            <attribute name="system">
+                <text/>
+            </attribute>
+            <attribute name="units">
+                <text/>
+            </attribute>
+            <attribute name="label">
+                <text/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="visibility_mi">
+        <element name="visibility_mi">
+            <text/>
+        </element>
+    </define>
+    <define name="icon_url">
+        <element name="icon_url">
+            <attribute name="href">
+                <text/>
+            </attribute>
+            <attribute name="label">
+                <text/>
+            </attribute>
+            <attribute name="role">
+                <text/>
+            </attribute>
+            <attribute name="title">
+                <text/>
+            </attribute>
+        </element>
+    </define>
+    <define name="two_day_history_url">
+        <element name="two_day_history_url">
+            <attribute name="href">
+                <text/>
+            </attribute>
+            <attribute name="label">
+                <text/>
+            </attribute>
+            <attribute name="role">
+                <text/>
+            </attribute>
+            <attribute name="title">
+                <text/>
+            </attribute>
+        </element>
+    </define>
+    <define name="ob_url">
+        <element name="ob_url">
+            <attribute name="href">
+                <text/>
+            </attribute>
+            <attribute name="label">
+                <text/>
+            </attribute>
+            <attribute name="role">
+                <text/>
+            </attribute>
+            <attribute name="title">
+                <text/>
+            </attribute>
+        </element>
+    </define>
+    <define name="disclaimer_url">
+        <element name="disclaimer_url">
+            <attribute name="href">
+                <text/>
+            </attribute>
+            <attribute name="label">
+                <text/>
+            </attribute>
+            <attribute name="role">
+                <text/>
+            </attribute>
+            <attribute name="title">
+                <text/>
+            </attribute>
+        </element>
+    </define>
+    <define name="copyright_url">
+        <element name="copyright_url">
+            <attribute name="href">
+                <text/>
+            </attribute>
+            <attribute name="label">
+                <text/>
+            </attribute>
+            <attribute name="role">
+                <text/>
+            </attribute>
+            <attribute name="title">
+                <text/>
+            </attribute>
+        </element>
+    </define>
+    <define name="privacy_policy_url">
+        <element name="privacy_policy_url">
+            <attribute name="href">
+                <text/>
+            </attribute>
+            <attribute name="label">
+                <text/>
+            </attribute>
+            <attribute name="role">
+                <text/>
+            </attribute>
+            <attribute name="title">
+                <text/>
+            </attribute>
+        </element>
+    </define>
+    
+    <start>
+        <ref name="current_observation"/>
+    </start>
+</grammar>

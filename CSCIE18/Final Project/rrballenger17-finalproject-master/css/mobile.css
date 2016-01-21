@@ -1,0 +1,19 @@
+
+
+
+.disappear{
+	
+	display: none;
+
+}
+
+.floatNav{
+	clear:left;
+	float:left;
+	width: 100%;
+}
+
+.appear{
+
+	display: table-row;
+}

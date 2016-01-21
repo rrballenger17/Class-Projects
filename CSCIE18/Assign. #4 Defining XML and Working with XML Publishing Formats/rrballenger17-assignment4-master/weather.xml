@@ -1,0 +1,75 @@
+<current_observation version="1.0">
+    <credit>NOAA's National Weather Service</credit>
+    <credit_URL>http://weather.gov/</credit_URL>
+    <image>
+        <url value="http://weather.gov/images/xml_logo.gif"/>
+        <title value="NOAA's National Weather Service"/>
+        <link value="http://weather.gov"/>
+    </image>
+    <suggested_pickup>15 minutes after the hour</suggested_pickup>
+    <suggested_pickup_period>60</suggested_pickup_period>
+    <location>Boston, Logan International Airport, MA</location>
+    <station_id>KBOS</station_id>
+    <latitude>42.36056</latitude>
+    <longitude>-71.01056</longitude>
+    <observation_time>2015-11-12T10:54:00-0400</observation_time>
+    <observation_time_rfc822>2015-11-12T10:54:00-0500</observation_time_rfc822>
+    <weather>Fog/Mist</weather>
+    <temperature_string>48.0 F (8.9 C)</temperature_string>
+    <temp system="english" units="Fahrenheit" label="&#176;F">48.0</temp>
+    <temp system="metric"  units="Celsius" label="&#176;C">8.9</temp>
+    <relative_humidity>89</relative_humidity>
+    <wind_string>South at 6.9 MPH (6 KT)</wind_string>
+    <wind_dir>South</wind_dir>
+    <wind_degrees>180</wind_degrees>
+    <wind_mph>6.9</wind_mph>
+    <wind_kt>6</wind_kt>
+    <pressure>
+        <string>1012.4 mb</string>
+        <mb>1012.4</mb>
+        <in>29.90</in>
+    </pressure>
+    <dewpoint_string>45.0 F (7.2 C)</dewpoint_string>
+    <dewpoint system="english" units="Fahrenheit" label="&#176;F">45.0</dewpoint>
+    <dewpoint system="metric"  units="Celsius" label="&#176;C">7.2</dewpoint>
+    <windchill_string>45 F (7 C)</windchill_string>
+    <windchill system="english" units="Fahrenheit" label="&#176;F">45</windchill>
+    <windchill system="metric"  units="Celsius" label="&#176;C">7</windchill>
+    <visibility_mi>6.00</visibility_mi>
+    <icon_url
+        href="fg.png"
+        label="Icon link"
+        role="http://forecast.weather.gov/images/wtf/small"
+        title="View image" />
+    <two_day_history_url
+        href="KBOS.html"
+        label="Previous history"
+        role="http://www.weather.gov/data/obhistory"
+        title="Information on weather for the past two days" />
+    <ob_url
+        href="KBOS.1.txt"
+        label="Location data"
+        role="http://www.weather.gov/data/METAR"
+        title="More data on this location" />
+    <disclaimer_url
+        href="disclaimer.html"
+        label="Disclaimer"
+        role="http://weather.gov"
+        title="Data use information for user" />
+    <copyright_url
+        href="disclaimer.html"
+        label="Copyright"
+        role="http://weather.gov"
+        title="Information on use of this page's data" />
+    <privacy_policy_url
+        href="notice.html"
+        label="Privacy Policy"
+        role="http://weather.gov"
+        title="Full privacy policy" />
+</current_observation>
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+default namespace = ""
+
+start =
+  element current_observation {
+    attribute version {text},
+    element credit {text},
+    element credit_URL {text},
+    element image {
+      element url {
+        attribute value {text}
+      },
+      element title {
+        attribute value {text}
+      },
+      element link {
+        attribute value {text}
+      }
+    },
+    element suggested_pickup {text},
+    element suggested_pickup_period {text},
+    element location {text},
+    element station_id {text},
+    element latitude {text},
+    element longitude {text},
+    element observation_time {text},
+    element observation_time_rfc822 {text},
+    element weather {text},
+    element temperature_string {text},
+    element temp{
+      attribute system {text}, 
+      attribute units {text}, 
+      attribute label {text}, 
+      text
+    }+,
+
+    element relative_humidity {text},
+    element wind_string {text},
+    element wind_dir {text},
+    element wind_degrees {text},
+    element wind_mph {text},
+    element wind_kt {text},
+    element pressure{
+      element string {text},
+      element mb {text},
+      element in {text}
+    },
+  
+    element dewpoint_string {text},
+    element dewpoint{
+      attribute system {text}, 
+      attribute units {text}, 
+      attribute label {text},
+      text
+    }+,
+    element windchill_string {text},
+    element windchill{
+      attribute system {text}, 
+      attribute units {text}, 
+      attribute label {text},
+      text
+    }+,
+
+    element visibility_mi {text},
+    element icon_url{
+      attribute href {text}, 
+      attribute label {text}, 
+      attribute role {text},
+      attribute title {text}
+    },
+    element two_day_history_url{
+      attribute href {text}, 
+      attribute label {text}, 
+      attribute role {text},
+      attribute title {text}
+    },
+    element ob_url{
+      attribute href {text}, 
+      attribute label {text}, 
+      attribute role {text},
+      attribute title {text}
+    },
+    element disclaimer_url{
+      attribute href {text}, 
+      attribute label {text}, 
+      attribute role {text},
+      attribute title {text}
+    },
+    element copyright_url{
+      attribute href {text}, 
+      attribute label {text}, 
+      attribute role {text},
+      attribute title {text}
+    },
+    element privacy_policy_url{
+      attribute href {text}, 
+      attribute label {text}, 
+      attribute role {text},
+      attribute title {text}
+    }
+  }
+
+
+
+
+
+
+

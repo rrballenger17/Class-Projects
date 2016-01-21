@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSCI E-18 Assignment 3</title>
+        <style type="text/css">
+            body{
+                font-family:sans-serif;
+            }
+            a:link,
+            a:visited,
+            a:active{
+                color:blue;
+                text-decoration:none;
+            }
+            a:hover{
+                text-decoration:underline;
+            }
+            code{
+                padding:2px 4px;
+                color:#d14;
+                background-color:#f7f7f9;
+                border:1px solid #e1e1e8;
+            }
+            *{
+                line-height:150%
+            }
+            ul{
+                margin-top:0.5em;
+            }</style>
+    </head>
+    <body>
+        <h1>CSCI E-18, Assignment 3</h1>
+        <p>Two parts to Assignment 3:</p>
+        <ol>
+            <li>
+                <strong>XSL-FO - Department Courses PDF</strong>. The main purpose of this exercise
+                is to write XSLT that will produce XSL-FO based on a list of courses from a
+                department. The resulting PDF should have a table of contents and a detailed listing
+                of each course. <ul>
+                    <li>
+                        <a href="gened.pdf">General Education</a>
+                    </li>
+                    <li>
+                        <a href="astronomy.pdf">Astronomy</a>
+                    </li>
+                </ul>
+                <p>X</p>
+                <p>You'll need to edit <code>xsl/course-listing-fo.xsl</code>. Note that the data is
+                    in <code>data/gened.xml</code> and <code>data/astronomy.xml</code>, and these
+                    are the only two department data files provided. Future improvement would be to
+                    make this a general solution by having our source XML come from an XQuery that
+                    would query the entire collection of "courses". But the main point of this
+                    assignment is figuring out the XSL-FO piece, so the current setup with
+                        <strong>Gened</strong> and <strong>Astronomy</strong> is sufficient! </p>
+            </li>
+            <li>
+                <strong>
+                    <a href="top25courses">SVG - Top 25 Courses</a>
+                </strong>. The main purpose of this exercise is to write XQuery that produces an SVG
+                graph of the "Top 25 Largest Enrolled Courses". You'll need to edit
+                    <code>xquery/top25courses.xq</code> and use the data in
+                    <code>data/enrollment.xml</code>
+                <ul>
+                    <li>
+                        <a href="top25courses">SVG Chart of Enrollment Top 25 Courses</a>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </body>
+</html>
