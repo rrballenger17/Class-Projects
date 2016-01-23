@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+
+	<!-- jquery --> 
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>	
+
+	<!-- required -->
+	<link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+
+	<!-- required --> 
+	<script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+	<!-- enables scrolling through slideshow with mouse -->
+	<script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- enables thumbs navigation -->
+	<link rel="stylesheet" href="css/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancy").fancybox(
+		{
+			prevEffect	: 'none',
+			nextEffect	: 'none',
+			autoPlay: true,
+			playSpeed: 5000,
+			helpers	: {
+				title	: {
+					type: 'inside'
+				},
+				thumbs	: {
+					width	: 50,
+					height	: 50
+				},
+			}
+		}
+		);
+	});
+	</script>
+
+</head>
+<body>
+	<header>
+		<h2> Pictures from our trip </h2>
+	</header>
+
+	<div>
+	<a class="fancy" rel="alternate" href="images/alpine_meadow.jpg" title="alpine_meadow.jpg">
+		<img src="images/thumb/alpine_meadow.jpg" alt="1" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/avalanche_lake.jpg" title="avalanche_lake.jpg">
+		<img src="images/thumb/avalanche_lake.jpg" alt="2" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/bowman_lake.jpg" title="bowman_lake.jpg">
+		<img src="images/thumb/bowman_lake.jpg" alt="3" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/chief_mountain.jpg" title="chief_mountain.jpg">
+		<img src="images/thumb/chief_mountain.jpg" alt="4" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/glenns_lake.jpg" title="glenns_lake.jpg">
+		<img src="images/thumb/glenns_lake.jpg" alt="5" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/granite_park.jpg" title="granite_park.jpg">
+		<img src="images/thumb/granite_park.jpg" alt="6" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/gunsight_lake.jpg" title="gunsight_lake.jpg">
+		<img src="images/thumb/gunsight_lake.jpg" alt="7" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/heavens_peak.jpg" title="heavens_peak.jpg">
+		<img src="images/thumb/heavens_peak.jpg" alt="8" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/hidden_lake.jpg" title="hidden_lake.jpg">
+		<img src="images/thumb/hidden_lake.jpg" alt="5" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/iceberg_lake.jpg" title="iceberg_lake.jpg">
+		<img src="images/thumb/iceberg_lake.jpg" alt="6" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/lake_mcdonald.jpg" title="lake_mcdonald.jpg">
+		<img src="images/thumb/lake_mcdonald.jpg" alt="7" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/logan_pass.jpg" title="logan_pass.jpg">
+		<img src="images/thumb/logan_pass.jpg" alt="8" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/logging_lake.jpg" title="logging_lake.jpg">
+		<img src="images/thumb/logging_lake.jpg" alt="5" />
+	</a>
+	<a class="fancy" rel="alternate" href="images/red_eagle_mountain.jpg" title="red_eagle_mountain.jpg">
+		<img src="images/thumb/red_eagle_mountain.jpg" alt="6" />
+	</a>
+	</div>
+
+	
+</body>
+</html>
