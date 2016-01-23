@@ -1,0 +1,260 @@
+html{
+	background-color: black;
+	min-width: 1000px;
+}
+
+body{
+	margin-top: 0px;
+	margin-left: 4%;
+	margin-right: 4%;
+	min-width: 580px;
+	font-family: arial, sans-serif;
+	font-size: 16px;
+	background-color: white;
+}
+
+header h1{
+	float: left;
+	text-indent: 100%;
+  	overflow: hidden;
+  	white-space: nowrap;
+  	background-image: url("../images/logo.png");
+  	background-size: 300px;
+  	background-repeat: no-repeat;
+	height: 70px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	width: 350px;	
+}
+
+header{
+	float: left;
+	background-color: white;
+	width: 100%;
+}
+
+
+header img{
+	margin-top: 13px;
+	float: right;
+	height: 40px;
+	margin-right: 15px;
+}
+
+
+
+#sitenav li #categoryhere{
+	text-decoration: underline;
+	color: yellow;
+}
+
+#breadcrumbNav{
+	float: left;
+	width: 80%;
+	
+	list-style: none;
+	color: black;
+
+	padding: 0px;
+	margin-left: 10px;
+	margin-top:10px;
+}
+
+#breadcrumbNav ul{
+	display: inline;
+	list-style: none;
+	padding-left: 2px;
+}
+
+#breadcrumbNav ul li{
+	display: inline;
+	list-style: none;
+
+	background-image: url(../images/arrow.gif);
+  	background-position: left;
+  	background-repeat: no-repeat;
+  	padding-left: 25px;
+}
+
+#breadcrumbNav a {
+  	color: inherit;
+  	text-decoration: none;
+}
+
+#breadcrumbNav a:hover {
+  	color: black;
+}
+
+#breadcrumbNav a:active {
+  	color: blue;
+}
+#breadcrumbNav a:visited{}
+
+
+#facebook{
+
+	right: 130px;
+}
+
+#twitter{
+
+	right: 80px;
+
+}
+
+#instagram{
+
+	right: 30px;
+
+}
+
+nav{
+	clear: left;
+	font-family: Tahoma, sans-serif;
+}
+
+#siteNav{
+	font-family: verdana;
+	font-weight: bold;
+
+	background-color: #D1C2B2;
+	border-top: black solid 3px;
+	border-bottom: black solid 3px;
+
+	list-style: none;
+	white-space: nowrap;
+	overflow: hidden;
+
+	padding-left: 5%;
+	padding-bottom: 16px;
+	margin-bottom: 0px;
+	padding-top: 15px;
+	margin-top: 0px;
+}
+
+#siteNav li{
+	display: inline;	
+}
+
+#siteNav li a{
+	text-decoration: none;
+	padding-left:1.0em;
+	padding-right: .6em;
+	margin: 0px;
+	color: black;
+}
+
+#siteNav li a:active{
+	color: blue !important;	
+}
+#siteNav li a:visited{}
+
+#siteNav li a:hover{
+	color: white;
+}
+
+#siteNav .youarehere a{
+	color: white;
+}
+
+#siteNav .youarehere{
+	border-bottom: 2px white solid;
+}
+
+footer{
+	clear:both;
+	font-size: .6em;
+	font-family: verdana;
+	padding: 10px;
+}
+
+footer p{
+	margin-left: 10px;
+}
+
+#credits{
+	clear:both;
+	font-size: .6em;
+	font-family: verdana;
+	padding: 10px;
+	margin-left: 10px;
+}
+
+
+.row{
+	border-bottom: 3px black solid;
+	font-family: verdana;
+	background-color: #D1C2B2;
+  	height: 500px;
+
+}
+
+.row h3{
+	float:left;
+	font-family: verdana;
+	width:26%;
+	text-align: center;
+	margin-left: 5px;
+
+}
+
+.row hr{
+	float: left;
+	width: 35%;
+	margin-top: 30px;
+	color: black;
+
+	height: 1px;
+    border: 0; 
+    border-top: 2px solid black;
+    margin-left: 1%;
+    
+}
+
+.row .firstitem{
+	clear:left;
+}
+
+.row div{
+	float: left;
+	margin-top: 30px;
+	width: 33%;
+}
+
+.row span{
+	margin-top: 3px;
+	clear:left;
+	float: left;
+	width: 100%;
+	text-align: center;
+	text-shadow: 1px 1px #D1C2B2;
+}
+
+.row img{
+  	height: 250px;
+  	border: 1px black solid;
+  	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.row a{
+	text-decoration: none;
+	font: inherit;
+	color: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

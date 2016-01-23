@@ -1,0 +1,77 @@
+#checkout img{
+	height: 45px;
+	float:left;
+	clear:left;
+	margin-left: 50px;
+}
+
+#checkout h5{
+	text-decoration: underline;
+	margin-left: 50px;
+	font-variant: small-caps;
+}
+
+#checkout span{
+	float:left;
+	margin-left: 20px;
+
+}
+
+#placeOrder{
+	margin-left: 20px;
+}
+
+#pAdditional, #sAdditional, #default{
+	display: none;
+}
+
+#checkout{
+	font-family: verdana;
+	clear:left;
+  	float:left;
+  	width: 100%;
+  	border-bottom: 3px black solid;
+
+  	background: white;
+}
+
+
+legend{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1.5em;
+	color: black;
+	font-variant: small-caps;
+	text-align: center;
+	letter-spacing: .09em;
+}
+
+
+label{
+	font-style: italic;
+}
+
+fieldset{
+	clear: left;
+	padding: 1em;
+	margin: 1em;
+	border: .1em solid blue;
+}
+
+#firstfieldset{
+	padding-top: 1px;
+}
+
+fieldset p{
+	display: inline;
+
+}
+
+
+
+label.error {
+    background: url('../images/redx.png') no-repeat;
+    background-size: 18px;
+    padding-left: 18px;
+    margin-left: .3em;
+    color: red;
+}
